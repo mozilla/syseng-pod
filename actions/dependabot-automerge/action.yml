@@ -1,0 +1,53 @@
+name: 'Dependabot Automerge'
+description: 'Automatically approve and merge Dependabot PRs'
+inputs:
+  merge-strategy:
+    description: Merge strategy to use when enabling automerge
+    required: true
+    default: 'squash'
+  prod-semver-autoapprovals:
+    description: 'Semver levels for which to automatically approve the PR for production dependencies'
+    required: true
+    default: 'patch'
+  dev-semver-autoapprovals:
+    description: 'Semver levels for which to automatically approve the PR for development dependencies'
+    required: true
+    default: 'major,minor,patch'
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - shell: bash
+      run: pip install click
+    - name: Dependabot metadata
+      id: dependabot-metadata
+      uses: dependabot/fetch-metadata@v1
+      with:
+        github-token: ${{ github.token }}
+    - name: Review PR
+      id: review-pr
+      shell: python
+      run: review_pr.py \
+          --semver-level "${{ steps.dependabot-metadata.outputs.update-type }}" \
+          --dependency-type "${{ steps.dependabot-metadata.outputs.dependency-type }}" \
+          --prod-semver-autoapprovals ${{ inputs.prod-semver-autoapprovals }} \
+          --dev-semver-autoapprovals ${{ inputs.dev-semver-autoapprovals }}
+    - name: Enable auto-merge on PR
+      shell: bash
+      run: gh pr merge --auto --${{ inputs.merge-strategy }} "${{ github.event.pull_request.html_url }}"
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    - name: Approve PR
+      if: ${{ steps.review-pr.outputs.should-approve == 'true' }}
+      shell: bash
+      run: gh pr review "${{ github.event.pull_request.html_url }}" --approve --body "${{ steps.review-pr.outputs.review-message }}"
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    - name: Comment on non-approval of PR
+      if: ${{ steps.review-pr.outputs.should-approve == 'false' }}
+      shell: bash
+      run: gh pr comment "${{ github.event.pull_request.html_url }}" --body "${{ steps.review-pr.outputs.review-message }}"
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
