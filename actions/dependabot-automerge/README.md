@@ -4,9 +4,9 @@ This GitHub custom action enables automatic approval and merging of Dependabot p
 
 ## Inputs
 
-- `merge-strategy`: The merge strategy to use when enabling automerge. Defaults to `squash`.
-- `prod-semver-autoapprovals`: Semver levels for which to automatically approve the PR for production dependencies. Defaults to `patch`.
-- `dev-semver-autoapprovals`: Semver levels for which to automatically approve the PR for development dependencies. Defaults to `major,minor,patch`.
+- `merge-strategy`: The merge strategy to use when enabling automerge. Possible values are `merge`, `rebase`, and `squash`. Defaults to `squash`.
+- `prod-semver-autoapprovals`: Comma-delimited list of semver levels for which to automatically approve the PR for production dependencies. Defaults to `patch`.
+- `dev-semver-autoapprovals`: Comma-delimited list of semver levels for which to automatically approve the PR for development dependencies. Defaults to `major,minor,patch`.
 
 ## Usage
 
@@ -33,7 +33,8 @@ jobs:
 The following repo settings should also be enabled:
 
 - Allow Github Actions to create and approve pull requests should be checked ([docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#preventing-github-actions-from-creating-or-approving-pull-requests))
-- [Requiring reviews](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-pull-request-reviews-before-merging) from Codeowners should be disabled for files that Dependabot would update, since bots can't be listed as Codeowners
+- the chosen merge strategy should be enabled on the repo ([docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges))
+- [Requiring reviews](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-pull-request-reviews-before-merging) from Codeowners should be disabled for files that Dependabot would update (e.g. `poetry.lock`), since bots can't be listed as Codeowners
 - It's best to use required status checks with this action (e.g. for linting and tests) and require that those status checks are successful before merging is allowed ([docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging))
 
 ## How It Works
