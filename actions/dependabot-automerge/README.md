@@ -22,7 +22,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  test:
+  dependabot-automerge:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
@@ -30,9 +30,11 @@ jobs:
         uses: mozilla/syseng-pod/actions/dependabot-automerge
 ```
 
-The following repo settings should also be enabled:
+the `contents` and `pull-requests` [token](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) permissions (used by the action) need to be set to `write` so that the automation can leave comments, approve the PR, and enable auto-merge.
 
-- Allow Github Actions to create and approve pull requests should be checked ([docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#preventing-github-actions-from-creating-or-approving-pull-requests))
+## Repo Configuration:
+
+- `Allow Github Actions to create and approve pull requests` should be checked ([docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#preventing-github-actions-from-creating-or-approving-pull-requests))
 - the chosen merge strategy should be enabled on the repo ([docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges))
 - [Requiring reviews](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-pull-request-reviews-before-merging) from Codeowners should be disabled for files that Dependabot would update (e.g. `poetry.lock`), since bots can't be listed as Codeowners
 - It's best to use required status checks with this action (e.g. for linting and tests) and require that those status checks are successful before merging is allowed ([docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging))
