@@ -30,7 +30,7 @@ runs:
       id: review-pr
       shell: bash
       run: |
-        python review_pr.py \
+        python $GITHUB_ACTION_PATH/review_pr.py \
           --semver-level "${{ steps.dependabot-metadata.outputs.update-type }}" \
           --dependency-type "${{ steps.dependabot-metadata.outputs.dependency-type }}" \
           --prod-semver-autoapprovals ${{ inputs.prod-semver-autoapprovals }} \

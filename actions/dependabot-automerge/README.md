@@ -27,7 +27,7 @@ jobs:
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
       - name: Enable Dependabot automation
-        uses: mozilla/syseng-pod/actions/dependabot-automerge
+        uses: mozilla/syseng-pod/actions/dependabot-automerge@main
 ```
 
 the `contents` and `pull-requests` [token](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) permissions (used by the action) need to be set to `write` so that the automation can leave comments, approve the PR, and enable auto-merge.
