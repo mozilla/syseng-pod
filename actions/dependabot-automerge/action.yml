@@ -28,8 +28,9 @@ runs:
         github-token: ${{ github.token }}
     - name: Review PR
       id: review-pr
-      shell: python
-      run: review_pr.py \
+      shell: bash
+      run: |
+        python review_pr.py \
           --semver-level "${{ steps.dependabot-metadata.outputs.update-type }}" \
           --dependency-type "${{ steps.dependabot-metadata.outputs.dependency-type }}" \
           --prod-semver-autoapprovals ${{ inputs.prod-semver-autoapprovals }} \
