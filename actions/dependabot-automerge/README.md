@@ -7,6 +7,7 @@ This GitHub custom action enables automatic approval and merging of Dependabot p
 - `merge-strategy`: The merge strategy to use when enabling automerge. Possible values are `merge`, `rebase`, and `squash`. Defaults to `squash`.
 - `prod-semver-autoapprovals`: Comma-delimited list of semver levels for which to automatically approve the PR for production dependencies. Defaults to `patch`.
 - `dev-semver-autoapprovals`: Comma-delimited list of semver levels for which to automatically approve the PR for development dependencies. Defaults to `major,minor,patch`.
+- `github-token`: Token used to approve, merge, and comment on PRs. Defaults to `${{ github.token }}`
 
 ## Usage
 

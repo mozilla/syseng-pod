@@ -13,6 +13,10 @@ inputs:
     description: 'Semver levels for which to automatically approve the PR for development dependencies'
     required: true
     default: 'major,minor,patch'
+  github-token:
+    description: 'Token used to approve, merge, and leave comments on PRs'
+    required: false
+    default: ${{ github.token }}
 runs:
   using: composite
   steps:
@@ -25,7 +29,7 @@ runs:
       id: dependabot-metadata
       uses: dependabot/fetch-metadata@v1
       with:
-        github-token: ${{ github.token }}
+        github-token: ${{ inputs.github-token }}
     - name: Review PR
       id: review-pr
       shell: bash
@@ -39,16 +43,16 @@ runs:
       shell: bash
       run: gh pr merge --auto --${{ inputs.merge-strategy }} "${{ github.event.pull_request.html_url }}"
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
     - name: Approve PR
       if: ${{ steps.review-pr.outputs.should-approve == 'true' }}
       shell: bash
       run: gh pr review "${{ github.event.pull_request.html_url }}" --approve --body "${{ steps.review-pr.outputs.review-message }}"
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
     - name: Comment on non-approval of PR
       if: ${{ steps.review-pr.outputs.should-approve == 'false' }}
       shell: bash
       run: gh pr comment "${{ github.event.pull_request.html_url }}" --body "${{ steps.review-pr.outputs.review-message }}"
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
