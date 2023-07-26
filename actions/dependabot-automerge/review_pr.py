@@ -4,7 +4,8 @@ from enum import StrEnum, auto
 import click
 
 UPDATE_TYPE_PREFIX = "version-update:semver-"
-DEPENDENCY_TYPE_PREFIX = "direct:"
+DIRECT_DEPENDENCY_TYPE_PREFIX = "direct:"
+INDIRECT_DEPENDENCY_TYPE = "indirect"
 
 
 class DependencyType(StrEnum):
@@ -29,7 +30,7 @@ def parse_semver_level(ctx, option, value: str):
 
 
 def parse_dependency_type(ctx, option, value: str):
-    return DependencyType(value.removeprefix(DEPENDENCY_TYPE_PREFIX))
+    return DependencyType(value.removeprefix(DIRECT_DEPENDENCY_TYPE_PREFIX))
 
 
 def parse_semver_autoapprovals(ctx, option, value):
@@ -80,7 +81,10 @@ def review_pr(
 )
 @click.option(
     "--dependency-type",
-    type=click.Choice([DEPENDENCY_TYPE_PREFIX + e.value for e in DependencyType]),
+    type=click.Choice(
+        [INDIRECT_DEPENDENCY_TYPE]
+        + [DIRECT_DEPENDENCY_TYPE_PREFIX + e.value for e in DependencyType]
+    ),
     callback=parse_dependency_type,
 )
 @click.option("--prod-semver-autoapprovals", callback=parse_semver_autoapprovals)
