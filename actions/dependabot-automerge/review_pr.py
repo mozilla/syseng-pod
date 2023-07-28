@@ -64,6 +64,12 @@ def review_pr(
     prod_semver_autoapprovals: list[SemverUpdateType],
     dev_semver_autoapprovals: list[SemverUpdateType],
 ) -> tuple[bool, str]:
+    # There's not an easy way to determine which direct dependencies an indirect
+    # dependency will affect through the metadata provided by Dependabot. An
+    # indirect dependency could be used by a production dependency, development
+    # dependency, or both. We could possibly find out which dependencies are affected
+    # by other means, but for now, the simple option is to just not automatically
+    # approve indirect updates.
     if dependency_type == DependencyType.indirect:
         message = (
             "This `indirect` dependency was not automatically approved. Only `direct` "
