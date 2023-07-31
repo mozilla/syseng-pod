@@ -47,12 +47,12 @@ runs:
     - name: Approve PR
       if: ${{ steps.review-pr.outputs.should-approve == 'true' }}
       shell: bash
-      run: gh pr review "${{ github.event.pull_request.html_url }}" --approve --body "${{ steps.review-pr.outputs.review-message }}"
+      run: gh pr review "${{ github.event.pull_request.html_url }}" --approve --body '${{ steps.review-pr.outputs.review-message }}'
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
     - name: Comment on non-approval of PR
       if: ${{ steps.review-pr.outputs.should-approve == 'false' }}
       shell: bash
-      run: gh pr comment "${{ github.event.pull_request.html_url }}" --body "${{ steps.review-pr.outputs.review-message }}"
+      run: gh pr comment "${{ github.event.pull_request.html_url }}" --body '${{ steps.review-pr.outputs.review-message }}'
       env:
         GITHUB_TOKEN: ${{ inputs.github-token }}
