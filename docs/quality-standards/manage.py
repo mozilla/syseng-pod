@@ -68,6 +68,7 @@ def audit():
                     "name": name,
                     "message": f"{name} ?",
                     "choices": points_for.keys(),
+                    "instruction": "\n" + rule["description"].strip() + "\n",
                 }
             )
             max_score += 2
