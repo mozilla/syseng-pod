@@ -1,0 +1,65 @@
+standard:
+  description: Yeah
+  categories:
+    - title: Repository Ergonomics
+      description: |
+        > Ergonomics *(ûr″gə-nŏm′ĭks)*: Design factors, as for the workplace, intended to maximize productivity by minimizing operator fatigue and discomfort.
+
+        * It takes time and effort to learn a project’s repository layout.
+        * How a project repository is organized provides little return on the mental energy it takes to learn it
+        * To contribute to a project someone is required to learn how its content is organized.
+        * There is too little reusable knowledge across project organizations / layouts
+      rules:
+        repo-standard-files:
+          description: |
+            - README.(md,rst)
+            - LICENSE
+            - CODE_OF_CONDUCT.md
+            - CONTRIBUTING.md
+            - SECURITY.md
+            - SUPPORT.md
+          details: |
+            See https://en.wikipedia.org/wiki/Contributing_guidelines
+            and https://mozillascience.github.io/working-open-workshop/contributing/
+            templates at https://contributing.md
+        repo-standard-folders:
+          description: |
+            - docs/
+            - bin/
+        repo-readme-sections:
+          description: |
+            - Readme contains the following:
+            - Project name as main title
+            - Status (invest, sustain, sunset, abandoned)
+            - Usage
+            - Link to documentation
+          details: |
+            Our goals here are:
+
+            - avoid empty README
+            - expose maintenance status
+            - basic usage is detailed
+            - standard sections will help reading/scanning for newcomers
+        repo-makefile-targets:
+          description: |
+            Make has the following targets:
+
+            - help
+            - test
+            - start
+            - lint
+            - format
+    - title: Releasing
+      rules:
+        release-semver-calver:
+          description: Project follows SemVer or Calver version scheme
+        release-tag-v-prefix:
+          description: The release tags have `v(.+)` format
+        release-tag-only:
+          description: |
+            Project version has a single source of truth. For example, it is read from `version.json`
+            which is automatically built from current git tag
+          details:
+            Does not apply to libraries, where a version number usually appears in package metadata
+        release-publish:
+          description: Project container or package is published on git tag
