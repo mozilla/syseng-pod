@@ -52,6 +52,19 @@ def audit():
         root = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
     service = questionary.text("What is the service name?").ask()
+    output = f"scorecards-{service}.yaml"
+    yaml = ruamel.yaml.YAML()
+    try:
+        with open(output) as existing:
+            scorecards = yaml.load(existing)
+    except IOError:
+        scorecards = {}
+    today = datetime.date.today().isoformat()
+    if today in scorecards:
+        confirmation = f"Score card of {today} already exists for {service}. Overwrite?"
+        if not questionary.confirm(confirmation).ask():
+            click.echo("Cancelled.")
+            sys.exit(1)
 
     points_for = {
         "Yes": 2,
@@ -61,11 +74,19 @@ def audit():
     max_score = 0
     score_card = []
     for category in root["standard"]["categories"]:
+        score_card.append(
+            {
+                "type": "confirm",
+                "name": category["title"],
+                "message": f"About {category['title']}",
+                "instruction": "\n" + category.get("description", "").strip() + "\nPress Enter...",
+            }
+        )
         for name, rule in category["rules"].items():
             score_card.append(
                 {
                     "type": "select",
-                    "name": name,
+                    "name": f"rule-{name}",
                     "message": f"{name} ?",
                     "choices": points_for.keys(),
                     "instruction": "\n" + rule["description"].strip() + "\n",
@@ -74,22 +95,14 @@ def audit():
             max_score += 2
 
     answers = questionary.prompt(score_card)
-
-    score = 100 * sum(points_for[v] for v in answers.values()) / max_score
+    rules_answers = {k.replace("rule-", ""): v for k, v in answers.items() if k.startswith("rule-")}
+    score = 100 * sum(points_for[v] for v in rules_answers.values()) / max_score
     click.echo(f"Service score is {score}")
 
     # Save score cards
-    yaml = ruamel.yaml.YAML()
-    output = f"scorecards-{service}.yaml"
-    try:
-        with open(output) as existing:
-            scorecards = yaml.load(existing)
-    except IOError:
-        scorecards = {}
-    today = datetime.date.today().isoformat()
     scorecards[today] = {
         "score": score,
-        "rules": answers,
+        "rules": rules_answers,
     }
     with open(output, "w") as out:
         yaml.dump(scorecards, out)
