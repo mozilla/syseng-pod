@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+from collections import defaultdict
 import datetime
 import os
 import sys
@@ -79,30 +80,51 @@ def audit():
                 "type": "confirm",
                 "name": category["title"],
                 "message": f"About {category['title']}",
-                "instruction": "\n" + category.get("description", "").strip() + "\nPress Enter...",
+                "instruction": "\n"
+                + category.get("description", "").strip()
+                + "\nPress Enter...",
             }
         )
         for name, rule in category["rules"].items():
             score_card.append(
                 {
                     "type": "select",
-                    "name": f"rule-{name}",
+                    "name": f"compliant:{name}",
                     "message": f"{name} ?",
                     "choices": points_for.keys(),
                     "instruction": "\n" + rule["description"].strip() + "\n",
                 }
             )
+            score_card.append(
+                {
+                    "type": "text",
+                    "name": f"notes:{name}",
+                    "message": f"Notes?",
+                    "multiline": True,
+                }
+            )
             max_score += 2
 
     answers = questionary.prompt(score_card)
-    rules_answers = {k.replace("rule-", ""): v for k, v in answers.items() if k.startswith("rule-")}
-    score = 100 * sum(points_for[v] for v in rules_answers.values()) / max_score
+    by_rule = defaultdict(dict)
+    for name, answer in answers.items():
+        if ":" not in name:
+            continue
+        field, rule = name.split(":")
+        if answer := answer.strip():
+            by_rule[rule][field] = answer
+
+    score = (
+        100
+        * sum(points_for[details["compliant"]] for details in by_rule.values())
+        / max_score
+    )
     click.echo(f"Service score is {score}")
 
     # Save score cards
     scorecards[today] = {
         "score": score,
-        "rules": rules_answers,
+        "rules": dict(by_rule),
     }
     with open(output, "w") as out:
         yaml.dump(scorecards, out)
