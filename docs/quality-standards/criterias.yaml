@@ -1,3 +1,4 @@
+---
 standard:
   description: Yeah
   categories:
@@ -49,6 +50,78 @@ standard:
             - start
             - lint
             - format
+        repo-main-branch-name:
+          description: Main branch is called `main`
+        repo-main-branch-protected:
+          description: Main branch is protected without exceptions
+        repo-version-tags-protected:
+          description: Tags starting with `v*` can only be pushed by maintainers/admins
+          details: |
+            [Github docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-tag-protection-rules)
+        repo-issue-labels:
+          description: |
+            Standard issue labels exist:
+
+            - bug
+            - dependencies
+            - enhancement
+            - documentation
+            - wontfix
+            - good-first-issue
+        repo-team-reviewers-permissions:
+          description: Team of reviewers has at least “Maintain” permissions
+        repo-pull-request-merge:
+          description: Only “*squash and merge*” and “*rebase and merge*” are allowed
+        repo-pre-commit-optional:
+          description: Pre-commit hooks are optional
+          details: Example in [Taskcluster](https://github.com/taskcluster/taskcluster/blob/main/dev-docs/development-process.md#pre-commit-optional)
+
+    - title: Repository Automation
+      rules:
+        repo-release-notes-auto:
+          description: Release Notes are generated from commits using `.github/release.yml`
+          details: Sections titles contain at least “*Breaking changes*”, “*Bug fixes*”, “*New features*”, “*Documentation*”, and “*Other changes*”
+        repo-dependencies-auto:
+          description: Pull-requests are automatically opened for dependencies
+          details: File `.github/dependabot.yml` and/or `renovate.json` exist
+        repo-automerge-enabled:
+          description: Automerge and merge queues are enabled
+        repo-head-branch-auto-delete:
+          description: Auto-delete head branches is enabled
+        repo-code-owners:
+          description: Code owners are configured
+          details: At least with team of reviewers for everything (eg. @syseng-reviewers)
+
+    - title: Testing and linting
+      rules:
+        test-lint-secrets:
+          description: A test verifies that no secret is committed to the sources
+          details: Eg. [Yelp/detect-secrets](https://github.com/Yelp/detect-secrets)
+        test-lint-code-format:
+          description: A test verifies that code format respects standard
+          details: Eg. prettier, black+isort, cargo fmt
+        test-lint-static-analysis:
+          description: A test verifies that code respects idioms and good practices
+          details: Eg. eslint, bandit+pylint, cargo clippy
+        test-lint-type-checking:
+          description: A test verifies that types are used consistently
+          details: Eg. typescript, mypy
+        test-unit-coverage:
+          description: Unit tests fail if coverage is under 90%
+          details: Better if 100% with branching option
+        test-documentation-build:
+          description: A test verifies that documentation builds successfully without warnings
+          details: If the project does not have built documentation, a lint check for markdown files is recommended
+        test-container-build:
+          description: A test verifies that container builds successfully
+        test-container-integration:
+          description: A test executes integration tests on the built container
+        test-pull-requests-labels:
+          description: A test verifies that pull-requests have labels
+        dependencies-reproducibility:
+          description: Dependencies are locked between local clone, tests, and container
+          details: Eg. use poetry, cargo, …
+
     - title: Releasing
       rules:
         release-semver-calver:
@@ -63,3 +136,80 @@ standard:
             Does not apply to libraries, where a version number usually appears in package metadata
         release-publish:
           description: Project container or package is published on git tag
+
+    - title: Deployment
+      rules:
+        deployment-dockerflow:
+          description: Container follows Dockerflow spec
+        deployment-integration-test:
+          description: Integration tests are part of deployment pipeline
+          details: Might be as well end-to-end (browser tests)
+        deployment-auto-main:
+          description: Automatic deployment on DEV/STAGE environment on pull-requests merge
+        deployment-auto-release:
+          description: Automatic deployment on STAGE/PROD environment on version tag
+          details: If they pass through a quality gate like an automated integration test
+        deployment-auto-pull-requests:
+          description: Automatic deployment on temporary instances on pull-requests
+          details: Should be allowed to repo owners only?
+
+    - title: Monitoring
+      rules:
+        monitoring-heartbeat-backends:
+          description: Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting
+        monitoring-heartbeat-error:
+          description: Heartbeat checks throw errors that will be reported
+        monitoring-requests-duration:
+          description: API requests processing duration is monitored
+        monitoring-requests-id:
+          description: A unique ID is associated to each request and logged
+        monitoring-backends-duration:
+          description: Backends calls durations are monitored
+          details: |
+            [Existing standards](https://opentelemetry.io/docs/concepts/signals/traces/)
+        monitoring-logging-level:
+          description: Logging has INFO level by default
+        monitoring-logging-mozlog:
+          description: Logging format is MozLog by default
+        monitoring-logging-env-configuration:
+          description: Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable
+        monitoring-error-reporting:
+          description: Sentry is setup by environment
+
+    - title: Telemetry
+      rules:
+        telemetry-metrics:
+          description: Project sends live telemetry
+          details: StatsD with tags
+        telemetry-naming:
+          description: Probes start with project name (eg. `ctms.*`)
+        telemetry-documented:
+          description: Probes are listed in documentation
+        telemetry-query-examples:
+          description: BigQuery example queries are given in documentation
+
+    - title: Notifications
+      rules:
+        notifications-error-chat:
+          description: Sentry reports to Slack channel
+          details: Sentry creates Github issues?
+
+    - title: Documentation Content
+      rules:
+        documentation-decisions-records:
+          description: Enumerate evaluation criterias.
+          details: Enumerate considered options with score/comment for each criteria.
+        documentation-security-assessment:
+          description: |
+            [Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+        documentation-dev:
+          description: |
+            Instructions for a developper: how to run the tests, procedures to obtain credentials on dev/stage instances, contribute, contact the team, etc.
+        documentation-test-args:
+          description: Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)
+        documentation-operator:
+          description: |
+            Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+          details: Can also be called “Deployment docs”
+        documentation-troubleshooting:
+          description: Common troubleshooting steps
