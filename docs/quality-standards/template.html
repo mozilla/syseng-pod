@@ -11,8 +11,17 @@
 <body>
   <h1>Quality Standards</h1>
   <p>{{ standard.description|markdown }}</p>
+  <section id="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+        {% for category in standard.categories %}
+        <li><a href="#{{ category.title }}">{{ category.title }}</a></hli>
+        {% endfor %}
+    </ul>
+  </section>
   {% for category in standard.categories %}
-    <h2>{{ category.title }}</h2>
+  <section class="rules">
+    <h2><a name="{{ category.title }}">{{ category.title }}</a></h2>
     <p>{{ category.description|default('')|markdown }}</p>
     <table>
         <thead>
@@ -32,6 +41,7 @@
             {% endfor %}
         </tbody>
     </table>
+  </section>
   {% endfor %}
 </body>
 </html>

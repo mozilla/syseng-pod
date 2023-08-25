@@ -1,6 +1,12 @@
 ---
 standard:
-  description: Yeah
+  description: |
+    Hello, this doc is about explicitly defining quality in the world of services software at Mozilla.
+
+    Definition: quality refers to the degree to which a software and its related deliverables **meet or exceed** the **expectations** of its **stakeholders**. However, what are those expectations and does the team share the same expectations?  This document defines what the expectations are and provides a way to measure the quality of a software.
+
+    Quality guarantees reliability and maintainability of the software, as well as efficiency of development.
+
   categories:
     - title: Repository Ergonomics
       description: |
