@@ -48,87 +48,126 @@ def html():
 
 @cli.command()
 def audit():
+    from questionary.prompts.common import print_formatted_text
+
     criteria = os.path.join(os.path.dirname(__file__), "criterias.yaml")
     with open(criteria) as f:
         root = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
-
-    service = questionary.text("What is the service name?").ask()
-    output = f"scorecards-{service}.yaml"
-    yaml = ruamel.yaml.YAML()
-    try:
-        with open(output) as existing:
-            scorecards = yaml.load(existing)
-    except IOError:
-        scorecards = {}
-    today = datetime.date.today().isoformat()
-    if today in scorecards:
-        confirmation = f"Score card of {today} already exists for {service}. Overwrite?"
-        if not questionary.confirm(confirmation).ask():
-            click.echo("Cancelled.")
-            sys.exit(1)
 
     points_for = {
         "Yes": 2,
         "Partially": 1,
         "No": 0,
     }
+
     max_score = 0
-    score_card = []
     for category in root["standard"]["categories"]:
-        score_card.append(
-            {
-                "type": "confirm",
-                "name": category["title"],
-                "message": f"About {category['title']}",
-                "instruction": "\n"
-                + category.get("description", "").strip()
-                + "\nPress Enter...",
+        for name in category["rules"].items():
+            max_score += points_for["Yes"]
+
+    service = questionary.text("What is the service name?").ask()
+    scorecard_filename = f"scorecards-{service}.yaml"
+    yaml = ruamel.yaml.YAML()
+    try:
+        with open(scorecard_filename) as existing:
+            scorecards = yaml.load(existing) or {}
+    except IOError:
+        scorecards = {}
+
+    previous_audit = {}
+    if scorecards:
+        latest_audit_date = max(scorecards.keys())
+        last_score = scorecards[latest_audit_date]["score"]
+        previous_audit = scorecards[latest_audit_date]["rules"]
+
+        choice = questionary.select(
+            message=f"Score card already exists for {service}. Do you want to:",
+            choices=[
+                {
+                    "name": f"Resume last audit ({latest_audit_date}, {last_score}/{max_score})",
+                    "value": 1,
+                },
+                {
+                    "name": f"Start new audit from previous (skip compliant checks)",
+                    "value": 2,
+                },
+                {"name": f"Start new audit from scratch", "value": 3},
+                {"name": f"Abort", "value": 4},
+            ],
+        ).ask()
+
+        if choice == 1:
+            # The new audit will be saved with today's date.
+            del scorecards[latest_audit_date]
+        if choice == 2:
+            previous_audit = {
+                rule: v for rule, v in previous_audit.items() if v == "Yes"
             }
-        )
+        if choice == 3:
+            previous_audit = {}
+        if choice == 4:
+            click.echo("Cancelled.")
+            sys.exit(1)
+
+    aborted = False
+    answers = previous_audit.copy()
+    for category in root["standard"]["categories"]:
+        # If user aborted one question, we exit the form.
+        if aborted:
+            break
+
+        shown_intro = False
         for name, rule in category["rules"].items():
-            score_card.append(
-                {
-                    "type": "select",
-                    "name": f"compliant:{name}",
-                    "message": f"{name} ?",
-                    "choices": points_for.keys(),
-                    "instruction": "\n" + rule["description"].strip() + "\n",
-                }
-            )
-            score_card.append(
-                {
-                    "type": "text",
-                    "name": f"notes:{name}",
-                    "message": f"Notes?",
-                    "multiline": True,
-                }
-            )
-            max_score += 2
+            if name in previous_audit:
+                # Do not prompt if already answered in previous audit.
+                continue
 
-    answers = questionary.prompt(score_card)
-    by_rule = defaultdict(dict)
-    for name, answer in answers.items():
-        if ":" not in name:
-            continue
-        field, rule = name.split(":")
-        if answer := answer.strip():
-            by_rule[rule][field] = answer
+            if not shown_intro:
+                print_formatted_text(
+                    f"\n\nAbout {category['title']}\n", style="bold ansiwhite"
+                )
+                if description := category.get("description"):
+                    print_formatted_text(description.strip() + "\n...")
+                shown_intro = True
 
-    score = (
-        100
-        * sum(points_for[details["compliant"]] for details in by_rule.values())
-        / max_score
-    )
-    click.echo(f"Service score is {score}")
+            # Prompt for compliance.
+            compliance = questionary.select(
+                message=f"{name} ?",
+                choices=points_for.keys(),
+                instruction="\n" + rule["description"].strip() + "\n",
+            ).ask()
+            if compliance is None:
+                aborted = True
+                break
+            # Offer ability to add notes if not compliant.
+            notes = ""
+            if compliance != "Yes":
+                notes = questionary.text(
+                    message="Notes?",
+                    multiline=True,
+                ).ask()
+            if notes is None:
+                aborted = True
+                break
+            answers[name] = {
+                "compliant": compliance,
+                "notes": notes,
+            }
+
+    # Compute scores.
+    score = sum(points_for[details["compliant"]] for details in answers.values())
+    score_percent = score * 100 / max_score
+    click.echo(f"Service new score is {score_percent:.2f}% ({score}/{max_score})")
 
     # Save score cards
+    today = datetime.date.today().isoformat()
     scorecards[today] = {
         "score": score,
-        "rules": dict(by_rule),
+        "rules": answers,
     }
-    with open(output, "w") as out:
+    with open(scorecard_filename, "w") as out:
         yaml.dump(scorecards, out)
-    click.echo(f"Rendered {output}")
+    click.echo(f"Wrote {scorecard_filename}")
 
 
 if __name__ == "__main__":
