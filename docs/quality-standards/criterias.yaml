@@ -1,5 +1,6 @@
 ---
 standard:
+  version: 1
   description: |
     Hello, this doc is about explicitly defining quality in the world of services software at Mozilla.
 

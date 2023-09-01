@@ -1,0 +1,114 @@
+ctms:
+  '2023-09-01':
+    version: 1
+    score: 64
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Yes
+        notes: ''
+      repo-standard-folders:
+        compliant: Yes
+        notes: ''
+      repo-readme-sections:
+        compliant: Yes
+        notes: ''
+      repo-makefile-targets:
+        compliant: Yes
+        notes: ''
+      repo-main-branch-name:
+        compliant: Yes
+        notes: ''
+      repo-main-branch-protected:
+        compliant: Yes
+        notes: ''
+      repo-version-tags-protected:
+        compliant: Yes
+        notes: ''
+      repo-issue-labels:
+        compliant: Yes
+        notes: ''
+      repo-team-reviewers-permissions:
+        compliant: Yes
+        notes: ''
+      repo-pull-request-merge:
+        compliant: Yes
+        notes: ''
+      repo-pre-commit-optional:
+        compliant: Yes
+        notes: ''
+      repo-release-notes-auto:
+        compliant: Yes
+        notes: ''
+      repo-dependencies-auto:
+        compliant: Yes
+        notes: ''
+      repo-automerge-enabled:
+        compliant: Yes
+        notes: ''
+      repo-head-branch-auto-delete:
+        compliant: Yes
+        notes: ''
+      repo-code-owners:
+        compliant: Yes
+        notes: ''
+      test-lint-secrets:
+        compliant: Yes
+        notes: ''
+      test-lint-code-format:
+        compliant: Yes
+        notes: ''
+      test-lint-static-analysis:
+        compliant: Yes
+        notes: ''
+      test-lint-type-checking:
+        compliant: Yes
+        notes: ''
+      test-unit-coverage:
+        compliant: Yes
+        notes: ''
+      test-documentation-build:
+        compliant: No
+        notes: Docs are only markdown files
+      test-container-build:
+        compliant: Yes
+        notes: ''
+      test-container-integration:
+        compliant: No
+        notes: ''
+      test-pull-requests-labels:
+        compliant: Yes
+        notes: ''
+      dependencies-reproducibility:
+        compliant: Yes
+        notes: ''
+      release-semver-calver:
+        compliant: Yes
+        notes: ''
+      release-tag-v-prefix:
+        compliant: Yes
+        notes: ''
+      release-tag-only:
+        compliant: Yes
+        notes: ''
+      release-publish:
+        compliant: Yes
+        notes: ''
+      deployment-dockerflow:
+        compliant: Yes
+        notes: ''
+      deployment-integration-test:
+        compliant: No
+        notes: ''
+      deployment-auto-main:
+        compliant: Yes
+        notes: ''
+      deployment-auto-release:
+        compliant: Yes
+        notes: ''
+      deployment-auto-pull-requests:
+        compliant: No
+        notes: ''
+      monitoring-heartbeat-backends:
+        compliant: Yes
+        notes: ''

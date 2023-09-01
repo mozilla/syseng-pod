@@ -47,7 +47,11 @@ def html():
 
 
 @cli.command()
-def audit():
+@click.option(
+    "--service",
+    help="Service name",
+)
+def audit(service):
     from questionary.prompts.common import print_formatted_text
 
     criteria = os.path.join(os.path.dirname(__file__), "criterias.yaml")
@@ -65,20 +69,27 @@ def audit():
         for name in category["rules"].items():
             max_score += points_for["Yes"]
 
-    service = questionary.text("What is the service name?").ask()
-    scorecard_filename = f"scorecards-{service}.yaml"
+    if not service:
+        service = questionary.text(
+            "What is the service name?", validate=lambda text: len(text) > 0
+        ).ask()
+        if service is None:
+            sys.exit(1)
+
+    scorecards_filename = f"scorecards.yaml"
     yaml = ruamel.yaml.YAML()
     try:
-        with open(scorecard_filename) as existing:
+        with open(scorecards_filename) as existing:
             scorecards = yaml.load(existing) or {}
-    except IOError:
+    except IOError as exc:
+        click.echo(exc, err=True)
         scorecards = {}
 
     previous_audit = {}
-    if scorecards:
-        latest_audit_date = max(scorecards.keys())
-        last_score = scorecards[latest_audit_date]["score"]
-        previous_audit = scorecards[latest_audit_date]["rules"]
+    if service in scorecards:
+        latest_audit_date = max(scorecards[service].keys())
+        last_score = scorecards[service][latest_audit_date]["score"]
+        previous_audit = scorecards[service][latest_audit_date]["rules"]
 
         choice = questionary.select(
             message=f"Score card already exists for {service}. Do you want to:",
@@ -98,13 +109,11 @@ def audit():
 
         if choice == 1:
             # The new audit will be saved with today's date.
-            del scorecards[latest_audit_date]
+            del scorecards[service][latest_audit_date]
         if choice == 2:
             previous_audit = {
                 rule: v for rule, v in previous_audit.items() if v == "Yes"
             }
-        if choice == 3:
-            previous_audit = {}
         if choice == 4:
             click.echo("Cancelled.")
             sys.exit(1)
@@ -161,13 +170,15 @@ def audit():
 
     # Save score cards
     today = datetime.date.today().isoformat()
-    scorecards[today] = {
+    scorecards.setdefault(service, {})[today] = {
+        "version": root["standard"]["version"],
         "score": score,
+        "max_score": max_score,
         "rules": answers,
     }
-    with open(scorecard_filename, "w") as out:
+    with open(scorecards_filename, "w") as out:
         yaml.dump(scorecards, out)
-    click.echo(f"Wrote {scorecard_filename}")
+    click.echo(f"Wrote {scorecards_filename}")
 
 
 if __name__ == "__main__":
