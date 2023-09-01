@@ -204,7 +204,7 @@ standard:
     - title: Documentation Content
       rules:
         documentation-decisions-records:
-          description: Enumerate evaluation criterias.
+          description: Enumerate evaluation criteria.
           details: Enumerate considered options with score/comment for each criteria.
         documentation-security-assessment:
           description: |

@@ -24,7 +24,7 @@ def cli():
 
 @cli.command()
 def html():
-    with open("criterias.yaml") as f:
+    with open("criteria.yaml") as f:
         root = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
     def render_markdown(value):
@@ -54,7 +54,7 @@ def html():
 def audit(service):
     from questionary.prompts.common import print_formatted_text
 
-    criteria = os.path.join(os.path.dirname(__file__), "criterias.yaml")
+    criteria = os.path.join(os.path.dirname(__file__), "criteria.yaml")
     with open(criteria) as f:
         root = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
