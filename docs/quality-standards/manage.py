@@ -25,7 +25,10 @@ def cli():
 @cli.command()
 def html():
     with open("criteria.yaml") as f:
-        root = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
+        root_criteria = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
+
+    with open("scorecards.yaml") as f:
+        root_scorecards = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
     def render_markdown(value):
         return markdown.markdown(value)
@@ -36,7 +39,7 @@ def html():
     env.filters["markdown"] = render_markdown
 
     template = env.get_template("template.html")
-    context = {"standard": root["standard"]}
+    context = {"standard": root_criteria["standard"], "scorecards": root_scorecards}
     rendered = template.render(**context)
 
     os.makedirs("html", exist_ok=True)

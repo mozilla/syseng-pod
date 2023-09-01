@@ -6,6 +6,10 @@
     body {
       font-family: sans-serif;
     }
+    .rulename {
+      font-family: monospace;
+      background-color: bisque;
+    }
   </style>
 </head>
 <body>
@@ -13,15 +17,22 @@
   <p>{{ standard.description|markdown }}</p>
   <section id="toc">
     <h2>Table of Contents</h2>
+    <h3>Rules</h3>
     <ul>
         {% for category in standard.categories %}
-        <li><a href="#{{ category.title }}">{{ category.title }}</a></hli>
+        <li><a href="#category-{{ category.title }}">{{ category.title }}</a></hli>
         {% endfor %}
+    </ul>
+    <h3>Score Cards</h3>
+    <ul>
+      {% for service in scorecards %}
+      <li><a href="#service-{{ service }}">{{ service }}</a></hli>
+      {% endfor %}
     </ul>
   </section>
   {% for category in standard.categories %}
   <section class="rules">
-    <h2><a name="{{ category.title }}">{{ category.title }}</a></h2>
+    <h2><a name="category-{{ category.title }}">{{ category.title }}</a></h2>
     <p>{{ category.description|default('')|markdown }}</p>
     <table>
         <thead>
@@ -34,12 +45,52 @@
         <tbody>
             {% for name, rule in category.rules.items() %}
             <tr>
-                <td>{{ name }}</td>
+                <td><span class="rulename">{{ name }}</span></td>
                 <td>{{ rule.description|markdown }}</td>
                 <td>{{ rule.details|default('')|markdown }}</td>
             </tr>
             {% endfor %}
         </tbody>
+    </table>
+  </section>
+  {% endfor %}
+
+  <h1>Score Cards</h1>
+  {% for service, results in scorecards.items() %}
+  <section>
+    <h2><a name="service-{{ service }}">{{ service }}</a></h2>
+    <table>
+      <thead>
+        <tr>
+          {% for date in results.keys() %}
+          <td>{{ date }}</td>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {% for result in results.values() %}
+          <td>{{ (result.score / result.max_score * 100)|round|int }}% ({{ result.score }} / {{ result.max_score }})</td>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for result in results.values() %}
+          <td>
+            Missing from standard v{{ result.version }}:
+            <ul>
+              {% for name, details in result.rules.items() %}
+                {% if details.compliant != "Yes" %}
+                <li>
+                  <span class="rulename">{{ name }}</span>: {{ details.compliant }}
+                  {% if details.notes %}({{ details.notes }}){% endif %}
+                </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </td>
+          {% endfor %}
+        </tr>
+      </tbody>
     </table>
   </section>
   {% endfor %}
