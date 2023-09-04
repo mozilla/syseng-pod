@@ -114,8 +114,10 @@ def audit(service):
             # The new audit will be saved with today's date.
             del scorecards[service][latest_audit_date]
         if choice == 2:
+            # Equivalent of resuming an audit ignoring all non compliant rules.
+            # Note: we copy to avoid ruamel to use anchors.
             previous_audit = {
-                rule: v for rule, v in previous_audit.items() if v == "Yes"
+                rule: v.copy() for rule, v in previous_audit.items() if v["compliant"] == "Yes"
             }
         if choice == 4:
             click.echo("Cancelled.")
@@ -158,13 +160,14 @@ def audit(service):
                     message="Notes?",
                     multiline=True,
                 ).ask()
+            answers[name] = {
+                "compliant": compliance,
+            }
             if notes is None:
                 aborted = True
                 break
-            answers[name] = {
-                "compliant": compliance,
-                "notes": notes,
-            }
+            elif notes := notes.strip():
+                answers[name]["notes"] = notes
 
     # Compute scores.
     score = sum(points_for[details["compliant"]] for details in answers.values())
@@ -181,7 +184,7 @@ def audit(service):
     }
     with open(scorecards_filename, "w") as out:
         yaml.dump(scorecards, out)
-    click.echo(f"Wrote {scorecards_filename}")
+    click.echo(f"Wrote {scorecards_filename!r}")
 
 
 if __name__ == "__main__":
