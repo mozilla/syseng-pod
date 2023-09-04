@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <title>Quality Standards</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: sans-serif;
@@ -63,19 +65,19 @@
     <table>
       <thead>
         <tr>
-          {% for date in results.keys() %}
+          {% for date in results|sort(reverse=True) %}
           <td>{{ date }}</td>
           {% endfor %}
         </tr>
       </thead>
       <tbody>
         <tr>
-          {% for result in results.values() %}
+          {% for _, result in results.items()|sort(reverse=True) %}
           <td>{{ (result.score / result.max_score * 100)|round|int }}% ({{ result.score }} / {{ result.max_score }})</td>
           {% endfor %}
         </tr>
         <tr>
-          {% for result in results.values() %}
+          {% for _, result in results.items()|sort(reverse=True) %}
           <td>
             Missing from standard v{{ result.version }}:
             <ul>
