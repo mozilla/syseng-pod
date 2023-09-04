@@ -30,9 +30,10 @@
       {% endfor %}
     </ul>
   </section>
+  <h2>Score Cards</h2>
   {% for category in standard.categories %}
   <section class="rules">
-    <h2><a name="category-{{ category.title }}">{{ category.title }}</a></h2>
+    <h3><a name="category-{{ category.title }}">{{ category.title }}</a></h3>
     <p>{{ category.description|default('')|markdown }}</p>
     <table>
         <thead>
