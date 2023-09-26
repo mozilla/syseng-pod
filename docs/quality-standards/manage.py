@@ -23,7 +23,13 @@ def cli():
 
 
 @cli.command()
-def html():
+@click.option(
+    "-o",
+    "--output",
+    help="Destination folder",
+    default="html"
+)
+def html(output):
     with open("criteria.yaml") as f:
         root_criteria = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
@@ -42,11 +48,11 @@ def html():
     context = {"standard": root_criteria["standard"], "scorecards": root_scorecards}
     rendered = template.render(**context)
 
-    os.makedirs("html", exist_ok=True)
-    output = os.path.abspath(os.path.join("html", "index.html"))
-    with open(output, "w") as f:
+    os.makedirs(output, exist_ok=True)
+    output_index = os.path.abspath(os.path.join(output, "index.html"))
+    with open(output_index, "w") as f:
         f.write(rendered)
-    click.echo(f"Rendered {output}")
+    click.echo(f"Rendered {output_index}")
 
 
 @cli.command()
