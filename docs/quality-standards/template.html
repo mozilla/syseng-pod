@@ -12,6 +12,73 @@
       font-family: monospace;
       background-color: bisque;
     }
+
+    section#rules {
+      table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        max-width: 70%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+        col:first-child {
+          width: 20%;
+        }
+        col:nth-child(2),
+        col:nth-child(3) {
+          width: 40%;
+        }
+
+        thead tr {
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+        }
+
+        th, td {
+          padding: 12px 15px;
+          vertical-align: top;
+        }
+
+        td p {
+          margin-top: 0px;
+        }
+
+        tbody {
+          tr {
+            border-bottom: 1px solid #dddddd;
+          }
+
+          tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+          }
+
+          tr:last-of-type {
+            border-bottom: 2px solid #009879;
+          }
+        }
+      }
+    }
+
+    section#scorecards {
+      .card {
+        display: inline-block;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        border-bottom: 1px solid #dddddd;
+        max-width: 30%;
+        margin-right: 20px;
+        margin-bottom: 20px;
+
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
   </style>
 </head>
 <body>
@@ -21,9 +88,9 @@
     <h2>Table of Contents</h2>
     <h3>Rules</h3>
     <ul>
-        {% for category in standard.categories %}
-        <li><a href="#category-{{ category.title }}">{{ category.title }}</a></hli>
-        {% endfor %}
+      {% for category in standard.categories %}
+      <li><a href="#category-{{ category.title }}">{{ category.title }}</a></hli>
+      {% endfor %}
     </ul>
     <h3>Score Cards</h3>
     <ul>
@@ -34,67 +101,60 @@
   </section>
   <h2>Score Cards</h2>
   {% for category in standard.categories %}
-  <section class="rules">
+  <section id="rules">
     <h3><a name="category-{{ category.title }}">{{ category.title }}</a></h3>
     <p>{{ category.description|default('')|markdown }}</p>
     <table>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for name, rule in category.rules.items() %}
-            <tr>
-                <td><span class="rulename">{{ name }}</span></td>
-                <td>{{ rule.description|markdown }}</td>
-                <td>{{ rule.details|default('')|markdown }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for name, rule in category.rules.items() %}
+        <tr>
+          <td><span class="rulename">{{ name }}</span></td>
+          <td>{{ rule.description|markdown }}</td>
+          <td>{{ rule.details|default('')|markdown }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
   </section>
   {% endfor %}
 
   <h1>Score Cards</h1>
   {% for service, results in scorecards.items() %}
-  <section>
+  <section id="scorecards">
     <h2><a name="service-{{ service }}">{{ service }}</a></h2>
-    <table>
-      <thead>
-        <tr>
-          {% for date in results|sort(reverse=True) %}
-          <td>{{ date }}</td>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          {% for _, result in results.items()|sort(reverse=True) %}
-          <td>{{ (result.score / result.max_score * 100)|round|int }}% ({{ result.score }} / {{ result.max_score }})</td>
-          {% endfor %}
-        </tr>
-        <tr>
-          {% for _, result in results.items()|sort(reverse=True) %}
-          <td>
-            Missing from standard v{{ result.version }}:
-            <ul>
-              {% for name, details in result.rules.items() %}
-                {% if details.compliant != "Yes" %}
-                <li>
-                  <span class="rulename">{{ name }}</span>: {{ details.compliant }}
-                  {% if details.notes %}({{ details.notes }}){% endif %}
-                </li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </td>
-          {% endfor %}
-        </tr>
-      </tbody>
-    </table>
+
+    {% for date, result in results.items()|sort(reverse=True) %}
+    <div class="card">
+      <div class="container">
+        <h3>{{ (result.score / result.max_score * 100)|round|int }}% ({{ result.score }} / {{ result.max_score }}), {{ date }}</h3>
+        <p>
+          Missing from standard v{{ result.version }}:
+          <ul>
+           {% for name, details in result.rules.items() %}
+             {% if details.compliant != "Yes" %}
+             <li>
+               <span class="rulename">{{ name }}</span>: {{ details.compliant }}
+               {% if details.notes %}({{ details.notes }}){% endif %}
+             </li>
+             {% endif %}
+           {% endfor %}
+          </ul>
+        </p>
+      </div>
+    </div>
+    {% endfor %}
   </section>
   {% endfor %}
 </body>
