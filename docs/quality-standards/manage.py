@@ -45,7 +45,11 @@ def html(output):
     env.filters["markdown"] = render_markdown
 
     template = env.get_template("template.html")
-    context = {"standard": root_criteria["standard"], "scorecards": root_scorecards}
+    context = {
+        "standard": root_criteria["standard"],
+        "scorecards": root_scorecards,
+        "criteria_last_update": datetime.datetime.fromtimestamp(os.path.getmtime("criteria.yaml")),
+    }
     rendered = template.render(**context)
 
     os.makedirs(output, exist_ok=True)
