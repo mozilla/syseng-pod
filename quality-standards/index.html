@@ -13,6 +13,11 @@
       background-color: bisque;
     }
 
+    blockquote {
+      border-left: solid 4px lightgray;
+      padding-left: 10px;
+    }
+
     section#rules {
       table {
         border-collapse: collapse;
@@ -21,87 +26,97 @@
         min-width: 400px;
         max-width: 70%;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-      }
 
-      table col:first-child {
-        width: 20%;
-      }
-      table col:nth-child(2),
-      table col:nth-child(3) {
-        width: 40%;
-      }
+        col:first-child {
+          width: 20%;
+        }
+        col:nth-child(2),
+        col:nth-child(3) {
+          width: 40%;
+        }
 
-      thead tr {
-        background-color: #009879;
-        color: #ffffff;
-        text-align: left;
-      }
+        thead tr {
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+        }
 
-      th, td {
-        padding: 12px 15px;
-        vertical-align: top;
-      }
+        th, td {
+          padding: 12px 15px;
+          vertical-align: top;
+        }
 
-      td p {
-        margin-top: 0px;
-      }
+        td p {
+          margin-top: 0px;
+        }
 
-      tbody tr {
-        border-bottom: 1px solid #dddddd;
-      }
+        tbody {
+          tr {
+            border-bottom: 1px solid #dddddd;
+          }
 
-      tbody tr:nth-of-type(even) {
-        background-color: #f3f3f3;
-      }
+          tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+          }
 
-      tbody tr:last-of-type {
-        border-bottom: 2px solid #009879;
+          tr:last-of-type {
+            border-bottom: 2px solid #009879;
+          }
+        }
       }
     }
 
     section#scorecards {
       .card {
+        display: inline-block;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
         border-bottom: 1px solid #dddddd;
         max-width: 30%;
+        margin-right: 20px;
         margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
-    
   </style>
 </head>
 <body>
   <h1>Quality Standards</h1>
+  <p>Version 1, last updated on 2023-09-27</p>
   <p><p>Hello, this doc is about explicitly defining quality in the world of services software at Mozilla.</p>
+<blockquote>
 <p>Definition: quality refers to the degree to which a software and its related deliverables <strong>meet or exceed</strong> the <strong>expectations</strong> of its <strong>stakeholders</strong>. However, what are those expectations and does the team share the same expectations?  This document defines what the expectations are and provides a way to measure the quality of a software.</p>
+</blockquote>
 <p>Quality guarantees reliability and maintainability of the software, as well as efficiency of development.</p></p>
   <section id="toc">
     <h2>Table of Contents</h2>
     <h3>Rules</h3>
     <ul>
-        
-        <li><a href="#category-Repository Ergonomics">Repository Ergonomics</a></hli>
-        
-        <li><a href="#category-Repository Automation">Repository Automation</a></hli>
-        
-        <li><a href="#category-Testing and linting">Testing and linting</a></hli>
-        
-        <li><a href="#category-Releasing">Releasing</a></hli>
-        
-        <li><a href="#category-Deployment">Deployment</a></hli>
-        
-        <li><a href="#category-Monitoring">Monitoring</a></hli>
-        
-        <li><a href="#category-Telemetry">Telemetry</a></hli>
-        
-        <li><a href="#category-Notifications">Notifications</a></hli>
-        
-        <li><a href="#category-Documentation Content">Documentation Content</a></hli>
-        
+      
+      <li><a href="#category-Repository Ergonomics">Repository Ergonomics</a></hli>
+      
+      <li><a href="#category-Repository Automation">Repository Automation</a></hli>
+      
+      <li><a href="#category-Testing and linting">Testing and linting</a></hli>
+      
+      <li><a href="#category-Releasing">Releasing</a></hli>
+      
+      <li><a href="#category-Deployment">Deployment</a></hli>
+      
+      <li><a href="#category-Monitoring">Monitoring</a></hli>
+      
+      <li><a href="#category-Telemetry">Telemetry</a></hli>
+      
+      <li><a href="#category-Notifications">Notifications</a></hli>
+      
+      <li><a href="#category-Documentation Content">Documentation Content</a></hli>
+      
     </ul>
     <h3>Score Cards</h3>
     <ul>
@@ -130,23 +145,23 @@
 <li>There is too little reusable knowledge across project organizations / layouts</li>
 </ul></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">repo-standard-files</span></td>
-                <td><ul>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">repo-standard-files</span></td>
+          <td><ul>
 <li>README.(md,rst)</li>
 <li>LICENSE</li>
 <li>CODE_OF_CONDUCT.md</li>
@@ -154,41 +169,41 @@
 <li>SECURITY.md</li>
 <li>SUPPORT.md</li>
 </ul></td>
-                <td><p>See https://en.wikipedia.org/wiki/Contributing_guidelines
-and https://mozillascience.github.io/working-open-workshop/contributing/
-templates at https://contributing.md</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-standard-folders</span></td>
-                <td><ul>
+          <td><p>See <a href="https://en.wikipedia.org/wiki/Contributing_guidelines">https://en.wikipedia.org/wiki/Contributing_guidelines</a>
+and <a href="https://mozillascience.github.io/working-open-workshop/contributing/">https://mozillascience.github.io/working-open-workshop/contributing/</a>
+templates at <a href="https://contributing.md">https://contributing.md</a></p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-standard-folders</span></td>
+          <td><ul>
 <li>docs/</li>
 <li>bin/</li>
 </ul></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-readme-sections</span></td>
-                <td><ul>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-readme-sections</span></td>
+          <td><ul>
 <li>Readme contains the following:</li>
 <li>Project name as main title</li>
 <li>Status (invest, sustain, sunset, abandoned)</li>
 <li>Usage</li>
 <li>Link to documentation</li>
 </ul></td>
-                <td><p>Our goals here are:</p>
+          <td><p>Our goals here are:</p>
 <ul>
 <li>avoid empty README</li>
 <li>expose maintenance status</li>
 <li>basic usage is detailed</li>
 <li>standard sections will help reading/scanning for newcomers</li>
 </ul></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-makefile-targets</span></td>
-                <td><p>Make has the following targets:</p>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-makefile-targets</span></td>
+          <td><p>Make has the following targets:</p>
 <ul>
 <li>help</li>
 <li>test</li>
@@ -196,30 +211,30 @@ templates at https://contributing.md</p></td>
 <li>lint</li>
 <li>format</li>
 </ul></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-main-branch-name</span></td>
-                <td><p>Main branch is called <code>main</code></p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-main-branch-protected</span></td>
-                <td><p>Main branch is protected without exceptions</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-version-tags-protected</span></td>
-                <td><p>Tags starting with <code>v*</code> can only be pushed by maintainers/admins</p></td>
-                <td><p><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-tag-protection-rules">Github docs</a></p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-issue-labels</span></td>
-                <td><p>Standard issue labels exist:</p>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-main-branch-name</span></td>
+          <td><p>Main branch is called <code>main</code></p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-main-branch-protected</span></td>
+          <td><p>Main branch is protected without exceptions</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-version-tags-protected</span></td>
+          <td><p>Tags starting with <code>v*</code> can only be pushed by maintainers/admins</p></td>
+          <td><p><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-tag-protection-rules">Github docs</a></p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-issue-labels</span></td>
+          <td><p>Standard issue labels exist:</p>
 <ul>
 <li>bug</li>
 <li>dependencies</li>
@@ -228,28 +243,28 @@ templates at https://contributing.md</p></td>
 <li>wontfix</li>
 <li>good-first-issue</li>
 </ul></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-team-reviewers-permissions</span></td>
-                <td><p>Team of reviewers has at least “Maintain” permissions</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-pull-request-merge</span></td>
-                <td><p>Only “<em>squash and merge</em>” and “<em>rebase and merge</em>” are allowed</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-pre-commit-optional</span></td>
-                <td><p>Pre-commit hooks are optional</p></td>
-                <td><p>Example in <a href="https://github.com/taskcluster/taskcluster/blob/main/dev-docs/development-process.md#pre-commit-optional">Taskcluster</a></p></td>
-            </tr>
-            
-        </tbody>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-team-reviewers-permissions</span></td>
+          <td><p>Team of reviewers has at least “Maintain” permissions</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-pull-request-merge</span></td>
+          <td><p>Only “<em>squash and merge</em>” and “<em>rebase and merge</em>” are allowed</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-pre-commit-optional</span></td>
+          <td><p>Pre-commit hooks are optional</p></td>
+          <td><p>Example in <a href="https://github.com/taskcluster/taskcluster/blob/main/dev-docs/development-process.md#pre-commit-optional">Taskcluster</a></p></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -257,51 +272,51 @@ templates at https://contributing.md</p></td>
     <h3><a name="category-Repository Automation">Repository Automation</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">repo-release-notes-auto</span></td>
-                <td><p>Release Notes are generated from commits using <code>.github/release.yml</code></p></td>
-                <td><p>Sections titles contain at least “<em>Breaking changes</em>”, “<em>Bug fixes</em>”, “<em>New features</em>”, “<em>Documentation</em>”, and “<em>Other changes</em>”</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-dependencies-auto</span></td>
-                <td><p>Pull-requests are automatically opened for dependencies</p></td>
-                <td><p>File <code>.github/dependabot.yml</code> and/or <code>renovate.json</code> exist</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-automerge-enabled</span></td>
-                <td><p>Automerge and merge queues are enabled</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-head-branch-auto-delete</span></td>
-                <td><p>Auto-delete head branches is enabled</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">repo-code-owners</span></td>
-                <td><p>Code owners are configured</p></td>
-                <td><p>At least with team of reviewers for everything (eg. @syseng-reviewers)</p></td>
-            </tr>
-            
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">repo-release-notes-auto</span></td>
+          <td><p>Release Notes are generated from commits using <code>.github/release.yml</code></p></td>
+          <td><p>Sections titles contain at least “<em>Breaking changes</em>”, “<em>Bug fixes</em>”, “<em>New features</em>”, “<em>Documentation</em>”, and “<em>Other changes</em>”</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-dependencies-auto</span></td>
+          <td><p>Pull-requests are automatically opened for dependencies</p></td>
+          <td><p>File <code>.github/dependabot.yml</code> and/or <code>renovate.json</code> exist</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-automerge-enabled</span></td>
+          <td><p>Automerge and merge queues are enabled</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-head-branch-auto-delete</span></td>
+          <td><p>Auto-delete head branches is enabled</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">repo-code-owners</span></td>
+          <td><p>Code owners are configured</p></td>
+          <td><p>At least with team of reviewers for everything (eg. @syseng-reviewers)</p></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -309,81 +324,81 @@ templates at https://contributing.md</p></td>
     <h3><a name="category-Testing and linting">Testing and linting</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">test-lint-secrets</span></td>
-                <td><p>A test verifies that no secret is committed to the sources</p></td>
-                <td><p>Eg. <a href="https://github.com/Yelp/detect-secrets">Yelp/detect-secrets</a></p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-lint-code-format</span></td>
-                <td><p>A test verifies that code format respects standard</p></td>
-                <td><p>Eg. prettier, black+isort, cargo fmt</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-lint-static-analysis</span></td>
-                <td><p>A test verifies that code respects idioms and good practices</p></td>
-                <td><p>Eg. eslint, bandit+pylint, cargo clippy</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-lint-type-checking</span></td>
-                <td><p>A test verifies that types are used consistently</p></td>
-                <td><p>Eg. typescript, mypy</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-unit-coverage</span></td>
-                <td><p>Unit tests fail if coverage is under 90%</p></td>
-                <td><p>Better if 100% with branching option</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-documentation-build</span></td>
-                <td><p>A test verifies that documentation builds successfully without warnings</p></td>
-                <td><p>If the project does not have built documentation, a lint check for markdown files is recommended</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-container-build</span></td>
-                <td><p>A test verifies that container builds successfully</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-container-integration</span></td>
-                <td><p>A test executes integration tests on the built container</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">test-pull-requests-labels</span></td>
-                <td><p>A test verifies that pull-requests have labels</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">dependencies-reproducibility</span></td>
-                <td><p>Dependencies are locked between local clone, tests, and container</p></td>
-                <td><p>Eg. use poetry, cargo, …</p></td>
-            </tr>
-            
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">test-lint-secrets</span></td>
+          <td><p>A test verifies that no secret is committed to the sources</p></td>
+          <td><p>Eg. <a href="https://github.com/Yelp/detect-secrets">Yelp/detect-secrets</a></p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-lint-code-format</span></td>
+          <td><p>A test verifies that code format respects standard</p></td>
+          <td><p>Eg. prettier, black+isort, cargo fmt</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-lint-static-analysis</span></td>
+          <td><p>A test verifies that code respects idioms and good practices</p></td>
+          <td><p>Eg. eslint, bandit+pylint, cargo clippy</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-lint-type-checking</span></td>
+          <td><p>A test verifies that types are used consistently</p></td>
+          <td><p>Eg. typescript, mypy</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-unit-coverage</span></td>
+          <td><p>Unit tests fail if coverage is under 90%</p></td>
+          <td><p>Better if 100% with branching option</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-documentation-build</span></td>
+          <td><p>A test verifies that documentation builds successfully without warnings</p></td>
+          <td><p>If the project does not have built documentation, a lint check for markdown files is recommended</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-container-build</span></td>
+          <td><p>A test verifies that container builds successfully</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-container-integration</span></td>
+          <td><p>A test executes integration tests on the built container</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">test-pull-requests-labels</span></td>
+          <td><p>A test verifies that pull-requests have labels</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">dependencies-reproducibility</span></td>
+          <td><p>Dependencies are locked between local clone, tests, and container</p></td>
+          <td><p>Eg. use poetry, cargo, …</p></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -391,46 +406,46 @@ templates at https://contributing.md</p></td>
     <h3><a name="category-Releasing">Releasing</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">release-semver-calver</span></td>
-                <td><p>Project follows SemVer or Calver version scheme</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">release-tag-v-prefix</span></td>
-                <td><p>The release tags have <code>v(.+)</code> format</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">release-tag-only</span></td>
-                <td><p>Project version has a single source of truth. For example, it is read from <code>version.json</code>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">release-semver-calver</span></td>
+          <td><p>Project follows SemVer or Calver version scheme</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">release-tag-v-prefix</span></td>
+          <td><p>The release tags have <code>v(.+)</code> format</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">release-tag-only</span></td>
+          <td><p>Project version has a single source of truth. For example, it is read from <code>version.json</code>
 which is automatically built from current git tag</p></td>
-                <td><p>Does not apply to libraries, where a version number usually appears in package metadata</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">release-publish</span></td>
-                <td><p>Project container or package is published on git tag</p></td>
-                <td></td>
-            </tr>
-            
-        </tbody>
+          <td><p>Does not apply to libraries, where a version number usually appears in package metadata</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">release-publish</span></td>
+          <td><p>Project container or package is published on git tag</p></td>
+          <td></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -438,51 +453,51 @@ which is automatically built from current git tag</p></td>
     <h3><a name="category-Deployment">Deployment</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">deployment-dockerflow</span></td>
-                <td><p>Container follows Dockerflow spec</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">deployment-integration-test</span></td>
-                <td><p>Integration tests are part of deployment pipeline</p></td>
-                <td><p>Might be as well end-to-end (browser tests)</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">deployment-auto-main</span></td>
-                <td><p>Automatic deployment on DEV/STAGE environment on pull-requests merge</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">deployment-auto-release</span></td>
-                <td><p>Automatic deployment on STAGE/PROD environment on version tag</p></td>
-                <td><p>If they pass through a quality gate like an automated integration test</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">deployment-auto-pull-requests</span></td>
-                <td><p>Automatic deployment on temporary instances on pull-requests</p></td>
-                <td><p>Should be allowed to repo owners only?</p></td>
-            </tr>
-            
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">deployment-dockerflow</span></td>
+          <td><p>Container follows Dockerflow spec</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">deployment-integration-test</span></td>
+          <td><p>Integration tests are part of deployment pipeline</p></td>
+          <td><p>Might be as well end-to-end (browser tests)</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">deployment-auto-main</span></td>
+          <td><p>Automatic deployment on DEV/STAGE environment on pull-requests merge</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">deployment-auto-release</span></td>
+          <td><p>Automatic deployment on STAGE/PROD environment on version tag</p></td>
+          <td><p>If they pass through a quality gate like an automated integration test</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">deployment-auto-pull-requests</span></td>
+          <td><p>Automatic deployment on temporary instances on pull-requests</p></td>
+          <td><p>Should be allowed to repo owners only?</p></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -490,75 +505,75 @@ which is automatically built from current git tag</p></td>
     <h3><a name="category-Monitoring">Monitoring</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">monitoring-heartbeat-backends</span></td>
-                <td><p>Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-heartbeat-error</span></td>
-                <td><p>Heartbeat checks throw errors that will be reported</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-requests-duration</span></td>
-                <td><p>API requests processing duration is monitored</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-requests-id</span></td>
-                <td><p>A unique ID is associated to each request and logged</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-backends-duration</span></td>
-                <td><p>Backends calls durations are monitored</p></td>
-                <td><p><a href="https://opentelemetry.io/docs/concepts/signals/traces/">Existing standards</a></p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-logging-level</span></td>
-                <td><p>Logging has INFO level by default</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-logging-mozlog</span></td>
-                <td><p>Logging format is MozLog by default</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-logging-env-configuration</span></td>
-                <td><p>Logging level is set using <code>LOG_LEVEL</code> env variable. Logging format is set using <code>LOG_FORMAT</code> env variable</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">monitoring-error-reporting</span></td>
-                <td><p>Sentry is setup by environment</p></td>
-                <td></td>
-            </tr>
-            
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">monitoring-heartbeat-backends</span></td>
+          <td><p>Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-heartbeat-error</span></td>
+          <td><p>Heartbeat checks throw errors that will be reported</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-requests-duration</span></td>
+          <td><p>API requests processing duration is monitored</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-requests-id</span></td>
+          <td><p>A unique ID is associated to each request and logged</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-backends-duration</span></td>
+          <td><p>Backends calls durations are monitored</p></td>
+          <td><p><a href="https://opentelemetry.io/docs/concepts/signals/traces/">Existing standards</a></p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-logging-level</span></td>
+          <td><p>Logging has INFO level by default</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-logging-mozlog</span></td>
+          <td><p>Logging format is MozLog by default</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-logging-env-configuration</span></td>
+          <td><p>Logging level is set using <code>LOG_LEVEL</code> env variable. Logging format is set using <code>LOG_FORMAT</code> env variable</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">monitoring-error-reporting</span></td>
+          <td><p>Sentry is setup by environment</p></td>
+          <td></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -566,45 +581,45 @@ which is automatically built from current git tag</p></td>
     <h3><a name="category-Telemetry">Telemetry</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">telemetry-metrics</span></td>
-                <td><p>Project sends live telemetry</p></td>
-                <td><p>StatsD with tags</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">telemetry-naming</span></td>
-                <td><p>Probes start with project name (eg. <code>ctms.*</code>)</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">telemetry-documented</span></td>
-                <td><p>Probes are listed in documentation</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">telemetry-query-examples</span></td>
-                <td><p>BigQuery example queries are given in documentation</p></td>
-                <td></td>
-            </tr>
-            
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">telemetry-metrics</span></td>
+          <td><p>Project sends live telemetry</p></td>
+          <td><p>StatsD with tags</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">telemetry-naming</span></td>
+          <td><p>Probes start with project name (eg. <code>ctms.*</code>)</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">telemetry-documented</span></td>
+          <td><p>Probes are listed in documentation</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">telemetry-query-examples</span></td>
+          <td><p>BigQuery example queries are given in documentation</p></td>
+          <td></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -612,27 +627,27 @@ which is automatically built from current git tag</p></td>
     <h3><a name="category-Notifications">Notifications</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">notifications-error-chat</span></td>
-                <td><p>Sentry reports to Slack channel</p></td>
-                <td><p>Sentry creates Github issues?</p></td>
-            </tr>
-            
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">notifications-error-chat</span></td>
+          <td><p>Sentry reports to Slack channel</p></td>
+          <td><p>Sentry creates Github issues?</p></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -640,57 +655,57 @@ which is automatically built from current git tag</p></td>
     <h3><a name="category-Documentation Content">Documentation Content</a></h3>
     <p></p>
     <table>
-        <colgroup>
-            <col>
-            <col>
-            <col>
-        </colgroup>
-        <thead>
-            <tr>
-                <td>Rule</td>
-                <td>Description</td>
-                <td>Details</td>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <tr>
-                <td><span class="rulename">documentation-decisions-records</span></td>
-                <td><p>Enumerate evaluation criteria.</p></td>
-                <td><p>Enumerate considered options with score/comment for each criteria.</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">documentation-security-assessment</span></td>
-                <td><p><a href="https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment">Rapid Risk Assessment</a>, either a link or its content</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">documentation-dev</span></td>
-                <td><p>Instructions for a developper: how to run the tests, procedures to obtain credentials on dev/stage instances, contribute, contact the team, etc.</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">documentation-test-args</span></td>
-                <td><p>Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)</p></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">documentation-operator</span></td>
-                <td><p>Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.</p></td>
-                <td><p>Can also be called “Deployment docs”</p></td>
-            </tr>
-            
-            <tr>
-                <td><span class="rulename">documentation-troubleshooting</span></td>
-                <td><p>Common troubleshooting steps</p></td>
-                <td></td>
-            </tr>
-            
-        </tbody>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td><span class="rulename">documentation-decisions-records</span></td>
+          <td><p>Enumerate evaluation criteria.</p></td>
+          <td><p>Enumerate considered options with score/comment for each criteria.</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">documentation-security-assessment</span></td>
+          <td><p><a href="https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment">Rapid Risk Assessment</a>, either a link or its content</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">documentation-dev</span></td>
+          <td><p>Instructions for a developper: how to run the tests, procedures to obtain credentials on dev/stage instances, contribute, contact the team, etc.</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">documentation-test-args</span></td>
+          <td><p>Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)</p></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">documentation-operator</span></td>
+          <td><p>Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.</p></td>
+          <td><p>Can also be called “Deployment docs”</p></td>
+        </tr>
+        
+        <tr>
+          <td><span class="rulename">documentation-troubleshooting</span></td>
+          <td><p>Common troubleshooting steps</p></td>
+          <td></td>
+        </tr>
+        
+      </tbody>
     </table>
   </section>
   
@@ -702,329 +717,333 @@ which is automatically built from current git tag</p></td>
 
     
     <div class="card">
-      <h3>81% (89 / 110), 2023-06-30</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>81% (89 / 110), 2023-06-30</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-documentation-build</span>: Partially
-             (Docs are only markdown files)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: No
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-logging-env-configuration</span>: Partially
-             (USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-security-assessment</span>: No
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-troubleshooting</span>: No
              
-           </li>
            
-         
-        </ul>
-      </p>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-documentation-build</span>: Partially
+               (Docs are only markdown files)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-logging-env-configuration</span>: Partially
+               (USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-security-assessment</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-troubleshooting</span>: No
+               
+             </li>
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
     <div class="card">
-      <h3>73% (80 / 110), 2023-02-01</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>73% (80 / 110), 2023-02-01</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-           <li>
-             <span class="rulename">repo-standard-files</span>: No
-             (Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">repo-readme-sections</span>: No
-             (README has only links to `docs/`)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-documentation-build</span>: Partially
-             (Docs are only markdown files)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
              
-           </li>
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: No
+             <li>
+               <span class="rulename">repo-standard-files</span>: No
+               (Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md)
+             </li>
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-logging-env-configuration</span>: Partially
-             (USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-requests-duration</span>: No
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">telemetry-query-examples</span>: No
-             (Until now, logs/metrics are not easily accessible)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-security-assessment</span>: No
              
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-test-args</span>: No
+             <li>
+               <span class="rulename">repo-readme-sections</span>: No
+               (README has only links to `docs/`)
+             </li>
              
-           </li>
            
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-troubleshooting</span>: No
              
-           </li>
            
-         
-        </ul>
-      </p>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-documentation-build</span>: Partially
+               (Docs are only markdown files)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-logging-env-configuration</span>: Partially
+               (USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL)
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-requests-duration</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-query-examples</span>: No
+               (Until now, logs/metrics are not easily accessible)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-security-assessment</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-test-args</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-troubleshooting</span>: No
+               
+             </li>
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
   </section>
   
@@ -1033,324 +1052,328 @@ which is automatically built from current git tag</p></td>
 
     
     <div class="card">
-      <h3>95% (105 / 110), 2023-07-04</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>95% (105 / 110), 2023-07-04</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-documentation-build</span>: Partially
              
-           </li>
            
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: No
              
-           </li>
            
-         
+             
            
-         
+             
            
-         
+             
            
-         
+             
            
-         
+             
            
-         
-        </ul>
-      </p>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-documentation-build</span>: Partially
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
     <div class="card">
-      <h3>78% (86 / 110), 2023-02-04</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>78% (86 / 110), 2023-02-04</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-           <li>
-             <span class="rulename">repo-standard-files</span>: No
-             (No LICENSE, CONTRIBUTING, files)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-standard-folders</span>: No
-             (No docs/ folder, bin/ instead of scripts/ )
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-readme-sections</span>: No
-             (No status section in readme)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-makefile-targets</span>: No
-             (No make clean)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-documentation-build</span>: Partially
-             (No built documentation, no markdown lint)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-container-integration</span>: No
-             (Built container is not tested)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
-             (No integration test available.)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: No
-             (No temporary instance deployed on pull-requests. THis would improve productivity since we could test configuration changes before merging/deploying to STAGE.)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-logging-level</span>: No
-             (DEBUG by default instead of INFO)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-logging-mozlog</span>: Partially
-             (Log level via LOG_LEVEL but log format is not configurable.)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-decisions-records</span>: No
              
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-security-assessment</span>: No
-             (No link to RRA.)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-test-args</span>: No
+             <li>
+               <span class="rulename">repo-standard-files</span>: No
+               (No LICENSE, CONTRIBUTING, files)
+             </li>
              
-           </li>
            
-         
+             
+             <li>
+               <span class="rulename">repo-standard-folders</span>: No
+               (No docs/ folder, bin/ instead of scripts/ )
+             </li>
+             
            
-         
+             
+             <li>
+               <span class="rulename">repo-readme-sections</span>: No
+               (No status section in readme)
+             </li>
+             
            
-         
-        </ul>
-      </p>
+             
+             <li>
+               <span class="rulename">repo-makefile-targets</span>: No
+               (No make clean)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-documentation-build</span>: Partially
+               (No built documentation, no markdown lint)
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-container-integration</span>: No
+               (Built container is not tested)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               (No integration test available.)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: No
+               (No temporary instance deployed on pull-requests. THis would improve productivity since we could test configuration changes before merging/deploying to STAGE.)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-logging-level</span>: No
+               (DEBUG by default instead of INFO)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-logging-mozlog</span>: Partially
+               (Log level via LOG_LEVEL but log format is not configurable.)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-decisions-records</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-security-assessment</span>: No
+               (No link to RRA.)
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-test-args</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
   </section>
   
@@ -1359,419 +1382,423 @@ which is automatically built from current git tag</p></td>
 
     
     <div class="card">
-      <h3>85% (93 / 110), 2023-09-04</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>85% (93 / 110), 2023-09-04</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-documentation-build</span>: Partially
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-container-integration</span>: Partially
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: Partially
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-backends-duration</span>: Partially
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">telemetry-metrics</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">telemetry-naming</span>: Partially
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">telemetry-documented</span>: Partially
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">telemetry-query-examples</span>: Partially
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">notifications-error-chat</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">documentation-security-assessment</span>: No
              
-           </li>
            
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-operator</span>: Partially
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">documentation-troubleshooting</span>: Partially
              
-           </li>
            
-         
-        </ul>
-      </p>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-documentation-build</span>: Partially
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-container-integration</span>: Partially
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: Partially
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-backends-duration</span>: Partially
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-metrics</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-naming</span>: Partially
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-documented</span>: Partially
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-query-examples</span>: Partially
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">notifications-error-chat</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-security-assessment</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-operator</span>: Partially
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-troubleshooting</span>: Partially
+               
+             </li>
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
     <div class="card">
-      <h3>71% (78 / 110), 2023-01-01</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>71% (78 / 110), 2023-01-01</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-           <li>
-             <span class="rulename">repo-standard-files</span>: No
-             (Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-standard-folders</span>: No
-             (scripts/ instead of bin/)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-readme-sections</span>: Partially
-             (Missing status badge, documentation within README)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-makefile-targets</span>: No
-             (Missing help, serve instead of start)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-lint-secrets</span>: No
              
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-documentation-build</span>: Partially
+             <li>
+               <span class="rulename">repo-standard-files</span>: No
+               (Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md)
+             </li>
              
-           </li>
            
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-container-integration</span>: Partially
-             (No integration tests (Telescope has no backend))
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
              
-           </li>
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: No
-             (No DEV environment and no temporary instance deployed on pull-requests.)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-heartbeat-backends</span>: Partially
-             (No backend)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-heartbeat-error</span>: Partially
-             (No check in heartbeat)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-requests-id</span>: No
+             <li>
+               <span class="rulename">repo-standard-folders</span>: No
+               (scripts/ instead of bin/)
+             </li>
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">monitoring-backends-duration</span>: Partially
-             (No backend)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">telemetry-metrics</span>: No
-             (No telemetry)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">telemetry-naming</span>: Partially
-             (No telemetry)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">telemetry-documented</span>: Partially
-             (No telemetry)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">telemetry-query-examples</span>: Partially
-             (No telemetry)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">notifications-error-chat</span>: No
-             (Would be too verbose)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-security-assessment</span>: No
              
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-test-args</span>: No
+             <li>
+               <span class="rulename">repo-readme-sections</span>: Partially
+               (Missing status badge, documentation within README)
+             </li>
              
-           </li>
            
-         
+             
+             <li>
+               <span class="rulename">repo-makefile-targets</span>: No
+               (Missing help, serve instead of start)
+             </li>
+             
            
-           <li>
-             <span class="rulename">documentation-operator</span>: Partially
-             (Only configuration)
-           </li>
+             
            
-         
+             
            
-           <li>
-             <span class="rulename">documentation-troubleshooting</span>: Partially
-             (Troubleshooting docs are on Mana but not about Telescope itself)
-           </li>
+             
            
-         
-        </ul>
-      </p>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-lint-secrets</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-documentation-build</span>: Partially
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-container-integration</span>: Partially
+               (No integration tests (Telescope has no backend))
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: No
+               (No DEV environment and no temporary instance deployed on pull-requests.)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-heartbeat-backends</span>: Partially
+               (No backend)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-heartbeat-error</span>: Partially
+               (No check in heartbeat)
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-requests-id</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-backends-duration</span>: Partially
+               (No backend)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-metrics</span>: No
+               (No telemetry)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-naming</span>: Partially
+               (No telemetry)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-documented</span>: Partially
+               (No telemetry)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-query-examples</span>: Partially
+               (No telemetry)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">notifications-error-chat</span>: No
+               (Would be too verbose)
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-security-assessment</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-test-args</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-operator</span>: Partially
+               (Only configuration)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-troubleshooting</span>: Partially
+               (Troubleshooting docs are on Mana but not about Telescope itself)
+             </li>
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
   </section>
   
@@ -1780,394 +1807,398 @@ which is automatically built from current git tag</p></td>
 
     
     <div class="card">
-      <h3>85% (94 / 110), 2023-09-04</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>85% (94 / 110), 2023-09-04</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-lint-static-analysis</span>: Partially
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">test-lint-type-checking</span>: No
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: No
              
-           </li>
            
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-logging-env-configuration</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">telemetry-documented</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">telemetry-query-examples</span>: No
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-test-args</span>: No
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">documentation-operator</span>: Partially
              
-           </li>
            
-         
-        </ul>
-      </p>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-lint-static-analysis</span>: Partially
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">test-lint-type-checking</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-logging-env-configuration</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-documented</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-query-examples</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-test-args</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-operator</span>: Partially
+               
+             </li>
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
     <div class="card">
-      <h3>66% (73 / 110), 2023-03-04</h3>
-      <p>
-        Missing from standard v1:
-        <ul>
-         
+      <div class="container">
+        <h3>66% (73 / 110), 2023-03-04</h3>
+        <p>
+          Missing from standard v1:
+          <ul>
            
-           <li>
-             <span class="rulename">repo-standard-files</span>: Partially
-             (Missing CONTRIBUTING.md, SECURITY.md)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">repo-readme-sections</span>: No
-             (Missing status badge, Usage is called “Run”)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-makefile-targets</span>: Partially
-             (Missing help)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">repo-pre-commit-optional</span>: Partially
-             (No pre-commit :))
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">repo-release-notes-auto</span>: No
-             (We use a CHANGELOG.rst file.)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-lint-secrets</span>: No
              
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-lint-static-analysis</span>: Partially
-             (Only flake8)
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">test-lint-type-checking</span>: No
+             <li>
+               <span class="rulename">repo-standard-files</span>: Partially
+               (Missing CONTRIBUTING.md, SECURITY.md)
+             </li>
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">test-pull-requests-labels</span>: No
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">release-tag-v-prefix</span>: No
              
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">release-tag-only</span>: No
-             (Requires a pull-request to update VERSION and CHANGELOG.rst files)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-integration-test</span>: No
-             (This is planned for H1/H2 2023)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">deployment-auto-pull-requests</span>: No
-             (No temporary instance deployed on pull-requests.)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-requests-id</span>: No
+             <li>
+               <span class="rulename">repo-readme-sections</span>: No
+               (Missing status badge, Usage is called “Run”)
+             </li>
              
-           </li>
            
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">monitoring-logging-env-configuration</span>: No
-             (via .ini)
-           </li>
-           
-         
-           
-         
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">telemetry-documented</span>: No
              
-           </li>
-           
-         
-           
-           <li>
-             <span class="rulename">telemetry-query-examples</span>: No
+             <li>
+               <span class="rulename">repo-makefile-targets</span>: Partially
+               (Missing help)
+             </li>
              
-           </li>
            
-         
-           
-           <li>
-             <span class="rulename">notifications-error-chat</span>: No
              
-           </li>
            
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-security-assessment</span>: No
-             (No link)
-           </li>
-           
-         
-           
-         
-           
-           <li>
-             <span class="rulename">documentation-test-args</span>: No
              
-           </li>
            
-         
+             
            
-           <li>
-             <span class="rulename">documentation-operator</span>: Partially
-             (Only via Kinto)
-           </li>
+             
            
-         
+             
            
-         
-        </ul>
-      </p>
+             
+           
+             
+             <li>
+               <span class="rulename">repo-pre-commit-optional</span>: Partially
+               (No pre-commit :))
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">repo-release-notes-auto</span>: No
+               (We use a CHANGELOG.rst file.)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-lint-secrets</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-lint-static-analysis</span>: Partially
+               (Only flake8)
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">test-lint-type-checking</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">test-pull-requests-labels</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">release-tag-v-prefix</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">release-tag-only</span>: No
+               (Requires a pull-request to update VERSION and CHANGELOG.rst files)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-integration-test</span>: No
+               (This is planned for H1/H2 2023)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">deployment-auto-pull-requests</span>: No
+               (No temporary instance deployed on pull-requests.)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-requests-id</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">monitoring-logging-env-configuration</span>: No
+               (via .ini)
+             </li>
+             
+           
+             
+           
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-documented</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">telemetry-query-examples</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">notifications-error-chat</span>: No
+               
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-security-assessment</span>: No
+               (No link)
+             </li>
+             
+           
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-test-args</span>: No
+               
+             </li>
+             
+           
+             
+             <li>
+               <span class="rulename">documentation-operator</span>: Partially
+               (Only via Kinto)
+             </li>
+             
+           
+             
+           
+          </ul>
+        </p>
       </div>
+    </div>
     
   </section>
   
