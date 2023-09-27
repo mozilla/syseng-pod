@@ -27,9 +27,9 @@ standard:
             - SECURITY.md
             - SUPPORT.md
           details: |
-            See https://en.wikipedia.org/wiki/Contributing_guidelines
-            and https://mozillascience.github.io/working-open-workshop/contributing/
-            templates at https://contributing.md
+            See <https://en.wikipedia.org/wiki/Contributing_guidelines>
+            and <https://mozillascience.github.io/working-open-workshop/contributing/>
+            templates at <https://contributing.md>
         repo-standard-folders:
           description: |
             - docs/
