@@ -858,7 +858,7 @@ Remote Settings:
         compliant: Yes
   '2023-09-04':
     version: 1
-    score: 94
+    score: 92
     max_score: 110
     rules:
       repo-standard-folders:
@@ -948,7 +948,7 @@ Remote Settings:
       test-pull-requests-labels:
         compliant: Yes
       release-tag-v-prefix:
-        compliant: Yes
+        compliant: No
       release-tag-only:
         compliant: Yes
       deployment-integration-test:
