@@ -36,7 +36,8 @@ standard:
             - bin/
         repo-readme-sections:
           description: |
-            - Readme contains the following:
+            Readme contains the following:
+
             - Project name as main title
             - Status (invest, sustain, sunset, abandoned)
             - Usage
