@@ -18,7 +18,7 @@
       padding-left: 10px;
     }
 
-    section#rules {
+    section.rules {
       table {
         border-collapse: collapse;
         margin: 25px 0;
@@ -66,7 +66,7 @@
       }
     }
 
-    section#scorecards {
+    section.scorecards {
       .card {
         display: inline-block;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -74,6 +74,7 @@
         max-width: 30%;
         margin-right: 20px;
         margin-bottom: 20px;
+        padding-right: 20px;
 
 
         .container {
@@ -95,21 +96,21 @@
     <h3>Rules</h3>
     <ul>
       {% for category in standard.categories %}
-      <li><a href="#category-{{ category.title }}">{{ category.title }}</a></hli>
+      <li><a href="#category-{{ category.title }}">{{ category.title }}</a></li>
       {% endfor %}
     </ul>
     <h3>Score Cards</h3>
     <ul>
       {% for service in scorecards %}
-      <li><a href="#service-{{ service }}">{{ service }}</a></hli>
+      <li><a href="#service-{{ service }}">{{ service }}</a></li>
       {% endfor %}
     </ul>
   </section>
   <h2>Score Cards</h2>
   {% for category in standard.categories %}
-  <section id="rules">
+  <section class="rules">
     <h3><a name="category-{{ category.title }}">{{ category.title }}</a></h3>
-    <p>{{ category.description|default('')|markdown }}</p>
+    {{ category.description|default('')|markdown }}
     <table>
       <colgroup>
         <col>
@@ -138,26 +139,24 @@
 
   <h1>Score Cards</h1>
   {% for service, results in scorecards.items() %}
-  <section id="scorecards">
+  <section class="scorecards">
     <h2><a name="service-{{ service }}">{{ service }}</a></h2>
 
     {% for date, result in results.items()|sort(reverse=True) %}
     <div class="card">
       <div class="container">
         <h3>{{ (result.score / result.max_score * 100)|round|int }}% ({{ result.score }} / {{ result.max_score }}), {{ date }}</h3>
-        <p>
-          Missing from standard v{{ result.version }}:
-          <ul>
-           {% for name, details in result.rules.items() %}
-             {% if details.compliant != "Yes" %}
-             <li>
-               <span class="rulename">{{ name }}</span>: {{ details.compliant }}
-               {% if details.notes %}({{ details.notes }}){% endif %}
-             </li>
-             {% endif %}
-           {% endfor %}
-          </ul>
-        </p>
+        <p>Missing from standard v{{ result.version }}:</p>
+        <ul>
+         {% for name, details in result.rules.items() %}
+           {% if details.compliant != "Yes" %}
+           <li>
+             <span class="rulename">{{ name }}</span>: {{ details.compliant }}
+             {% if details.notes %}({{ details.notes }}){% endif %}
+           </li>
+           {% endif %}
+         {% endfor %}
+        </ul>
       </div>
     </div>
     {% endfor %}
