@@ -131,6 +131,8 @@ standard:
           details: Eg. use poetry, cargo, …
 
     - title: Releasing
+      description: |
+        These checks apply to services that still rely on tags and releases. If a service has moved to *Continuous Delivery*, without tagging or releasing at all, they can all be considered as compliant.
       rules:
         release-semver-calver:
           description: Project follows SemVer or Calver version scheme
