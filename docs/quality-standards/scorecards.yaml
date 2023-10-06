@@ -1,0 +1,1114 @@
+CTMS:
+  '2023-06-30':
+    version: 1
+    score: 89
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Yes
+      repo-standard-folders:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: Yes
+      repo-makefile-targets:
+        compliant: Yes
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Yes
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: Yes
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Partially
+        notes: Docs are only markdown files
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: Yes
+      test-pull-requests-labels:
+        compliant: Yes
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: Partially
+        notes: USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL
+      monitoring-heartbeat-error:
+        compliant: Yes
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: Yes
+      telemetry-query-examples:
+        compliant: Yes
+      notifications-error-chat:
+        compliant: Yes
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: Yes
+      documentation-operator:
+        compliant: Yes
+      documentation-troubleshooting:
+        compliant: No
+  '2023-02-01':
+    version: 1
+    score: 80
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: No
+        notes: Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md
+      repo-standard-folders:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: No
+        notes: README has only links to `docs/`
+      repo-makefile-targets:
+        compliant: Yes
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Yes
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: Yes
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Partially
+        notes: Docs are only markdown files
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: Yes
+      test-pull-requests-labels:
+        compliant: Yes
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: Partially
+        notes: USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL
+      monitoring-heartbeat-error:
+        compliant: Yes
+      monitoring-requests-duration:
+        compliant: No
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: Yes
+      telemetry-query-examples:
+        compliant: No
+        notes: Until now, logs/metrics are not easily accessible
+      notifications-error-chat:
+        compliant: Yes
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: Yes
+      documentation-troubleshooting:
+        compliant: No
+JBI:
+  '2023-02-04':
+    version: 1
+    score: 86
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: No
+        notes: No LICENSE, CONTRIBUTING, files
+      repo-standard-folders:
+        compliant: No
+        notes: 'No docs/ folder, bin/ instead of scripts/ '
+      repo-readme-sections:
+        compliant: No
+        notes: No status section in readme
+      repo-makefile-targets:
+        compliant: No
+        notes: No make clean
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Yes
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: Yes
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Partially
+        notes: No built documentation, no markdown lint
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: No
+        notes: Built container is not tested
+      test-pull-requests-labels:
+        compliant: Yes
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+        notes: No integration test available.
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      deployment-auto-pull-requests:
+        compliant: No
+        notes: No temporary instance deployed on pull-requests. THis would improve
+          productivity since we could test configuration changes before merging/deploying
+          to STAGE.
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: Yes
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Yes
+      monitoring-logging-level:
+        compliant: No
+        notes: DEBUG by default instead of INFO
+      monitoring-logging-mozlog:
+        compliant: Partially
+        notes: Log level via LOG_LEVEL but log format is not configurable.
+      monitoring-logging-env-configuration:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: Yes
+      telemetry-query-examples:
+        compliant: Yes
+      notifications-error-chat:
+        compliant: Yes
+      documentation-decisions-records:
+        compliant: No
+      documentation-security-assessment:
+        compliant: No
+        notes: No link to RRA.
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: Yes
+      documentation-troubleshooting:
+        compliant: Yes
+  '2023-07-04':
+    version: 1
+    score: 105
+    max_score: 110
+    rules:
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Yes
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: Yes
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: Yes
+      test-container-build:
+        compliant: Yes
+      test-pull-requests-labels:
+        compliant: Yes
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: Yes
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: Yes
+      telemetry-query-examples:
+        compliant: Yes
+      notifications-error-chat:
+        compliant: Yes
+      documentation-dev:
+        compliant: Yes
+      documentation-operator:
+        compliant: Yes
+      documentation-troubleshooting:
+        compliant: Yes
+      repo-standard-files:
+        compliant: Yes
+      repo-standard-folders:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: Yes
+      repo-makefile-targets:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Partially
+      test-container-integration:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: Yes
+      documentation-test-args:
+        compliant: Yes
+Telescope:
+  '2023-01-01':
+    version: 1
+    score: 78
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: No
+        notes: Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md
+      repo-standard-folders:
+        compliant: No
+        notes: scripts/ instead of bin/
+      repo-readme-sections:
+        compliant: Partially
+        notes: Missing status badge, documentation within README
+      repo-makefile-targets:
+        compliant: No
+        notes: Missing help, serve instead of start
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Yes
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: No
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Partially
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: Partially
+        notes: No integration tests (Telescope has no backend)
+      test-pull-requests-labels:
+        compliant: Yes
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+        notes: ''
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      deployment-auto-pull-requests:
+        compliant: No
+        notes: No DEV environment and no temporary instance deployed on pull-requests.
+      monitoring-heartbeat-backends:
+        compliant: Partially
+        notes: No backend
+      monitoring-heartbeat-error:
+        compliant: Partially
+        notes: No check in heartbeat
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: No
+      monitoring-backends-duration:
+        compliant: Partially
+        notes: No backend
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: No
+        notes: No telemetry
+      telemetry-naming:
+        compliant: Partially
+        notes: No telemetry
+      telemetry-documented:
+        compliant: Partially
+        notes: No telemetry
+      telemetry-query-examples:
+        compliant: Partially
+        notes: No telemetry
+      notifications-error-chat:
+        compliant: No
+        notes: Would be too verbose
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: Partially
+        notes: Only configuration
+      documentation-troubleshooting:
+        compliant: Partially
+        notes: Troubleshooting docs are on Mana but not about Telescope itself
+  '2023-09-04':
+    version: 1
+    score: 93
+    max_score: 110
+    rules:
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Yes
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Partially
+      test-container-build:
+        compliant: Yes
+      test-pull-requests-labels:
+        compliant: Yes
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: Yes
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-dev:
+        compliant: Yes
+      repo-standard-files:
+        compliant: Yes
+      repo-standard-folders:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: Yes
+      repo-makefile-targets:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: Yes
+      test-container-integration:
+        compliant: Partially
+      deployment-integration-test:
+        compliant: No
+      deployment-auto-pull-requests:
+        compliant: Partially
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Partially
+      telemetry-metrics:
+        compliant: No
+      telemetry-naming:
+        compliant: Partially
+      telemetry-documented:
+        compliant: Partially
+      telemetry-query-examples:
+        compliant: Partially
+      notifications-error-chat:
+        compliant: No
+      documentation-security-assessment:
+        compliant: No
+      documentation-test-args:
+        compliant: Yes
+      documentation-operator:
+        compliant: Partially
+      documentation-troubleshooting:
+        compliant: Partially
+Remote Settings:
+  '2023-03-04':
+    version: 1
+    score: 73
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Partially
+        notes: Missing CONTRIBUTING.md, SECURITY.md
+      repo-standard-folders:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: No
+        notes: Missing status badge, Usage is called “Run”
+      repo-makefile-targets:
+        compliant: Partially
+        notes: Missing help
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Partially
+        notes: No pre-commit :)
+      repo-release-notes-auto:
+        compliant: No
+        notes: We use a CHANGELOG.rst file.
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: No
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Partially
+        notes: Only flake8
+      test-lint-type-checking:
+        compliant: No
+      test-unit-coverage:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Yes
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: Yes
+      test-pull-requests-labels:
+        compliant: No
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: No
+      release-tag-only:
+        compliant: No
+        notes: Requires a pull-request to update VERSION and CHANGELOG.rst files
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+        notes: This is planned for H1/H2 2023
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      deployment-auto-pull-requests:
+        compliant: No
+        notes: No temporary instance deployed on pull-requests.
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: Yes
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: No
+      monitoring-backends-duration:
+        compliant: Yes
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: No
+        notes: via .ini
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: No
+      telemetry-query-examples:
+        compliant: No
+      notifications-error-chat:
+        compliant: No
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: No
+        notes: No link
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: Partially
+        notes: Only via Kinto
+      documentation-troubleshooting:
+        compliant: Yes
+  '2023-09-04':
+    version: 1
+    score: 92
+    max_score: 110
+    rules:
+      repo-standard-folders:
+        compliant: Yes
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-issue-labels:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Yes
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Yes
+      repo-head-branch-auto-delete:
+        compliant: Yes
+      repo-code-owners:
+        compliant: Yes
+      test-lint-code-format:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: Yes
+      test-documentation-build:
+        compliant: Yes
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: Yes
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Yes
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: Yes
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Yes
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-dev:
+        compliant: Yes
+      documentation-troubleshooting:
+        compliant: Yes
+      repo-standard-files:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: Yes
+      repo-makefile-targets:
+        compliant: Yes
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Partially
+      test-lint-type-checking:
+        compliant: No
+      test-pull-requests-labels:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: No
+      release-tag-only:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: No
+      telemetry-documented:
+        compliant: No
+      telemetry-query-examples:
+        compliant: No
+      notifications-error-chat:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: Partially
+Tecken:
+  '2023-10-06':
+    version: 1
+    score: 50
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Partially
+        notes: Missing SECURITY and SUPPORT files
+      repo-standard-folders:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: Partially
+        notes: Missing status
+      repo-makefile-targets:
+        compliant: Partially
+        notes: '`run` instead of `start` and `lintfix` instead of `format`'
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Unknown
+      repo-version-tags-protected:
+        compliant: No
+      repo-issue-labels:
+        compliant: Yes
+        notes: No issue tracker.
+      repo-team-reviewers-permissions:
+        compliant: Unknown
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-pre-commit-optional:
+        compliant: Yes
+        notes: No precommit hook
+      repo-release-notes-auto:
+        compliant: No
+        notes: Changelog is put in tag annotation
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Unknown
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      repo-code-owners:
+        compliant: No
+      test-lint-secrets:
+        compliant: No
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+        notes: Using ruff
+      test-lint-type-checking:
+        compliant: No
+      test-unit-coverage:
+        compliant: No
+        notes: No coverage mesurement
+      test-documentation-build:
+        compliant: Yes
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: Partially
+        notes: Frontend tests are ran. System tests exist.
+      test-pull-requests-labels:
+        compliant: No
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: No
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Yes
+        notes: Uses python-dockerflow with Django
+      deployment-integration-test:
+        compliant: Unknown
+      deployment-auto-main:
+        compliant: Unknown
+      deployment-auto-release:
+        compliant: Unknown
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: Yes
+        notes:
+          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L585-L588
+      monitoring-heartbeat-error:
+        compliant: Unknown
+      monitoring-requests-duration:
+        compliant: Unknown
+        notes: Didn't see middleware/requests.summary. Maybe part of python-dockerflow
+      monitoring-requests-id:
+        compliant: Unknown
+      monitoring-backends-duration:
+        compliant: Partially
+        notes: metrics are used to monitor uploads/downloads, but apparently not for
+          database/cache calls
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+        notes:
+          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L170-L171
+      monitoring-logging-env-configuration:
+        compliant: Partially
+        notes: human format only in DEV, not configurable, and default level using
+          LOGGING_DEFAULT_LEVEL env var
+          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L87-L91
+      monitoring-error-reporting:
+        compliant: No
+        notes:
+          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/bin/sentry-wrap.py#L43C21-L43C31  Not
+          environment / version passed to init
+      telemetry-metrics:
+        compliant: Yes
+        notes: Using markus
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: Yes
+        notes: A command allows to list them, but not explicitly listed in docs
+      telemetry-query-examples:
+        compliant: No
+      notifications-error-chat:
+        compliant: Unknown
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: No
+      documentation-troubleshooting:
+        compliant: No

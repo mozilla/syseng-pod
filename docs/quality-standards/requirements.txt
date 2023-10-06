@@ -1,0 +1,5 @@
+click==8.*
+markdown==3.*
+questionary==2.*
+ruamel.yaml==0.17.*
+Jinja2==3.*

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quality Standards</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .rulename {
+      font-family: monospace;
+      background-color: bisque;
+    }
+
+    blockquote {
+      border-left: solid 4px lightgray;
+      padding-left: 10px;
+    }
+
+    section.rules {
+      table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        max-width: 70%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+        col:first-child {
+          width: 20%;
+        }
+        col:nth-child(2),
+        col:nth-child(3) {
+          width: 40%;
+        }
+
+        thead tr {
+          background-color: #009879;
+          color: #ffffff;
+          text-align: left;
+        }
+
+        th, td {
+          padding: 12px 15px;
+          vertical-align: top;
+        }
+
+        td p {
+          margin-top: 0px;
+        }
+
+        tbody {
+          tr {
+            border-bottom: 1px solid #dddddd;
+          }
+
+          tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+          }
+
+          tr:last-of-type {
+            border-bottom: 2px solid #009879;
+          }
+        }
+      }
+    }
+
+    section.scorecards {
+      .card {
+        display: inline-block;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        border-bottom: 1px solid #dddddd;
+        max-width: 30%;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .punchs {
+            max-width: 20em;
+
+            .punch {
+              height: 10px;
+              width: 10px;
+              display: inline-block;
+              border-radius: 2px;
+
+              &.yes {
+                background-color: green;
+              }
+
+              &.no {
+                background-color: red;
+              }
+
+              &.partially {
+                background-color: yellow;
+              }
+
+              &.unknown {
+                background-color: lightgray;
+              }
+            }
+          }
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Quality Standards</h1>
+  <p>Version {{ standard.version }}, last updated on {{ criteria_last_update.strftime('%Y-%m-%d') }}</p>
+  <p>{{ standard.description|markdown }}</p>
+  <section id="toc">
+    <h2>Table of Contents</h2>
+    <h3>Rules</h3>
+    <ul>
+      {% for category in standard.categories %}
+      <li><a href="#category-{{ category.title }}">{{ category.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <h3>Score Cards</h3>
+    <ul>
+      {% for service in scorecards %}
+      <li><a href="#service-{{ service }}">{{ service }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <h2>Score Cards</h2>
+  {% for category in standard.categories %}
+  <section class="rules">
+    <h3><a name="category-{{ category.title }}">{{ category.title }}</a></h3>
+    {{ category.description|default('')|markdown }}
+    <table>
+      <colgroup>
+        <col>
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <td>Rule</td>
+          <td>Description</td>
+          <td>Details</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for name, rule in category.rules.items() %}
+        <tr>
+          <td><span class="rulename">{{ name }}</span></td>
+          <td>{{ rule.description|markdown }}</td>
+          <td>{{ rule.details|default('')|markdown }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endfor %}
+
+  <h1>Score Cards</h1>
+  {% for service, results in scorecards.items() %}
+  <section class="scorecards">
+    <h2><a name="service-{{ service }}">{{ service }}</a></h2>
+
+    {% for date, result in results.items()|sort(reverse=True) %}
+    <div class="card">
+      <div class="container">
+        <h3>{{ (result.score / result.max_score * 100)|round|int }}% ({{ result.score }} / {{ result.max_score }}), {{ date }}</h3>
+        <div class="punchs">
+          {% for name, details in result.rules.items() %}
+          <div class="punch {{ details.compliant|lower }}" title="{{ name }}"></div>
+          {% endfor %}
+        </div>
+
+        {% set ns = namespace(iterated=false) %}
+        {% for name, details in result.rules.items() %}
+          {% if details.compliant in ("No", "Partially") %}
+            {% if not ns.iterated %}
+              <p>Missing from standard v{{ result.version }}:</p>
+                <ul>
+            {% endif %}
+            {% set ns.iterated = true %}
+            <li>
+              <span class="rulename">{{ name }}</span>: {{ details.compliant }}
+              {% if details.notes %}({{ details.notes }}){% endif %}
+            </li>
+          {% endif %}
+          {% if loop.last %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+
+        {% set ns = namespace(iterated=false) %}
+        {% for name, details in result.rules.items() %}
+          {% if details.compliant == "Unknown" %}
+            {% if not ns.iterated %}
+              <p>Could not be verified:</p>
+                <ul>
+            {% endif %}
+            {% set ns.iterated = true %}
+            <li>
+              <span class="rulename">{{ name }}</span>
+              {% if details.notes %}: ({{ details.notes }}){% endif %}
+            </li>
+          {% endif %}
+          {% if loop.last %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</body>
+</html>
