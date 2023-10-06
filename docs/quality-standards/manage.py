@@ -75,6 +75,7 @@ def audit(service):
         "Yes": 2,
         "Partially": 1,
         "No": 0,
+        "Unknown": 0,
     }
 
     max_score = 0
