@@ -75,7 +75,7 @@ Where applicable, we agree to adhere to the quality standards defined in [SysEng
 - Prefer merge and follow-up commits over rebase/force pushing once a review is requested
 - Request review/feedback at any time and suggest specific areas for review for anything less than "ready to merge"
 - Use checkboxes to track milestones of completeness for incomplete/draft PRs
-- Provide a review within 24 hours of being tagged for review, preferably before the author's next workday cycle. The review does not need to be comprehensive
+- Provide a review within 72 hours of being tagged for review, preferably before the author's next workday cycle. The review does not need to be comprehensive
 - Tag specific reviewers when needed
 
 ## Information Architecture
