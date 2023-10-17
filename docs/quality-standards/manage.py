@@ -17,18 +17,21 @@ except ImportError as e:
     sys.exit(2)
 
 
+POINTS_FOR = {
+    "Yes": 2,
+    "Partially": 1,
+    "No": 0,
+    "Unknown": 0,
+}
+
+
 @click.group()
 def cli():
     pass
 
 
 @cli.command()
-@click.option(
-    "-o",
-    "--output",
-    help="Destination folder",
-    default="html"
-)
+@click.option("-o", "--output", help="Destination folder", default="html")
 def html(output):
     with open("criteria.yaml") as f:
         root_criteria = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
@@ -44,11 +47,31 @@ def html(output):
     )
     env.filters["markdown"] = render_markdown
 
+    # Categorize rules and compute max score by category.
+    category_for_rule = {}
+    max_score_for_category = defaultdict(int)
+    for category in root_criteria["standard"]["categories"]:
+        for name in category["rules"]:
+            category_for_rule[name] = category["title"]
+            max_score_for_category[category["title"]] += POINTS_FOR["Yes"]
+
+    # Compute score by category for each score card.
+    for service, scorecards in root_scorecards.items():
+        for scorecard in scorecards.values():
+            score_by_category = defaultdict(int)
+            for rule, details in scorecard["rules"].items():
+                category = category_for_rule[rule]
+                score_by_category[category] += POINTS_FOR[details["compliant"]]
+            scorecard["score_by_category"] = score_by_category
+
     template = env.get_template("template.html")
     context = {
         "standard": root_criteria["standard"],
         "scorecards": root_scorecards,
-        "criteria_last_update": datetime.datetime.fromtimestamp(os.path.getmtime("criteria.yaml")),
+        "max_score_for_category": max_score_for_category,
+        "criteria_last_update": datetime.datetime.fromtimestamp(
+            os.path.getmtime("criteria.yaml")
+        ),
     }
     rendered = template.render(**context)
 
@@ -71,17 +94,10 @@ def audit(service):
     with open(criteria) as f:
         root = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
-    points_for = {
-        "Yes": 2,
-        "Partially": 1,
-        "No": 0,
-        "Unknown": 0,
-    }
-
     max_score = 0
     for category in root["standard"]["categories"]:
         for name in category["rules"].items():
-            max_score += points_for["Yes"]
+            max_score += POINTS_FOR["Yes"]
 
     if not service:
         service = questionary.text(
@@ -128,7 +144,9 @@ def audit(service):
             # Equivalent of resuming an audit ignoring all non compliant rules.
             # Note: we copy to avoid ruamel to use anchors.
             previous_audit = {
-                rule: v.copy() for rule, v in previous_audit.items() if v["compliant"] == "Yes"
+                rule: v.copy()
+                for rule, v in previous_audit.items()
+                if v["compliant"] == "Yes"
             }
         if choice == 4:
             click.echo("Cancelled.")
@@ -158,7 +176,7 @@ def audit(service):
             # Prompt for compliance.
             compliance = questionary.select(
                 message=f"{name} ?",
-                choices=points_for.keys(),
+                choices=POINTS_FOR.keys(),
                 instruction="\n" + rule["description"].strip() + "\n",
             ).ask()
             if compliance is None:
@@ -181,7 +199,7 @@ def audit(service):
                 answers[name]["notes"] = notes
 
     # Compute scores.
-    score = sum(points_for[details["compliant"]] for details in answers.values())
+    score = sum(POINTS_FOR[details["compliant"]] for details in answers.values())
     score_percent = score * 100 / max_score
     click.echo(f"Service new score is {score_percent:.2f}% ({score}/{max_score})")
 

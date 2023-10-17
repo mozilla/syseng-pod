@@ -174,6 +174,11 @@
     <div class="card">
       <div class="container">
         <h3>{{ (result.score / result.max_score * 100)|round|int }}% ({{ result.score }} / {{ result.max_score }}), {{ date }}</h3>
+        <ul>
+          {% for title, score in result.score_by_category.items()|sort() %}
+          <li>{{ title }} ({{ score }}/{{ max_score_for_category[title] }})</li>
+          {% endfor %}
+        </ul>
         <div class="punchs">
           {% for name, details in result.rules.items() %}
           <div class="punch {{ details.compliant|lower }}" title="{{ name }}"></div>
