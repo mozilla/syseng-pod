@@ -1112,3 +1112,132 @@ Tecken:
         compliant: No
       documentation-troubleshooting:
         compliant: No
+Experimenter:
+  '2023-10-18':
+    version: 1
+    score: 45
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Partially
+        notes: Missing SECURITY.md and SUPPORT.md
+      repo-standard-folders:
+        compliant: Partially
+        notes: scripts/ instead of bin/
+      repo-readme-sections:
+        compliant: Partially
+        notes: Missing Status
+      repo-makefile-targets:
+        compliant: No
+        notes: up instead of start, no help, code_format instead of format, check
+          instead of lint, pytest instead of test, ...
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Unknown
+      repo-version-tags-protected:
+        compliant: Unknown
+      repo-issue-labels:
+        compliant: No
+        notes: No documentation, defect instead of bug
+      repo-team-reviewers-permissions:
+        compliant: Unknown
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: No
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Unknown
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: No
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: No
+      test-documentation-build:
+        compliant: No
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: Yes
+      test-pull-requests-labels:
+        compliant: No
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Partially
+        notes: No readonly user apparently, /experimenter instead of /app, not ENTRYPOINT
+          and CMD, ...
+      deployment-integration-test:
+        compliant: Unknown
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Unknown
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: Unknown
+      monitoring-heartbeat-error:
+        compliant: Unknown
+      monitoring-requests-duration:
+        compliant: Unknown
+      monitoring-requests-id:
+        compliant: Unknown
+      monitoring-backends-duration:
+        compliant: Unknown
+      monitoring-logging-level:
+        compliant: No
+        notes: DEBUG 
+          https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L233
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: No
+        notes: LOGGING_CONSOLE_LEVEL and LOGGING_USE_JSON
+      monitoring-error-reporting:
+        compliant: Partially
+        notes: Without env/version 
+          https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L277
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: No
+      telemetry-query-examples:
+        compliant: No
+      notifications-error-chat:
+        compliant: Unknown
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: No
+      documentation-troubleshooting:
+        compliant: No
