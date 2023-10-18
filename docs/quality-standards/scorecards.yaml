@@ -1059,7 +1059,7 @@ Tecken:
         compliant: No
       monitoring-heartbeat-backends:
         compliant: Yes
-        notes:
+        notes: 
           https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L585-L588
       monitoring-heartbeat-error:
         compliant: Unknown
@@ -1076,16 +1076,16 @@ Tecken:
         compliant: Yes
       monitoring-logging-mozlog:
         compliant: Yes
-        notes:
+        notes: 
           https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L170-L171
       monitoring-logging-env-configuration:
         compliant: Partially
         notes: human format only in DEV, not configurable, and default level using
-          LOGGING_DEFAULT_LEVEL env var
+          LOGGING_DEFAULT_LEVEL env var 
           https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L87-L91
       monitoring-error-reporting:
         compliant: No
-        notes:
+        notes: 
           https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/bin/sentry-wrap.py#L43C21-L43C31  Not
           environment / version passed to init
       telemetry-metrics:
@@ -1239,5 +1239,135 @@ Experimenter:
         compliant: No
       documentation-operator:
         compliant: No
+      documentation-troubleshooting:
+        compliant: No
+Balrog:
+  '2023-10-18':
+    version: 1
+    score: 34
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Partially
+        notes: Missing CONTRIBUTING, SECURITY, SUPPORT
+      repo-standard-folders:
+        compliant: Partially
+        notes: scripts/ instead of bin/
+      repo-readme-sections:
+        compliant: Partially
+        notes: No title, no status, no usage
+      repo-makefile-targets:
+        compliant: No
+        notes: No Makefile
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Unknown
+      repo-version-tags-protected:
+        compliant: Unknown
+      repo-issue-labels:
+        compliant: No
+        notes: bug, no enhancement, no documentation, no wontfix, first-bug instead
+          of good-first-issue
+      repo-team-reviewers-permissions:
+        compliant: Unknown
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: No
+        notes: No changelog
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: No
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: No
+      test-lint-code-format:
+        compliant: No
+      test-lint-static-analysis:
+        compliant: No
+      test-lint-type-checking:
+        compliant: No
+      test-unit-coverage:
+        compliant: No
+      test-documentation-build:
+        compliant: No
+      test-container-build:
+        compliant: Unknown
+        notes: Could not find in taskcluster
+      test-container-integration:
+        compliant: Unknown
+        notes: Could not find it
+      test-pull-requests-labels:
+        compliant: No
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Unknown
+      deployment-dockerflow:
+        compliant: Partially
+        notes: No dedicated user, not exposing 8000, ...
+      deployment-integration-test:
+        compliant: Unknown
+      deployment-auto-main:
+        compliant: Unknown
+      deployment-auto-release:
+        compliant: Unknown
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: Unknown
+        notes: Could not find heartbeat checks implementation
+      monitoring-requests-duration:
+        compliant: Unknown
+      monitoring-requests-id:
+        compliant: Unknown
+      monitoring-backends-duration:
+        compliant: Unknown
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: Yes
+      monitoring-error-reporting:
+        compliant: No
+        notes: No env Sentry SDK init
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Yes
+      telemetry-documented:
+        compliant: No
+        notes: Not listed in 
+          https://github.com/mozilla-releng/balrog/blob/6493a9e2eae9e959fc69e7e2fd93b6e91ed16ba3/docs/source/infrastructure.rst#monitoring--metrics
+      telemetry-query-examples:
+        compliant: No
+      notifications-error-chat:
+        compliant: Unknown
+      documentation-decisions-records:
+        compliant: No
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+      documentation-operator:
+        compliant: Unknown
       documentation-troubleshooting:
         compliant: No
