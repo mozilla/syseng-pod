@@ -48,6 +48,11 @@ def html(output):
     )
     env.filters["markdown"] = render_markdown
 
+    rules_details = {}
+    for category in root_criteria["standard"]["categories"]:
+        for rule, details in category["rules"].items():
+            rules_details[rule] = details
+
     # Categorize rules and compute max score by category.
     category_for_rule = {}
     max_score_for_category = defaultdict(int)
@@ -90,6 +95,7 @@ def html(output):
         "standard": root_criteria["standard"],
         "scorecards": root_scorecards,
         "max_score_for_category": max_score_for_category,
+        "rules_details": rules_details,
         "rules_popularity": rules_popularity,
         "criteria_last_update": datetime.datetime.fromtimestamp(
             os.path.getmtime("criteria.yaml")
