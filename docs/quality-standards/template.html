@@ -8,6 +8,11 @@
     body {
       font-family: sans-serif;
     }
+
+    h2 {
+      margin-top: 2.5em;
+    }
+
     .rulename {
       font-family: monospace;
       background-color: bisque;
@@ -16,6 +21,27 @@
     blockquote {
       border-left: solid 4px lightgray;
       padding-left: 10px;
+    }
+
+    #intro {
+      max-width: 70%;
+
+      p.version {
+        font-style: italic;
+      }
+
+      table {
+        text-align: center;
+
+        td {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        img {
+          max-height: 300px;
+        }
+      }
     }
 
     section.rules {
@@ -44,6 +70,10 @@
         th, td {
           padding: 12px 15px;
           vertical-align: top;
+        }
+
+        tr td:first-child {
+          white-space: nowrap;
         }
 
         td p {
@@ -117,8 +147,10 @@
 </head>
 <body>
   <h1>Quality Standards</h1>
-  <p>Version {{ standard.version }}, last updated on {{ criteria_last_update.strftime('%Y-%m-%d') }}</p>
-  <p>{{ standard.description|markdown }}</p>
+  <section id="intro">
+    <p class="version">Version {{ standard.version }}, last updated on {{ criteria_last_update.strftime('%Y-%m-%d') }}</p>
+    <p>{{ standard.description|markdown }}</p>
+  </section>
   <section id="toc">
     <h2>Table of Contents</h2>
     <h3>Rules</h3>
@@ -134,7 +166,7 @@
       {% endfor %}
     </ul>
   </section>
-  <h2>Score Cards</h2>
+  <h2>Rules</h2>
   {% for category in standard.categories %}
   <section class="rules">
     <h3><a name="category-{{ category.title }}">{{ category.title }}</a></h3>
@@ -165,10 +197,10 @@
   </section>
   {% endfor %}
 
-  <h1>Score Cards</h1>
+  <h2>Score Cards</h2>
   {% for service, results in scorecards.items() %}
   <section class="scorecards">
-    <h2><a name="service-{{ service }}">{{ service }}</a></h2>
+    <h3><a name="service-{{ service }}">{{ service }}</a></h3>
 
     {% for date, result in results.items()|sort(reverse=True) %}
     <div class="card">

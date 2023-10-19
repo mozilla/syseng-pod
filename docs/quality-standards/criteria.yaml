@@ -8,6 +8,32 @@ standard:
 
     Quality guarantees reliability and maintainability of the software, as well as efficiency of development.
 
+    The goal of this initiative is to increase the familiarity of codebases, so we can be effective sooner. Ultimately, this means more of our time can be spent on innovation and less on just keeping the lights on.
+
+    More projects than people is a common situation for service engineers at Mozilla. As priorities shift, reorgs happen, projects are moved around, at some point we are maintaining several codebases. Most of these projects were not developed to a shared set of quality criteria so there is little familiarity between them.
+
+    > **Note:** Instead of enforcing a limited set of rules, we made the choice to have many rules and a global score.
+    > Scorecards show complicance in each category, which allows progress in iterations.
+
+    |                                                                                  |                                                                                           |
+    |----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+    | ![](assets/messy-workbench.jpg)                                                  | ![](assets/professional-workbench.jpg)                                                  |
+    | A messy workbench © [Dan Larson](https://flickr.com/photos/dclarson/2919489714/) | A professional workbench © [mtneer_man](https://flickr.com/photos/mtneer_man/2713076677/) |
+
+    Objectives:
+
+    * Define quality in the context of a team that delivers software
+    * Organize and recommend software engineering practices to increase familiarity
+    * Establish a checklist for existing and future projects
+
+    Non Goals:
+
+    * Do not enforce certain technologies or frameworks
+    * Be too specific about tooling
+    * This is not (yet) a boilerplate for new projects
+
+    For comments and questions, don't hesitate to get in touch in the `#coreservices` Slack channel, or open issues and pull-requests in the [source repo](https://github.com/mozilla/syseng-pod/tree/main/docs/quality-standards).
+
   categories:
     - title: Repository Ergonomics
       description: |
