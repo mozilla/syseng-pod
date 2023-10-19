@@ -107,7 +107,6 @@
         padding-left: 20px;
         padding-right: 20px;
 
-
         .container {
           display: flex;
           flex-direction: column;
@@ -141,6 +140,21 @@
             }
           }
         }
+      }
+    }
+
+    .popularity {
+      height: 1em;
+      background-color: lightgray;
+
+      &::before {
+        content: '';
+        display: flex;
+        justify-content: end;
+        width: calc(var(--percent) * 1%);
+        height: 100%;
+        background: darkgray;
+        white-space: nowrap;
       }
     }
   </style>
@@ -182,6 +196,7 @@
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -190,6 +205,9 @@
           <td><span class="rulename">{{ name }}</span></td>
           <td>{{ rule.description|markdown }}</td>
           <td>{{ rule.details|default('')|markdown }}</td>
+          <td>
+            <div class="popularity" style="--percent: {{ rules_popularity[name].percent }};" title="{{ rules_popularity[name].services|join(', ') }}"></div>
+          </td>
         </tr>
         {% endfor %}
       </tbody>

@@ -701,7 +701,7 @@ Telescope:
       deployment-integration-test:
         compliant: No
       deployment-auto-pull-requests:
-        compliant: Partially
+        compliant: No
       monitoring-heartbeat-backends:
         compliant: Yes
       monitoring-heartbeat-error:
