@@ -1636,3 +1636,137 @@ kitsune:
         compliant: Yes
       documentation-troubleshooting:
         compliant: No
+Taskcluster:
+  '2023-10-19':
+    version: 1
+    score: 28
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Partially
+        notes: Missing SUPPORT.md
+      repo-standard-folders:
+        compliant: No
+        notes: No bin/, no docs/
+      repo-readme-sections:
+        compliant: Partially
+        notes: Missing status
+      repo-makefile-targets:
+        compliant: No
+        notes: No Makefile
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Unknown
+      repo-version-tags-protected:
+        compliant: Unknown
+      repo-issue-labels:
+        compliant: Partially
+        notes: No wontfix, docs instead of documentation
+      repo-team-reviewers-permissions:
+        compliant: Unknown
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: Partially
+        notes: Using a command `yarn release`
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Unknown
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: No
+      test-lint-code-format:
+        compliant: Unknown
+        notes: could not find references to script/lint
+      test-lint-static-analysis:
+        compliant: Unknown
+      test-lint-type-checking:
+        compliant: Unknown
+      test-unit-coverage:
+        compliant: Unknown
+      test-documentation-build:
+        compliant: Unknown
+      test-container-build:
+        compliant: Unknown
+      test-container-integration:
+        compliant: Unknown
+      test-pull-requests-labels:
+        compliant: No
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: Yes
+      release-tag-only:
+        compliant: Unknown
+      release-publish:
+        compliant: Unknown
+      deployment-dockerflow:
+        compliant: No
+        notes: Does not expose 8000, not using specific user, ...
+      deployment-integration-test:
+        compliant: Unknown
+      deployment-auto-main:
+        compliant: Unknown
+      deployment-auto-release:
+        compliant: Unknown
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: No
+      monitoring-heartbeat-error:
+        compliant: No
+        notes: Heartbeat is a simple Nginx endpoint that returns 200
+      monitoring-requests-duration:
+        compliant: Unknown
+      monitoring-requests-id:
+        compliant: Unknown
+      monitoring-backends-duration:
+        compliant: Unknown
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: No
+        notes: only if ENV==production 
+          https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/tools/websocktunnel/cmd/websocktunnel/main.go#L47
+      monitoring-logging-env-configuration:
+        compliant: No
+      monitoring-error-reporting:
+        compliant: No
+        notes: Sentry init does not set environment 
+          https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/libraries/monitor/src/plugins/sentry.js#L19-L23
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Unknown
+      telemetry-documented:
+        compliant: Unknown
+      telemetry-query-examples:
+        compliant: Unknown
+      notifications-error-chat:
+        compliant: Unknown
+      documentation-decisions-records:
+        compliant: No
+        notes: There are design docs though 
+          https://github.com/taskcluster/taskcluster/tree/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/ui/docs/manual/design
+      documentation-security-assessment:
+        compliant: Unknown
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: No
+        notes: 
+          https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/dev-docs/development-process.md#hacking-on-services-and-libraries
+          does not mention it
+      documentation-operator:
+        compliant: Yes
+      documentation-troubleshooting:
+        compliant: Yes
