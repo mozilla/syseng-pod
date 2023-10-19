@@ -57,7 +57,7 @@ We agree to:
 
 ## Software Engineering Practices
 
-Where applicable, we agree to adhere to the quality standards defined in [SysEng Software Quality](https://docs.google.com/document/d/1m96FOH8Dv87m3OtjBT14C969gjhcMygZmrPpx5e7A2Y/). In addition, we agree to:
+Where applicable, we agree to adhere to the quality standards defined in [SysEng Software Quality](https://mozilla.github.io/syseng-pod/quality-standards/). In addition, we agree to:
 
 ### Code Quality
 
@@ -80,7 +80,7 @@ Where applicable, we agree to adhere to the quality standards defined in [SysEng
 
 ## Information Architecture
 
-Where applicable, we agree to adhere to the quality standards defined in [SysEng Software Quality](https://docs.google.com/document/d/1m96FOH8Dv87m3OtjBT14C969gjhcMygZmrPpx5e7A2Y/). In addition, we agree to:
+Where applicable, we agree to adhere to the quality standards defined in [SysEng Software Quality](https://mozilla.github.io/syseng-pod/quality-standards/). In addition, we agree to:
 
 - Document decisions and processes in permanent places, avoiding Slack and other temporary communication channels
 - Prefer the most open/public scope possible for information
