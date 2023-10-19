@@ -1371,3 +1371,136 @@ Balrog:
         compliant: Unknown
       documentation-troubleshooting:
         compliant: No
+addons-server:
+  '2023-10-19':
+    version: 1
+    score: 48
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: No
+        notes: "None of these:\n- CODE_OF_CONDUCT.md\n- CONTRIBUTING.md\n- SECURITY.md\n
+          - SUPPORT.md"
+      repo-standard-folders:
+        compliant: No
+        notes: scripts instead of bin/
+      repo-readme-sections:
+        compliant: Partially
+        notes: No status nor usage
+      repo-makefile-targets:
+        compliant: Partially
+        notes: No start
+      repo-main-branch-name:
+        compliant: No
+        notes: master instead of main
+      repo-main-branch-protected:
+        compliant: Unknown
+        notes: '`'
+      repo-version-tags-protected:
+        compliant: Unknown
+      repo-issue-labels:
+        compliant: Partially
+        notes: labels have prefixes, no enhancement, good_first_bug instead of good-first-issue
+      repo-team-reviewers-permissions:
+        compliant: Unknown
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-pre-commit-optional:
+        compliant: Yes
+      repo-release-notes-auto:
+        compliant: No
+        notes: No changelog
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Unknown
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      repo-code-owners:
+        compliant: Yes
+      test-lint-secrets:
+        compliant: Yes
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: Yes
+      test-unit-coverage:
+        compliant: No
+        notes: No coverage reporting
+      test-documentation-build:
+        compliant: Yes
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: No
+      test-pull-requests-labels:
+        compliant: No
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: No
+      release-tag-only:
+        compliant: Yes
+      release-publish:
+        compliant: Yes
+      deployment-dockerflow:
+        compliant: Partially
+        notes: No entrypoint, cmd, not exposing 8000, ...
+      deployment-integration-test:
+        compliant: Unknown
+      deployment-auto-main:
+        compliant: Unknown
+      deployment-auto-release:
+        compliant: Unknown
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: Partially
+        notes: Not everything is logged 
+          https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/amo/monitors.py#L154
+      monitoring-requests-duration:
+        compliant: Unknown
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Partially
+        notes: Via heartbeat
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: Yes
+      monitoring-logging-env-configuration:
+        compliant: No
+        notes: 
+          https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/lib/settings_base.py
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: Yes
+      telemetry-naming:
+        compliant: Unknown
+        notes: Using django-statsd
+      telemetry-documented:
+        compliant: No
+      telemetry-query-examples:
+        compliant: No
+      notifications-error-chat:
+        compliant: Unknown
+      documentation-decisions-records:
+        compliant: No
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: Yes
+      documentation-operator:
+        compliant: No
+      documentation-troubleshooting:
+        compliant: No
