@@ -1639,7 +1639,7 @@ kitsune:
 Taskcluster:
   '2023-10-19':
     version: 1
-    score: 28
+    score: 55
     max_score: 110
     rules:
       repo-standard-files:
@@ -1657,16 +1657,18 @@ Taskcluster:
       repo-main-branch-name:
         compliant: Yes
       repo-main-branch-protected:
-        compliant: Unknown
+        compliant: Yes
       repo-version-tags-protected:
-        compliant: Unknown
+        compliant: No
+        notes: No tag protection rules
       repo-issue-labels:
         compliant: Partially
         notes: No wontfix, docs instead of documentation
       repo-team-reviewers-permissions:
-        compliant: Unknown
+        compliant: Yes
       repo-pull-request-merge:
-        compliant: Unknown
+        compliant: Partially
+        notes: Merge commits are also allowed
       repo-pre-commit-optional:
         compliant: Yes
       repo-release-notes-auto:
@@ -1675,26 +1677,26 @@ Taskcluster:
       repo-dependencies-auto:
         compliant: Yes
       repo-automerge-enabled:
-        compliant: Unknown
+        compliant: Partially
+        notes: Merge queues are not enabled
       repo-head-branch-auto-delete:
-        compliant: Unknown
+        compliant: Yes
       repo-code-owners:
         compliant: Yes
       test-lint-secrets:
         compliant: No
       test-lint-code-format:
-        compliant: Unknown
-        notes: could not find references to script/lint
+        compliant: Yes
       test-lint-static-analysis:
-        compliant: Unknown
+        compliant: Yes
       test-lint-type-checking:
-        compliant: Unknown
+        compliant: No
       test-unit-coverage:
-        compliant: Unknown
+        compliant: No
       test-documentation-build:
-        compliant: Unknown
+        compliant: Yes
       test-container-build:
-        compliant: Unknown
+        compliant: Yes
       test-container-integration:
         compliant: Unknown
       test-pull-requests-labels:
@@ -1706,18 +1708,20 @@ Taskcluster:
       release-tag-v-prefix:
         compliant: Yes
       release-tag-only:
-        compliant: Unknown
+        compliant: Yes
       release-publish:
-        compliant: Unknown
+        compliant: Yes
       deployment-dockerflow:
         compliant: No
         notes: Does not expose 8000, not using specific user, ...
       deployment-integration-test:
-        compliant: Unknown
+        compliant: Partially
+        notes: A simple smoketest is run after deployment
       deployment-auto-main:
-        compliant: Unknown
+        compliant: Yes
       deployment-auto-release:
-        compliant: Unknown
+        compliant: Partially
+        notes: No quality gate to pass through before DEV deployment
       deployment-auto-pull-requests:
         compliant: No
       monitoring-heartbeat-backends:
@@ -1728,7 +1732,7 @@ Taskcluster:
       monitoring-requests-duration:
         compliant: Unknown
       monitoring-requests-id:
-        compliant: Unknown
+        compliant: Yes
       monitoring-backends-duration:
         compliant: Unknown
       monitoring-logging-level:
@@ -1752,7 +1756,9 @@ Taskcluster:
       telemetry-query-examples:
         compliant: Unknown
       notifications-error-chat:
-        compliant: Unknown
+        compliant: Partially
+        notes: 'Notifications of elevated Sentry errors are sent to #taskcluster-services-notifications
+          and no GitHub issues are created automatically'
       documentation-decisions-records:
         compliant: No
         notes: There are design docs though 
