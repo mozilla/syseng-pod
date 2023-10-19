@@ -1504,3 +1504,135 @@ addons-server:
         compliant: No
       documentation-troubleshooting:
         compliant: No
+kitsune:
+  '2023-10-19':
+    version: 1
+    score: 35
+    max_score: 110
+    rules:
+      repo-standard-files:
+        compliant: Partially
+        notes: No SUPPORT, no SECURITY, no CONTRIBUTING
+      repo-standard-folders:
+        compliant: Yes
+      repo-readme-sections:
+        compliant: Partially
+        notes: No Status, no Usage
+      repo-makefile-targets:
+        compliant: Partially
+        notes: No format, run instead of start
+      repo-main-branch-name:
+        compliant: Yes
+      repo-main-branch-protected:
+        compliant: Unknown
+      repo-version-tags-protected:
+        compliant: Unknown
+      repo-issue-labels:
+        compliant: Partially
+        notes: No bug, no good-first-issue, ...
+      repo-team-reviewers-permissions:
+        compliant: Unknown
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-pre-commit-optional:
+        compliant: No
+        notes: 
+          https://github.com/mozilla/kitsune/blob/1f1eb9e11dafbb4814f379fa748bef35f20ca780/docs/hacking_howto.md?plain=1#L187
+      repo-release-notes-auto:
+        compliant: No
+      repo-dependencies-auto:
+        compliant: Yes
+      repo-automerge-enabled:
+        compliant: Unknown
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      repo-code-owners:
+        compliant: No
+      test-lint-secrets:
+        compliant: No
+      test-lint-code-format:
+        compliant: Yes
+      test-lint-static-analysis:
+        compliant: Yes
+      test-lint-type-checking:
+        compliant: No
+        notes: Only flake8
+      test-unit-coverage:
+        compliant: No
+      test-documentation-build:
+        compliant: No
+      test-container-build:
+        compliant: Yes
+      test-container-integration:
+        compliant: No
+        notes: No integration test apparently (only unit and js)
+      test-pull-requests-labels:
+        compliant: No
+      dependencies-reproducibility:
+        compliant: Yes
+      release-semver-calver:
+        compliant: Yes
+      release-tag-v-prefix:
+        compliant: No
+      release-tag-only:
+        compliant: Unknown
+        notes: No tag since 2016 (continuous deployment?)
+      release-publish:
+        compliant: Unknown
+        notes: No tag since 2016 (continuous deployment?)
+      deployment-dockerflow:
+        compliant: Yes
+      deployment-integration-test:
+        compliant: No
+        notes: No integration tests apparently
+      deployment-auto-main:
+        compliant: Unknown
+      deployment-auto-release:
+        compliant: Unknown
+      deployment-auto-pull-requests:
+        compliant: No
+      monitoring-heartbeat-backends:
+        compliant: No
+        notes: Could not find mention of heartbeat or dockerflow
+      monitoring-heartbeat-error:
+        compliant: No
+      monitoring-requests-duration:
+        compliant: No
+      monitoring-requests-id:
+        compliant: No
+      monitoring-backends-duration:
+        compliant: No
+        notes: statsd was removed https://github.com/mozilla/kitsune/pull/4412
+      monitoring-logging-level:
+        compliant: Yes
+      monitoring-logging-mozlog:
+        compliant: No
+        notes: No mention of Json formatter
+      monitoring-logging-env-configuration:
+        compliant: Partially
+        notes: Not LOG_FORMAT
+      monitoring-error-reporting:
+        compliant: Yes
+      telemetry-metrics:
+        compliant: No
+        notes: statsd was removed
+      telemetry-naming:
+        compliant: No
+      telemetry-documented:
+        compliant: No
+      telemetry-query-examples:
+        compliant: No
+      notifications-error-chat:
+        compliant: Unknown
+      documentation-decisions-records:
+        compliant: Yes
+      documentation-security-assessment:
+        compliant: No
+      documentation-dev:
+        compliant: Yes
+      documentation-test-args:
+        compliant: Yes
+      documentation-operator:
+        compliant: Yes
+      documentation-troubleshooting:
+        compliant: No
