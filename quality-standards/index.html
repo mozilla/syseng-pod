@@ -8,6 +8,11 @@
     body {
       font-family: sans-serif;
     }
+
+    h2 {
+      margin-top: 2.5em;
+    }
+
     .rulename {
       font-family: monospace;
       background-color: bisque;
@@ -16,6 +21,27 @@
     blockquote {
       border-left: solid 4px lightgray;
       padding-left: 10px;
+    }
+
+    #intro {
+      max-width: 70%;
+
+      p.version {
+        font-style: italic;
+      }
+
+      table {
+        text-align: center;
+
+        td {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        img {
+          max-height: 300px;
+        }
+      }
     }
 
     section.rules {
@@ -44,6 +70,10 @@
         th, td {
           padding: 12px 15px;
           vertical-align: top;
+        }
+
+        tr td:first-child {
+          white-space: nowrap;
         }
 
         td p {
@@ -76,7 +106,6 @@
         margin-bottom: 20px;
         padding-left: 20px;
         padding-right: 20px;
-
 
         .container {
           display: flex;
@@ -113,16 +142,70 @@
         }
       }
     }
+
+    .popularity {
+      height: 1em;
+      background-color: lightgray;
+
+      &::before {
+        content: '';
+        display: flex;
+        justify-content: end;
+        width: calc(var(--percent) * 1%);
+        height: 100%;
+        background: darkgray;
+        white-space: nowrap;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Quality Standards</h1>
-  <p>Version 1, last updated on 2023-10-17</p>
-  <p><p>Hello, this doc is about explicitly defining quality in the world of services software at Mozilla.</p>
+  <section id="intro">
+    <p class="version">Version 1, last updated on 2023-10-19</p>
+    <p><p>Hello, this doc is about explicitly defining quality in the world of services software at Mozilla.</p>
 <blockquote>
 <p>Definition: quality refers to the degree to which a software and its related deliverables <strong>meet or exceed</strong> the <strong>expectations</strong> of its <strong>stakeholders</strong>. However, what are those expectations and does the team share the same expectations?  This document defines what the expectations are and provides a way to measure the quality of a software.</p>
 </blockquote>
-<p>Quality guarantees reliability and maintainability of the software, as well as efficiency of development.</p></p>
+<p>Quality guarantees reliability and maintainability of the software, as well as efficiency of development.</p>
+<p>The goal of this initiative is to increase the familiarity of codebases, so we can be effective sooner. Ultimately, this means more of our time can be spent on innovation and less on just keeping the lights on.</p>
+<p>More projects than people is a common situation for service engineers at Mozilla. As priorities shift, reorgs happen, projects are moved around, at some point we are maintaining several codebases. Most of these projects were not developed to a shared set of quality criteria so there is little familiarity between them.</p>
+<blockquote>
+<p><strong>Note:</strong> Instead of enforcing a limited set of rules, we made the choice to have many rules and a global score.
+Scorecards show complicance in each category, which allows progress in iterations.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="assets/messy-workbench.jpg" /></td>
+<td><img alt="" src="assets/professional-workbench.jpg" /></td>
+</tr>
+<tr>
+<td>A messy workbench © <a href="https://flickr.com/photos/dclarson/2919489714/">Dan Larson</a></td>
+<td>A professional workbench © <a href="https://flickr.com/photos/mtneer_man/2713076677/">mtneer_man</a></td>
+</tr>
+</tbody>
+</table>
+<p>Objectives:</p>
+<ul>
+<li>Define quality in the context of a team that delivers software</li>
+<li>Organize and recommend software engineering practices to increase familiarity</li>
+<li>Establish a checklist for existing and future projects</li>
+</ul>
+<p>Non Goals:</p>
+<ul>
+<li>Do not enforce certain technologies or frameworks</li>
+<li>Be too specific about tooling</li>
+<li>This is not (yet) a boilerplate for new projects</li>
+</ul>
+<p>For comments and questions, don't hesitate to get in touch in the <code>#coreservices</code> Slack channel, or open issues and pull-requests in the <a href="https://github.com/mozilla/syseng-pod/tree/main/docs/quality-standards">source repo</a>.</p></p>
+  </section>
   <section id="toc">
     <h2>Table of Contents</h2>
     <h3>Rules</h3>
@@ -164,9 +247,13 @@
       
       <li><a href="#service-Balrog">Balrog</a></li>
       
+      <li><a href="#service-addons-server">addons-server</a></li>
+      
+      <li><a href="#service-kitsune">kitsune</a></li>
+      
     </ul>
   </section>
-  <h2>Score Cards</h2>
+  <h2>Rules</h2>
   
   <section class="rules">
     <h3><a name="category-Repository Ergonomics">Repository Ergonomics</a></h3>
@@ -190,6 +277,7 @@
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -207,6 +295,9 @@
           <td><p>See <a href="https://en.wikipedia.org/wiki/Contributing_guidelines">https://en.wikipedia.org/wiki/Contributing_guidelines</a>
 and <a href="https://mozillascience.github.io/working-open-workshop/contributing/">https://mozillascience.github.io/working-open-workshop/contributing/</a>
 templates at <a href="https://contributing.md">https://contributing.md</a></p></td>
+          <td>
+            <div class="popularity" style="--percent: 66;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
@@ -216,6 +307,9 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
 <li>bin/</li>
 </ul></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 77;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
@@ -234,6 +328,9 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
 <li>basic usage is detailed</li>
 <li>standard sections will help reading/scanning for newcomers</li>
 </ul></td>
+          <td>
+            <div class="popularity" style="--percent: 72;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
@@ -247,24 +344,36 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
 <li>format</li>
 </ul></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 61;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-main-branch-name</span></td>
           <td><p>Main branch is called <code>main</code></p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 88;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-main-branch-protected</span></td>
           <td><p>Main branch is protected without exceptions</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-version-tags-protected</span></td>
           <td><p>Tags starting with <code>v*</code> can only be pushed by maintainers/admins</p></td>
           <td><p><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-tag-protection-rules">Github docs</a></p></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
@@ -279,24 +388,36 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
 <li>good-first-issue</li>
 </ul></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 66;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-team-reviewers-permissions</span></td>
           <td><p>Team of reviewers has at least “Maintain” permissions</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-pull-request-merge</span></td>
           <td><p>Only “<em>squash and merge</em>” and “<em>rebase and merge</em>” are allowed</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-pre-commit-optional</span></td>
           <td><p>Pre-commit hooks are optional</p></td>
           <td><p>Example in <a href="https://github.com/taskcluster/taskcluster/blob/main/dev-docs/development-process.md#pre-commit-optional">Taskcluster</a></p></td>
+          <td>
+            <div class="popularity" style="--percent: 88;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -317,6 +438,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -325,30 +447,45 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td><span class="rulename">repo-release-notes-auto</span></td>
           <td><p>Release Notes are generated from commits using <code>.github/release.yml</code></p></td>
           <td><p>Sections titles contain at least “<em>Breaking changes</em>”, “<em>Bug fixes</em>”, “<em>New features</em>”, “<em>Documentation</em>”, and “<em>Other changes</em>”</p></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-dependencies-auto</span></td>
           <td><p>Pull-requests are automatically opened for dependencies</p></td>
           <td><p>File <code>.github/dependabot.yml</code> and/or <code>renovate.json</code> exist</p></td>
+          <td>
+            <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-automerge-enabled</span></td>
           <td><p>Automerge and merge queues are enabled</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-head-branch-auto-delete</span></td>
           <td><p>Auto-delete head branches is enabled</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-code-owners</span></td>
           <td><p>Code owners are configured</p></td>
           <td><p>At least with team of reviewers for everything (eg. @syseng-reviewers)</p></td>
+          <td>
+            <div class="popularity" style="--percent: 77;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, Balrog, addons-server"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -369,6 +506,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -377,60 +515,90 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td><span class="rulename">test-lint-secrets</span></td>
           <td><p>A test verifies that no secret is committed to the sources</p></td>
           <td><p>Eg. <a href="https://github.com/Yelp/detect-secrets">Yelp/detect-secrets</a></p></td>
+          <td>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-lint-code-format</span></td>
           <td><p>A test verifies that code format respects standard</p></td>
           <td><p>Eg. prettier, black+isort, cargo fmt</p></td>
+          <td>
+            <div class="popularity" style="--percent: 88;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-lint-static-analysis</span></td>
           <td><p>A test verifies that code respects idioms and good practices</p></td>
           <td><p>Eg. eslint, bandit+pylint, cargo clippy</p></td>
+          <td>
+            <div class="popularity" style="--percent: 83;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-lint-type-checking</span></td>
           <td><p>A test verifies that types are used consistently</p></td>
           <td><p>Eg. typescript, mypy</p></td>
+          <td>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Experimenter, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-unit-coverage</span></td>
           <td><p>Unit tests fail if coverage is under 90%</p></td>
           <td><p>Better if 100% with branching option</p></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-documentation-build</span></td>
           <td><p>A test verifies that documentation builds successfully without warnings</p></td>
           <td><p>If the project does not have built documentation, a lint check for markdown files is recommended</p></td>
+          <td>
+            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-container-build</span></td>
           <td><p>A test verifies that container builds successfully</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 88;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-container-integration</span></td>
           <td><p>A test executes integration tests on the built container</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">test-pull-requests-labels</span></td>
           <td><p>A test verifies that pull-requests have labels</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">dependencies-reproducibility</span></td>
           <td><p>Dependencies are locked between local clone, tests, and container</p></td>
           <td><p>Eg. use poetry, cargo, …</p></td>
+          <td>
+            <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -451,6 +619,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -459,12 +628,18 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td><span class="rulename">release-semver-calver</span></td>
           <td><p>Project follows SemVer or Calver version scheme</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">release-tag-v-prefix</span></td>
           <td><p>The release tags have <code>v(.+)</code> format</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Experimenter, Balrog"></div>
+          </td>
         </tr>
         
         <tr>
@@ -472,12 +647,18 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td><p>Project version has a single source of truth. For example, it is read from <code>version.json</code>
 which is automatically built from current git tag</p></td>
           <td><p>Does not apply to libraries, where a version number usually appears in package metadata</p></td>
+          <td>
+            <div class="popularity" style="--percent: 88;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">release-publish</span></td>
           <td><p>Project container or package is published on git tag</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 77;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -498,6 +679,7 @@ which is automatically built from current git tag</p></td>
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -506,30 +688,45 @@ which is automatically built from current git tag</p></td>
           <td><span class="rulename">deployment-dockerflow</span></td>
           <td><p>Container follows Dockerflow spec</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 83;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">deployment-integration-test</span></td>
           <td><p>Integration tests are part of deployment pipeline</p></td>
           <td><p>Might be as well end-to-end (browser tests)</p></td>
+          <td>
+            <div class="popularity" style="--percent: 0;" title=""></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">deployment-auto-main</span></td>
           <td><p>Automatic deployment on DEV/STAGE environment on pull-requests merge</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">deployment-auto-release</span></td>
           <td><p>Automatic deployment on STAGE/PROD environment on version tag</p></td>
           <td><p>If they pass through a quality gate like an automated integration test</p></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">deployment-auto-pull-requests</span></td>
           <td><p>Automatic deployment on temporary instances on pull-requests</p></td>
           <td><p>Should be allowed to repo owners only?</p></td>
+          <td>
+            <div class="popularity" style="--percent: 0;" title=""></div>
+          </td>
         </tr>
         
       </tbody>
@@ -550,6 +747,7 @@ which is automatically built from current git tag</p></td>
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -558,54 +756,81 @@ which is automatically built from current git tag</p></td>
           <td><span class="rulename">monitoring-heartbeat-backends</span></td>
           <td><p>Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 77;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Balrog, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-heartbeat-error</span></td>
           <td><p>Heartbeat checks throw errors that will be reported</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-requests-duration</span></td>
           <td><p>API requests processing duration is monitored</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-requests-id</span></td>
           <td><p>A unique ID is associated to each request and logged</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-backends-duration</span></td>
           <td><p>Backends calls durations are monitored</p></td>
           <td><p><a href="https://opentelemetry.io/docs/concepts/signals/traces/">Existing standards</a></p></td>
+          <td>
+            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-logging-level</span></td>
           <td><p>Logging has INFO level by default</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 88;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Balrog, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-logging-mozlog</span></td>
           <td><p>Logging format is MozLog by default</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 88;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-logging-env-configuration</span></td>
           <td><p>Logging level is set using <code>LOG_LEVEL</code> env variable. Logging format is set using <code>LOG_FORMAT</code> env variable</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Tecken, Balrog, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-error-reporting</span></td>
           <td><p>Sentry is setup by environment</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 72;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, kitsune"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -626,6 +851,7 @@ which is automatically built from current git tag</p></td>
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -634,24 +860,36 @@ which is automatically built from current git tag</p></td>
           <td><span class="rulename">telemetry-metrics</span></td>
           <td><p>Project sends live telemetry</p></td>
           <td><p>StatsD with tags</p></td>
+          <td>
+            <div class="popularity" style="--percent: 77;" title="CTMS, JBI, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">telemetry-naming</span></td>
           <td><p>Probes start with project name (eg. <code>ctms.*</code>)</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 72;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">telemetry-documented</span></td>
           <td><p>Probes are listed in documentation</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 38;" title="CTMS, JBI, Telescope, Tecken"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">telemetry-query-examples</span></td>
           <td><p>BigQuery example queries are given in documentation</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 27;" title="CTMS, JBI, Telescope"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -672,6 +910,7 @@ which is automatically built from current git tag</p></td>
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -680,6 +919,9 @@ which is automatically built from current git tag</p></td>
           <td><span class="rulename">notifications-error-chat</span></td>
           <td><p>Sentry reports to Slack channel</p></td>
           <td><p>Sentry creates Github issues?</p></td>
+          <td>
+            <div class="popularity" style="--percent: 33;" title="CTMS, JBI, Remote Settings"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -700,6 +942,7 @@ which is automatically built from current git tag</p></td>
           <td>Rule</td>
           <td>Description</td>
           <td>Details</td>
+          <td>Popularity</td>
         </tr>
       </thead>
       <tbody>
@@ -708,36 +951,54 @@ which is automatically built from current git tag</p></td>
           <td><span class="rulename">documentation-decisions-records</span></td>
           <td><p>Enumerate evaluation criteria.</p></td>
           <td><p>Enumerate considered options with score/comment for each criteria.</p></td>
+          <td>
+            <div class="popularity" style="--percent: 77;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">documentation-security-assessment</span></td>
           <td><p><a href="https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment">Rapid Risk Assessment</a>, either a link or its content</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 22;" title="JBI, Remote Settings"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">documentation-dev</span></td>
           <td><p>Instructions for a developper: how to run the tests, procedures to obtain credentials on dev/stage instances, contribute, contact the team, etc.</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">documentation-test-args</span></td>
           <td><p>Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, addons-server, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">documentation-operator</span></td>
           <td><p>Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.</p></td>
           <td><p>Can also be called “Deployment docs”</p></td>
+          <td>
+            <div class="popularity" style="--percent: 44;" title="CTMS, JBI, Telescope, Remote Settings, kitsune"></div>
+          </td>
         </tr>
         
         <tr>
           <td><span class="rulename">documentation-troubleshooting</span></td>
           <td><p>Common troubleshooting steps</p></td>
           <td></td>
+          <td>
+            <div class="popularity" style="--percent: 27;" title="JBI, Telescope, Remote Settings"></div>
+          </td>
         </tr>
         
       </tbody>
@@ -745,10 +1006,10 @@ which is automatically built from current git tag</p></td>
   </section>
   
 
-  <h1>Score Cards</h1>
+  <h2>Score Cards</h2>
   
   <section class="scorecards">
-    <h2><a name="service-CTMS">CTMS</a></h2>
+    <h3><a name="service-CTMS">CTMS</a></h3>
 
     
     <div class="card">
@@ -1839,7 +2100,7 @@ which is automatically built from current git tag</p></td>
   </section>
   
   <section class="scorecards">
-    <h2><a name="service-JBI">JBI</a></h2>
+    <h3><a name="service-JBI">JBI</a></h3>
 
     
     <div class="card">
@@ -2923,7 +3184,7 @@ which is automatically built from current git tag</p></td>
   </section>
   
   <section class="scorecards">
-    <h2><a name="service-Telescope">Telescope</a></h2>
+    <h3><a name="service-Telescope">Telescope</a></h3>
 
     
     <div class="card">
@@ -2931,7 +3192,7 @@ which is automatically built from current git tag</p></td>
         <h3>85% (93 / 110), 2023-09-04</h3>
         <ul>
           
-          <li>Deployment (7/10)</li>
+          <li>Deployment (6/10)</li>
           
           <li>Documentation Content (8/12)</li>
           
@@ -3034,7 +3295,7 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="deployment-integration-test"></div>
           
-          <div class="punch partially" title="deployment-auto-pull-requests"></div>
+          <div class="punch no" title="deployment-auto-pull-requests"></div>
           
           <div class="punch yes" title="monitoring-heartbeat-backends"></div>
           
@@ -3217,7 +3478,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: Partially
+              <span class="rulename">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -4140,7 +4401,7 @@ which is automatically built from current git tag</p></td>
   </section>
   
   <section class="scorecards">
-    <h2><a name="service-Remote Settings">Remote Settings</a></h2>
+    <h3><a name="service-Remote Settings">Remote Settings</a></h3>
 
     
     <div class="card">
@@ -5329,7 +5590,7 @@ which is automatically built from current git tag</p></td>
   </section>
   
   <section class="scorecards">
-    <h2><a name="service-Tecken">Tecken</a></h2>
+    <h3><a name="service-Tecken">Tecken</a></h3>
 
     
     <div class="card">
@@ -6052,7 +6313,7 @@ which is automatically built from current git tag</p></td>
   </section>
   
   <section class="scorecards">
-    <h2><a name="service-Experimenter">Experimenter</a></h2>
+    <h3><a name="service-Experimenter">Experimenter</a></h3>
 
     
     <div class="card">
@@ -6789,7 +7050,7 @@ which is automatically built from current git tag</p></td>
   </section>
   
   <section class="scorecards">
-    <h2><a name="service-Balrog">Balrog</a></h2>
+    <h3><a name="service-Balrog">Balrog</a></h3>
 
     
     <div class="card">
@@ -7547,6 +7808,1512 @@ which is automatically built from current git tag</p></td>
               <span class="rulename">documentation-operator</span>
               
             </li>
+          
+          
+        
+          
+          
+            </ul>
+          
+        
+      </div>
+    </div>
+    
+  </section>
+  
+  <section class="scorecards">
+    <h3><a name="service-addons-server">addons-server</a></h3>
+
+    
+    <div class="card">
+      <div class="container">
+        <h3>44% (48 / 110), 2023-10-19</h3>
+        <ul>
+          
+          <li>Deployment (1/10)</li>
+          
+          <li>Documentation Content (4/12)</li>
+          
+          <li>Monitoring (12/18)</li>
+          
+          <li>Notifications (0/2)</li>
+          
+          <li>Releasing (6/8)</li>
+          
+          <li>Repository Automation (4/10)</li>
+          
+          <li>Repository Ergonomics (5/22)</li>
+          
+          <li>Telemetry (2/8)</li>
+          
+          <li>Testing and linting (14/20)</li>
+          
+        </ul>
+        <div class="punchs">
+          
+          <div class="punch no" title="repo-standard-files"></div>
+          
+          <div class="punch no" title="repo-standard-folders"></div>
+          
+          <div class="punch partially" title="repo-readme-sections"></div>
+          
+          <div class="punch partially" title="repo-makefile-targets"></div>
+          
+          <div class="punch no" title="repo-main-branch-name"></div>
+          
+          <div class="punch unknown" title="repo-main-branch-protected"></div>
+          
+          <div class="punch unknown" title="repo-version-tags-protected"></div>
+          
+          <div class="punch partially" title="repo-issue-labels"></div>
+          
+          <div class="punch unknown" title="repo-team-reviewers-permissions"></div>
+          
+          <div class="punch unknown" title="repo-pull-request-merge"></div>
+          
+          <div class="punch yes" title="repo-pre-commit-optional"></div>
+          
+          <div class="punch no" title="repo-release-notes-auto"></div>
+          
+          <div class="punch yes" title="repo-dependencies-auto"></div>
+          
+          <div class="punch unknown" title="repo-automerge-enabled"></div>
+          
+          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
+          
+          <div class="punch yes" title="repo-code-owners"></div>
+          
+          <div class="punch yes" title="test-lint-secrets"></div>
+          
+          <div class="punch yes" title="test-lint-code-format"></div>
+          
+          <div class="punch yes" title="test-lint-static-analysis"></div>
+          
+          <div class="punch yes" title="test-lint-type-checking"></div>
+          
+          <div class="punch no" title="test-unit-coverage"></div>
+          
+          <div class="punch yes" title="test-documentation-build"></div>
+          
+          <div class="punch yes" title="test-container-build"></div>
+          
+          <div class="punch no" title="test-container-integration"></div>
+          
+          <div class="punch no" title="test-pull-requests-labels"></div>
+          
+          <div class="punch yes" title="dependencies-reproducibility"></div>
+          
+          <div class="punch yes" title="release-semver-calver"></div>
+          
+          <div class="punch no" title="release-tag-v-prefix"></div>
+          
+          <div class="punch yes" title="release-tag-only"></div>
+          
+          <div class="punch yes" title="release-publish"></div>
+          
+          <div class="punch partially" title="deployment-dockerflow"></div>
+          
+          <div class="punch unknown" title="deployment-integration-test"></div>
+          
+          <div class="punch unknown" title="deployment-auto-main"></div>
+          
+          <div class="punch unknown" title="deployment-auto-release"></div>
+          
+          <div class="punch no" title="deployment-auto-pull-requests"></div>
+          
+          <div class="punch yes" title="monitoring-heartbeat-backends"></div>
+          
+          <div class="punch partially" title="monitoring-heartbeat-error"></div>
+          
+          <div class="punch unknown" title="monitoring-requests-duration"></div>
+          
+          <div class="punch yes" title="monitoring-requests-id"></div>
+          
+          <div class="punch partially" title="monitoring-backends-duration"></div>
+          
+          <div class="punch yes" title="monitoring-logging-level"></div>
+          
+          <div class="punch yes" title="monitoring-logging-mozlog"></div>
+          
+          <div class="punch no" title="monitoring-logging-env-configuration"></div>
+          
+          <div class="punch yes" title="monitoring-error-reporting"></div>
+          
+          <div class="punch yes" title="telemetry-metrics"></div>
+          
+          <div class="punch unknown" title="telemetry-naming"></div>
+          
+          <div class="punch no" title="telemetry-documented"></div>
+          
+          <div class="punch no" title="telemetry-query-examples"></div>
+          
+          <div class="punch unknown" title="notifications-error-chat"></div>
+          
+          <div class="punch no" title="documentation-decisions-records"></div>
+          
+          <div class="punch no" title="documentation-security-assessment"></div>
+          
+          <div class="punch yes" title="documentation-dev"></div>
+          
+          <div class="punch yes" title="documentation-test-args"></div>
+          
+          <div class="punch no" title="documentation-operator"></div>
+          
+          <div class="punch no" title="documentation-troubleshooting"></div>
+          
+        </div>
+
+        
+        
+          
+            
+              <p>Missing from standard v1:</p>
+                <ul>
+            
+            
+            <li>
+              <span class="rulename">repo-standard-files</span>: No
+              (None of these:
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+ - SUPPORT.md)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-standard-folders</span>: No
+              (scripts instead of bin/)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-readme-sections</span>: Partially
+              (No status nor usage)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-makefile-targets</span>: Partially
+              (No start)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-main-branch-name</span>: No
+              (master instead of main)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-issue-labels</span>: Partially
+              (labels have prefixes, no enhancement, good_first_bug instead of good-first-issue)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-release-notes-auto</span>: No
+              (No changelog)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-unit-coverage</span>: No
+              (No coverage reporting)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-container-integration</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-pull-requests-labels</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">release-tag-v-prefix</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-dockerflow</span>: Partially
+              (No entrypoint, cmd, not exposing 8000, ...)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-auto-pull-requests</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-heartbeat-error</span>: Partially
+              (Not everything is logged https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/amo/monitors.py#L154)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-backends-duration</span>: Partially
+              (Via heartbeat)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-logging-env-configuration</span>: No
+              (https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/lib/settings_base.py)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">telemetry-documented</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">telemetry-query-examples</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">documentation-decisions-records</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">documentation-security-assessment</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">documentation-operator</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">documentation-troubleshooting</span>: No
+              
+            </li>
+          
+          
+            </ul>
+          
+        
+
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+              <p>Could not be verified:</p>
+                <ul>
+            
+            
+            <li>
+              <span class="rulename">repo-main-branch-protected</span>
+              : (`)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-version-tags-protected</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-team-reviewers-permissions</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-pull-request-merge</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-automerge-enabled</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-head-branch-auto-delete</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-integration-test</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-auto-main</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-auto-release</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-requests-duration</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">telemetry-naming</span>
+              : (Using django-statsd)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">notifications-error-chat</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            </ul>
+          
+        
+      </div>
+    </div>
+    
+  </section>
+  
+  <section class="scorecards">
+    <h3><a name="service-kitsune">kitsune</a></h3>
+
+    
+    <div class="card">
+      <div class="container">
+        <h3>32% (35 / 110), 2023-10-19</h3>
+        <ul>
+          
+          <li>Deployment (2/10)</li>
+          
+          <li>Documentation Content (8/12)</li>
+          
+          <li>Monitoring (5/18)</li>
+          
+          <li>Notifications (0/2)</li>
+          
+          <li>Releasing (2/8)</li>
+          
+          <li>Repository Automation (2/10)</li>
+          
+          <li>Repository Ergonomics (8/22)</li>
+          
+          <li>Telemetry (0/8)</li>
+          
+          <li>Testing and linting (8/20)</li>
+          
+        </ul>
+        <div class="punchs">
+          
+          <div class="punch partially" title="repo-standard-files"></div>
+          
+          <div class="punch yes" title="repo-standard-folders"></div>
+          
+          <div class="punch partially" title="repo-readme-sections"></div>
+          
+          <div class="punch partially" title="repo-makefile-targets"></div>
+          
+          <div class="punch yes" title="repo-main-branch-name"></div>
+          
+          <div class="punch unknown" title="repo-main-branch-protected"></div>
+          
+          <div class="punch unknown" title="repo-version-tags-protected"></div>
+          
+          <div class="punch partially" title="repo-issue-labels"></div>
+          
+          <div class="punch unknown" title="repo-team-reviewers-permissions"></div>
+          
+          <div class="punch unknown" title="repo-pull-request-merge"></div>
+          
+          <div class="punch no" title="repo-pre-commit-optional"></div>
+          
+          <div class="punch no" title="repo-release-notes-auto"></div>
+          
+          <div class="punch yes" title="repo-dependencies-auto"></div>
+          
+          <div class="punch unknown" title="repo-automerge-enabled"></div>
+          
+          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
+          
+          <div class="punch no" title="repo-code-owners"></div>
+          
+          <div class="punch no" title="test-lint-secrets"></div>
+          
+          <div class="punch yes" title="test-lint-code-format"></div>
+          
+          <div class="punch yes" title="test-lint-static-analysis"></div>
+          
+          <div class="punch no" title="test-lint-type-checking"></div>
+          
+          <div class="punch no" title="test-unit-coverage"></div>
+          
+          <div class="punch no" title="test-documentation-build"></div>
+          
+          <div class="punch yes" title="test-container-build"></div>
+          
+          <div class="punch no" title="test-container-integration"></div>
+          
+          <div class="punch no" title="test-pull-requests-labels"></div>
+          
+          <div class="punch yes" title="dependencies-reproducibility"></div>
+          
+          <div class="punch yes" title="release-semver-calver"></div>
+          
+          <div class="punch no" title="release-tag-v-prefix"></div>
+          
+          <div class="punch unknown" title="release-tag-only"></div>
+          
+          <div class="punch unknown" title="release-publish"></div>
+          
+          <div class="punch yes" title="deployment-dockerflow"></div>
+          
+          <div class="punch no" title="deployment-integration-test"></div>
+          
+          <div class="punch unknown" title="deployment-auto-main"></div>
+          
+          <div class="punch unknown" title="deployment-auto-release"></div>
+          
+          <div class="punch no" title="deployment-auto-pull-requests"></div>
+          
+          <div class="punch no" title="monitoring-heartbeat-backends"></div>
+          
+          <div class="punch no" title="monitoring-heartbeat-error"></div>
+          
+          <div class="punch no" title="monitoring-requests-duration"></div>
+          
+          <div class="punch no" title="monitoring-requests-id"></div>
+          
+          <div class="punch no" title="monitoring-backends-duration"></div>
+          
+          <div class="punch yes" title="monitoring-logging-level"></div>
+          
+          <div class="punch no" title="monitoring-logging-mozlog"></div>
+          
+          <div class="punch partially" title="monitoring-logging-env-configuration"></div>
+          
+          <div class="punch yes" title="monitoring-error-reporting"></div>
+          
+          <div class="punch no" title="telemetry-metrics"></div>
+          
+          <div class="punch no" title="telemetry-naming"></div>
+          
+          <div class="punch no" title="telemetry-documented"></div>
+          
+          <div class="punch no" title="telemetry-query-examples"></div>
+          
+          <div class="punch unknown" title="notifications-error-chat"></div>
+          
+          <div class="punch yes" title="documentation-decisions-records"></div>
+          
+          <div class="punch no" title="documentation-security-assessment"></div>
+          
+          <div class="punch yes" title="documentation-dev"></div>
+          
+          <div class="punch yes" title="documentation-test-args"></div>
+          
+          <div class="punch yes" title="documentation-operator"></div>
+          
+          <div class="punch no" title="documentation-troubleshooting"></div>
+          
+        </div>
+
+        
+        
+          
+            
+              <p>Missing from standard v1:</p>
+                <ul>
+            
+            
+            <li>
+              <span class="rulename">repo-standard-files</span>: Partially
+              (No SUPPORT, no SECURITY, no CONTRIBUTING)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-readme-sections</span>: Partially
+              (No Status, no Usage)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-makefile-targets</span>: Partially
+              (No format, run instead of start)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-issue-labels</span>: Partially
+              (No bug, no good-first-issue, ...)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-pre-commit-optional</span>: No
+              (https://github.com/mozilla/kitsune/blob/1f1eb9e11dafbb4814f379fa748bef35f20ca780/docs/hacking_howto.md?plain=1#L187)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-release-notes-auto</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-code-owners</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-lint-secrets</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-lint-type-checking</span>: No
+              (Only flake8)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-unit-coverage</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-documentation-build</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-container-integration</span>: No
+              (No integration test apparently (only unit and js))
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">test-pull-requests-labels</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">release-tag-v-prefix</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-integration-test</span>: No
+              (No integration tests apparently)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-auto-pull-requests</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-heartbeat-backends</span>: No
+              (Could not find mention of heartbeat or dockerflow)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-heartbeat-error</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-requests-duration</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-requests-id</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-backends-duration</span>: No
+              (statsd was removed https://github.com/mozilla/kitsune/pull/4412)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-logging-mozlog</span>: No
+              (No mention of Json formatter)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">monitoring-logging-env-configuration</span>: Partially
+              (Not LOG_FORMAT)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">telemetry-metrics</span>: No
+              (statsd was removed)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">telemetry-naming</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">telemetry-documented</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">telemetry-query-examples</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">documentation-security-assessment</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">documentation-troubleshooting</span>: No
+              
+            </li>
+          
+          
+            </ul>
+          
+        
+
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+              <p>Could not be verified:</p>
+                <ul>
+            
+            
+            <li>
+              <span class="rulename">repo-main-branch-protected</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-version-tags-protected</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-team-reviewers-permissions</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-pull-request-merge</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-automerge-enabled</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">repo-head-branch-auto-delete</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">release-tag-only</span>
+              : (No tag since 2016 (continuous deployment?))
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">release-publish</span>
+              : (No tag since 2016 (continuous deployment?))
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-auto-main</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">deployment-auto-release</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename">notifications-error-chat</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
           
         
