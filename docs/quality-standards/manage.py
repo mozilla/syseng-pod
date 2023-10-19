@@ -64,11 +64,32 @@ def html(output):
                 score_by_category[category] += POINTS_FOR[details["compliant"]]
             scorecard["score_by_category"] = score_by_category
 
+    # Compute popularity of each rule.
+    total_compliant_by_rule = defaultdict(int)
+    compliant_services_by_rule = defaultdict(list)
+    for service, scorecards in root_scorecards.items():
+        latest_audit_date = max(scorecards.keys())
+        scorecard = scorecards[latest_audit_date]
+        for rule, details in scorecard["rules"].items():
+            points = POINTS_FOR[details["compliant"]]
+            total_compliant_by_rule[rule] += points
+            if points > 0:
+                compliant_services_by_rule[rule].append(service)
+    max_points_compliant = POINTS_FOR["Yes"] * len(root_scorecards)
+    rules_popularity = {
+        rule: {
+            "percent": int(total / max_points_compliant * 100),
+            "services": compliant_services_by_rule[rule],
+        }
+        for rule, total in total_compliant_by_rule.items()
+    }
+
     template = env.get_template("template.html")
     context = {
         "standard": root_criteria["standard"],
         "scorecards": root_scorecards,
         "max_score_for_category": max_score_for_category,
+        "rules_popularity": rules_popularity,
         "criteria_last_update": datetime.datetime.fromtimestamp(
             os.path.getmtime("criteria.yaml")
         ),
