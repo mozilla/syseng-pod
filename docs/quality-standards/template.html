@@ -244,7 +244,7 @@
             {% endif %}
             {% set ns.iterated = true %}
             <li>
-              <span class="rulename">{{ name }}</span>: {{ details.compliant }}
+              <span class="rulename" title="{{ rules_details[name].description }}">{{ name }}</span>: {{ details.compliant }}
               {% if details.notes %}({{ details.notes }}){% endif %}
             </li>
           {% endif %}
@@ -262,7 +262,7 @@
             {% endif %}
             {% set ns.iterated = true %}
             <li>
-              <span class="rulename">{{ name }}</span>
+              <span class="rulename" title="{{ rules_details[name].description }}">{{ name }}</span>
               {% if details.notes %}: ({{ details.notes }}){% endif %}
             </li>
           {% endif %}
