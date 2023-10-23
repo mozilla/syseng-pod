@@ -1395,7 +1395,6 @@ addons-server:
         notes: master instead of main
       repo-main-branch-protected:
         compliant: Unknown
-        notes: '`'
       repo-version-tags-protected:
         compliant: Unknown
       repo-issue-labels:
