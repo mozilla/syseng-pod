@@ -365,7 +365,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td><p>Main branch is protected without exceptions</p></td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 60;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, Taskcluster"></div>
+            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
@@ -409,7 +409,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td><p>Only “<em>squash and merge</em>” and “<em>rebase and merge</em>” are allowed</p></td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, Taskcluster"></div>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
@@ -477,7 +477,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
           <td><p>Auto-delete head branches is enabled</p></td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, Taskcluster"></div>
+            <div class="popularity" style="--percent: 60;" title="CTMS, JBI, Telescope, Remote Settings, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
@@ -700,7 +700,7 @@ which is automatically built from current git tag</p></td>
           <td><p>Integration tests are part of deployment pipeline</p></td>
           <td><p>Might be as well end-to-end (browser tests)</p></td>
           <td>
-            <div class="popularity" style="--percent: 15;" title="Experimenter, Taskcluster"></div>
+            <div class="popularity" style="--percent: 25;" title="Experimenter, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
@@ -709,7 +709,7 @@ which is automatically built from current git tag</p></td>
           <td><p>Automatic deployment on DEV/STAGE environment on pull-requests merge</p></td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 60;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, Taskcluster"></div>
+            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
@@ -718,7 +718,7 @@ which is automatically built from current git tag</p></td>
           <td><p>Automatic deployment on STAGE/PROD environment on version tag</p></td>
           <td><p>If they pass through a quality gate like an automated integration test</p></td>
           <td>
-            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, Taskcluster"></div>
+            <div class="popularity" style="--percent: 65;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
@@ -777,7 +777,7 @@ which is automatically built from current git tag</p></td>
           <td><p>API requests processing duration is monitored</p></td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 40;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+            <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
           </td>
         </tr>
         
@@ -872,7 +872,7 @@ which is automatically built from current git tag</p></td>
           <td><p>Probes start with project name (eg. <code>ctms.*</code>)</p></td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 65;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog"></div>
+            <div class="popularity" style="--percent: 75;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
           </td>
         </tr>
         
@@ -7801,24 +7801,24 @@ which is automatically built from current git tag</p></td>
     
     <div class="card">
       <div class="container">
-        <h3>44% (48 / 110), 2023-10-19</h3>
+        <h3>57% (63 / 110), 2023-10-19</h3>
         <ul>
           
-          <li>Deployment (1/10)</li>
+          <li>Deployment (7/10)</li>
           
           <li>Documentation Content (4/12)</li>
           
-          <li>Monitoring (12/18)</li>
+          <li>Monitoring (13/18)</li>
           
           <li>Notifications (0/2)</li>
           
           <li>Releasing (6/8)</li>
           
-          <li>Repository Automation (4/10)</li>
+          <li>Repository Automation (6/10)</li>
           
-          <li>Repository Ergonomics (5/22)</li>
+          <li>Repository Ergonomics (9/22)</li>
           
-          <li>Telemetry (2/8)</li>
+          <li>Telemetry (4/8)</li>
           
           <li>Testing and linting (14/20)</li>
           
@@ -7835,15 +7835,15 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="repo-main-branch-name"></div>
           
-          <div class="punch unknown" title="repo-main-branch-protected"></div>
+          <div class="punch yes" title="repo-main-branch-protected"></div>
           
-          <div class="punch unknown" title="repo-version-tags-protected"></div>
+          <div class="punch no" title="repo-version-tags-protected"></div>
           
           <div class="punch partially" title="repo-issue-labels"></div>
           
-          <div class="punch unknown" title="repo-team-reviewers-permissions"></div>
+          <div class="punch no" title="repo-team-reviewers-permissions"></div>
           
-          <div class="punch unknown" title="repo-pull-request-merge"></div>
+          <div class="punch yes" title="repo-pull-request-merge"></div>
           
           <div class="punch yes" title="repo-pre-commit-optional"></div>
           
@@ -7851,9 +7851,9 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="repo-dependencies-auto"></div>
           
-          <div class="punch unknown" title="repo-automerge-enabled"></div>
+          <div class="punch no" title="repo-automerge-enabled"></div>
           
-          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
+          <div class="punch yes" title="repo-head-branch-auto-delete"></div>
           
           <div class="punch yes" title="repo-code-owners"></div>
           
@@ -7887,11 +7887,11 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch partially" title="deployment-dockerflow"></div>
           
-          <div class="punch unknown" title="deployment-integration-test"></div>
+          <div class="punch yes" title="deployment-integration-test"></div>
           
-          <div class="punch unknown" title="deployment-auto-main"></div>
+          <div class="punch yes" title="deployment-auto-main"></div>
           
-          <div class="punch unknown" title="deployment-auto-release"></div>
+          <div class="punch yes" title="deployment-auto-release"></div>
           
           <div class="punch no" title="deployment-auto-pull-requests"></div>
           
@@ -7899,7 +7899,7 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch partially" title="monitoring-heartbeat-error"></div>
           
-          <div class="punch unknown" title="monitoring-requests-duration"></div>
+          <div class="punch partially" title="monitoring-requests-duration"></div>
           
           <div class="punch yes" title="monitoring-requests-id"></div>
           
@@ -7915,15 +7915,15 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="telemetry-metrics"></div>
           
-          <div class="punch unknown" title="telemetry-naming"></div>
+          <div class="punch yes" title="telemetry-naming"></div>
           
           <div class="punch no" title="telemetry-documented"></div>
           
           <div class="punch no" title="telemetry-query-examples"></div>
           
-          <div class="punch unknown" title="notifications-error-chat"></div>
+          <div class="punch no" title="notifications-error-chat"></div>
           
-          <div class="punch no" title="documentation-decisions-records"></div>
+          <div class="punch unknown" title="documentation-decisions-records"></div>
           
           <div class="punch no" title="documentation-security-assessment"></div>
           
@@ -8000,6 +8000,13 @@ which is automatically built from current git tag</p></td>
           
         
           
+            
+            
+            <li>
+              <span class="rulename">repo-version-tags-protected</span>: No
+              
+            </li>
+          
           
         
           
@@ -8012,6 +8019,13 @@ which is automatically built from current git tag</p></td>
           
           
         
+          
+            
+            
+            <li>
+              <span class="rulename">repo-team-reviewers-permissions</span>: No
+              (No but only 2 engineers in the team currently, all with write access)
+            </li>
           
           
         
@@ -8034,6 +8048,13 @@ which is automatically built from current git tag</p></td>
           
           
         
+          
+            
+            
+            <li>
+              <span class="rulename">repo-automerge-enabled</span>: No
+              
+            </li>
           
           
         
@@ -8156,6 +8177,13 @@ which is automatically built from current git tag</p></td>
           
         
           
+            
+            
+            <li>
+              <span class="rulename">monitoring-requests-duration</span>: Partially
+              (In Grafana (not in MozLog field))
+            </li>
+          
           
         
           
@@ -8217,15 +8245,15 @@ which is automatically built from current git tag</p></td>
           
         
           
-          
-        
-          
             
             
             <li>
-              <span class="rulename">documentation-decisions-records</span>: No
-              
+              <span class="rulename">notifications-error-chat</span>: No
+              (Too verbose. Sentry tracebacks can automatically comment in GitHub and can be linked to GitHub issues though.)
             </li>
+          
+          
+        
           
           
         
@@ -8286,224 +8314,147 @@ which is automatically built from current git tag</p></td>
           
         
           
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
             
               <p>Could not be verified:</p>
                 <ul>
             
             
             <li>
-              <span class="rulename">repo-main-branch-protected</span>
+              <span class="rulename">documentation-decisions-records</span>
               
             </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-version-tags-protected</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-team-reviewers-permissions</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-pull-request-merge</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-automerge-enabled</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-head-branch-auto-delete</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-integration-test</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-auto-main</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-auto-release</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-requests-duration</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-naming</span>
-              : (Using django-statsd)
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">notifications-error-chat</span>
-              
-            </li>
-          
-          
-        
           
           
         
