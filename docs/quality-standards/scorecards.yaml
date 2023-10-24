@@ -1375,13 +1375,12 @@ Balrog:
 addons-server:
   '2023-10-19':
     version: 1
-    score: 48
+    score: 63
     max_score: 110
     rules:
       repo-standard-files:
-        compliant: No
-        notes: "None of these:\n- CODE_OF_CONDUCT.md\n- CONTRIBUTING.md\n- SECURITY.md\n
-          - SUPPORT.md"
+        compliant: Partially
+        notes: Missing SUPPORT.md
       repo-standard-folders:
         compliant: No
         notes: scripts instead of bin/
@@ -1395,16 +1394,17 @@ addons-server:
         compliant: No
         notes: master instead of main
       repo-main-branch-protected:
-        compliant: Unknown
+        compliant: Yes
       repo-version-tags-protected:
-        compliant: Unknown
+        compliant: No
       repo-issue-labels:
         compliant: Partially
         notes: labels have prefixes, no enhancement, good_first_bug instead of good-first-issue
       repo-team-reviewers-permissions:
-        compliant: Unknown
+        compliant: No
+        notes: No but only 2 engineers in the team currently, all with write access
       repo-pull-request-merge:
-        compliant: Unknown
+        compliant: Yes
       repo-pre-commit-optional:
         compliant: Yes
       repo-release-notes-auto:
@@ -1413,9 +1413,9 @@ addons-server:
       repo-dependencies-auto:
         compliant: Yes
       repo-automerge-enabled:
-        compliant: Unknown
+        compliant: No
       repo-head-branch-auto-delete:
-        compliant: Unknown
+        compliant: Yes
       repo-code-owners:
         compliant: Yes
       test-lint-secrets:
@@ -1451,11 +1451,14 @@ addons-server:
         compliant: Partially
         notes: No entrypoint, cmd, not exposing 8000, ...
       deployment-integration-test:
-        compliant: Unknown
+        compliant: Yes
       deployment-auto-main:
-        compliant: Unknown
+        compliant: Yes
+        notes: Every main commit goes to dev
       deployment-auto-release:
-        compliant: Unknown
+        compliant: Yes
+        notes: Every tag that follows specific scheme goes to stage. Prod requires
+          approval.
       deployment-auto-pull-requests:
         compliant: No
       monitoring-heartbeat-backends:
@@ -1465,7 +1468,8 @@ addons-server:
         notes: Not everything is logged 
           https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/amo/monitors.py#L154
       monitoring-requests-duration:
-        compliant: Unknown
+        compliant: Partially
+        notes: In Grafana (not in MozLog field)
       monitoring-requests-id:
         compliant: Yes
       monitoring-backends-duration:
@@ -1484,14 +1488,15 @@ addons-server:
       telemetry-metrics:
         compliant: Yes
       telemetry-naming:
-        compliant: Unknown
-        notes: Using django-statsd
+        compliant: Yes
+        notes: Using django-statsd, `addons-prod`/`stage`/`dev` prefix
       telemetry-documented:
         compliant: No
       telemetry-query-examples:
         compliant: No
       notifications-error-chat:
-        compliant: Unknown
+        compliant: No
+        notes: Too verbose. Sentry tracebacks can automatically comment in GitHub and can be linked to GitHub issues though.
       documentation-decisions-records:
         compliant: No
       documentation-security-assessment:
