@@ -1134,7 +1134,7 @@ Experimenter:
       repo-main-branch-name:
         compliant: Yes
       repo-main-branch-protected:
-        compliant: Unknown
+        compliant: Yes
       repo-version-tags-protected:
         compliant: Unknown
       repo-issue-labels:
@@ -1189,11 +1189,11 @@ Experimenter:
         notes: No readonly user apparently, /experimenter instead of /app, not ENTRYPOINT
           and CMD, ...
       deployment-integration-test:
-        compliant: Unknown
+        compliant: Yes
       deployment-auto-main:
         compliant: Yes
       deployment-auto-release:
-        compliant: Unknown
+        compliant: Yes
       deployment-auto-pull-requests:
         compliant: No
       monitoring-heartbeat-backends:
@@ -1228,7 +1228,8 @@ Experimenter:
       telemetry-query-examples:
         compliant: No
       notifications-error-chat:
-        compliant: Unknown
+        compliant: Yes
+        notes: in `#experimenter-notifications`
       documentation-decisions-records:
         compliant: Yes
       documentation-security-assessment:
