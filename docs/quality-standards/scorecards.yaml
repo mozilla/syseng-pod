@@ -1496,7 +1496,8 @@ addons-server:
         compliant: No
       notifications-error-chat:
         compliant: No
-        notes: Too verbose. Sentry tracebacks can automatically comment in GitHub and can be linked to GitHub issues though.
+        notes: Too verbose. Sentry tracebacks can automatically comment in GitHub
+          and can be linked to GitHub issues though.
       documentation-decisions-records:
         compliant: No
       documentation-security-assessment:
@@ -1512,7 +1513,7 @@ addons-server:
 kitsune:
   '2023-10-19':
     version: 1
-    score: 35
+    score: 43
     max_score: 110
     rules:
       repo-standard-files:
@@ -1528,17 +1529,9 @@ kitsune:
         notes: No format, run instead of start
       repo-main-branch-name:
         compliant: Yes
-      repo-main-branch-protected:
-        compliant: Unknown
-      repo-version-tags-protected:
-        compliant: Unknown
       repo-issue-labels:
         compliant: Partially
         notes: No bug, no good-first-issue, ...
-      repo-team-reviewers-permissions:
-        compliant: Unknown
-      repo-pull-request-merge:
-        compliant: Unknown
       repo-pre-commit-optional:
         compliant: No
         notes: 
@@ -1547,10 +1540,6 @@ kitsune:
         compliant: No
       repo-dependencies-auto:
         compliant: Yes
-      repo-automerge-enabled:
-        compliant: Unknown
-      repo-head-branch-auto-delete:
-        compliant: Unknown
       repo-code-owners:
         compliant: No
       test-lint-secrets:
@@ -1579,21 +1568,11 @@ kitsune:
         compliant: Yes
       release-tag-v-prefix:
         compliant: No
-      release-tag-only:
-        compliant: Unknown
-        notes: No tag since 2016 (continuous deployment?)
-      release-publish:
-        compliant: Unknown
-        notes: No tag since 2016 (continuous deployment?)
       deployment-dockerflow:
         compliant: Yes
       deployment-integration-test:
         compliant: No
         notes: No integration tests apparently
-      deployment-auto-main:
-        compliant: Unknown
-      deployment-auto-release:
-        compliant: Unknown
       deployment-auto-pull-requests:
         compliant: No
       monitoring-heartbeat-backends:
@@ -1627,8 +1606,6 @@ kitsune:
         compliant: No
       telemetry-query-examples:
         compliant: No
-      notifications-error-chat:
-        compliant: Unknown
       documentation-decisions-records:
         compliant: Yes
       documentation-security-assessment:
@@ -1641,6 +1618,32 @@ kitsune:
         compliant: Yes
       documentation-troubleshooting:
         compliant: No
+      repo-main-branch-protected:
+        compliant: Yes
+      repo-version-tags-protected:
+        compliant: No
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: No
+      repo-automerge-enabled:
+        compliant: No
+      repo-head-branch-auto-delete:
+        compliant: No
+      release-tag-only:
+        compliant: No
+      release-publish:
+        compliant: No
+      deployment-auto-main:
+        compliant: Yes
+      deployment-auto-release:
+        compliant: Partially
+        notes: Automatic releases but without tags. We are on the process of switching
+          to tags
+      notifications-error-chat:
+        compliant: Partially
+        notes: We do get notification but it's from NewRelic and from the pipelines.
+          We do use Sentry but we don't have slack automation
 Taskcluster:
   '2023-10-19':
     version: 1
