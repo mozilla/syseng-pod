@@ -48,6 +48,11 @@ def html(output):
     )
     env.filters["markdown"] = render_markdown
 
+    rules_details = {}
+    for category in root_criteria["standard"]["categories"]:
+        for rule, details in category["rules"].items():
+            rules_details[rule] = details
+
     # Categorize rules and compute max score by category.
     category_for_rule = {}
     max_score_for_category = defaultdict(int)
@@ -90,6 +95,7 @@ def html(output):
         "standard": root_criteria["standard"],
         "scorecards": root_scorecards,
         "max_score_for_category": max_score_for_category,
+        "rules_details": rules_details,
         "rules_popularity": rules_popularity,
         "criteria_last_update": datetime.datetime.fromtimestamp(
             os.path.getmtime("criteria.yaml")
@@ -142,6 +148,13 @@ def audit(service):
         latest_audit_date = max(scorecards[service].keys())
         last_score = scorecards[service][latest_audit_date]["score"]
         previous_audit = scorecards[service][latest_audit_date]["rules"]
+        unknown_count = len(
+            [
+                v
+                for v in scorecards[service][latest_audit_date]["rules"].values()
+                if v["compliant"] == "Unknown"
+            ]
+        )
 
         choice = questionary.select(
             message=f"Score card already exists for {service}. Do you want to:",
@@ -151,11 +164,15 @@ def audit(service):
                     "value": 1,
                 },
                 {
-                    "name": f"Start new audit from previous (skip compliant checks)",
+                    "name": f"Complete {unknown_count} unknown{'s'[:unknown_count^1]} in last audit",
                     "value": 2,
                 },
-                {"name": f"Start new audit from scratch", "value": 3},
-                {"name": f"Abort", "value": 4},
+                {
+                    "name": f"Start new audit from previous (skip compliant checks)",
+                    "value": 3,
+                },
+                {"name": f"Start new audit from scratch", "value": 4},
+                {"name": f"Abort", "value": 5},
             ],
         ).ask()
 
@@ -163,6 +180,15 @@ def audit(service):
             # The new audit will be saved with today's date.
             del scorecards[service][latest_audit_date]
         if choice == 2:
+            # The new audit will be saved with today's date, and
+            # we only keep known answers to prompt again for unknowns.
+            del scorecards[service][latest_audit_date]
+            previous_audit = {
+                rule: v.copy()
+                for rule, v in previous_audit.items()
+                if v["compliant"] != "Unknown"
+            }
+        if choice == 3:
             # Equivalent of resuming an audit ignoring all non compliant rules.
             # Note: we copy to avoid ruamel to use anchors.
             previous_audit = {
@@ -170,7 +196,7 @@ def audit(service):
                 for rule, v in previous_audit.items()
                 if v["compliant"] == "Yes"
             }
-        if choice == 4:
+        if choice == 5:
             click.echo("Cancelled.")
             sys.exit(1)
 
