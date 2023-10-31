@@ -196,7 +196,7 @@ def audit(service):
                 for rule, v in previous_audit.items()
                 if v["compliant"] == "Yes"
             }
-        if choice == 5:
+        if not choice or choice == 5:
             click.echo("Cancelled.")
             sys.exit(1)
 
