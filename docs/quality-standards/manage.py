@@ -227,7 +227,7 @@ def audit(service):
                 choices=POINTS_FOR.keys(),
                 instruction="\n" + rule["description"].strip() + "\n",
             ).ask()
-            if compliance is None:
+            if not compliance:
                 aborted = True
                 break
             # Offer ability to add notes if not compliant.
