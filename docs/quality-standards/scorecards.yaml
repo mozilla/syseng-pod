@@ -972,9 +972,9 @@ Remote Settings:
       documentation-operator:
         compliant: Partially
 Tecken:
-  '2023-10-06':
+  '2023-11-03':
     version: 1
-    score: 50
+    score: 54
     max_score: 110
     rules:
       repo-standard-files:
@@ -990,17 +990,11 @@ Tecken:
         notes: '`run` instead of `start` and `lintfix` instead of `format`'
       repo-main-branch-name:
         compliant: Yes
-      repo-main-branch-protected:
-        compliant: Unknown
       repo-version-tags-protected:
         compliant: No
       repo-issue-labels:
         compliant: Yes
         notes: No issue tracker.
-      repo-team-reviewers-permissions:
-        compliant: Unknown
-      repo-pull-request-merge:
-        compliant: Unknown
       repo-pre-commit-optional:
         compliant: Yes
         notes: No precommit hook
@@ -1009,10 +1003,6 @@ Tecken:
         notes: Changelog is put in tag annotation
       repo-dependencies-auto:
         compliant: Yes
-      repo-automerge-enabled:
-        compliant: Unknown
-      repo-head-branch-auto-delete:
-        compliant: Unknown
       repo-code-owners:
         compliant: No
       test-lint-secrets:
@@ -1049,25 +1039,12 @@ Tecken:
       deployment-dockerflow:
         compliant: Yes
         notes: Uses python-dockerflow with Django
-      deployment-integration-test:
-        compliant: Unknown
-      deployment-auto-main:
-        compliant: Unknown
-      deployment-auto-release:
-        compliant: Unknown
       deployment-auto-pull-requests:
         compliant: No
       monitoring-heartbeat-backends:
         compliant: Yes
         notes: 
           https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L585-L588
-      monitoring-heartbeat-error:
-        compliant: Unknown
-      monitoring-requests-duration:
-        compliant: Unknown
-        notes: Didn't see middleware/requests.summary. Maybe part of python-dockerflow
-      monitoring-requests-id:
-        compliant: Unknown
       monitoring-backends-duration:
         compliant: Partially
         notes: metrics are used to monitor uploads/downloads, but apparently not for
@@ -1098,8 +1075,6 @@ Tecken:
         notes: A command allows to list them, but not explicitly listed in docs
       telemetry-query-examples:
         compliant: No
-      notifications-error-chat:
-        compliant: Unknown
       documentation-decisions-records:
         compliant: Yes
       documentation-security-assessment:
@@ -1112,6 +1087,31 @@ Tecken:
         compliant: No
       documentation-troubleshooting:
         compliant: No
+      repo-main-branch-protected:
+        compliant: Unknown
+      repo-team-reviewers-permissions:
+        compliant: Unknown
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-automerge-enabled:
+        compliant: Unknown
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      deployment-integration-test:
+        compliant: Unknown
+      deployment-auto-main:
+        compliant: Unknown
+      deployment-auto-release:
+        compliant: Unknown
+      monitoring-heartbeat-error:
+        compliant: Unknown
+        notes: Uses Django check framework. Likely to log errors.
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: Yes
+      notifications-error-chat:
+        compliant: Unknown
 Experimenter:
   '2023-10-18':
     version: 1
