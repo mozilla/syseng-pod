@@ -41,7 +41,7 @@ def html(output):
         root_scorecards = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
     def render_markdown(value):
-        return markdown.markdown(value, extensions=['tables'])
+        return markdown.markdown(value, extensions=["tables"])
 
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader("."),
@@ -103,7 +103,9 @@ def html(output):
     }
     rendered = template.render(**context)
 
-    shutil.copytree("assets", os.path.abspath(os.path.join(output, "assets")), dirs_exist_ok=True)
+    shutil.copytree(
+        "assets", os.path.abspath(os.path.join(output, "assets")), dirs_exist_ok=True
+    )
     output_index = os.path.abspath(os.path.join(output, "index.html"))
     with open(output_index, "w") as f:
         f.write(rendered)
