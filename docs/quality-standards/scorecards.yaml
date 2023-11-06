@@ -1113,9 +1113,9 @@ Tecken:
       notifications-error-chat:
         compliant: Unknown
 Experimenter:
-  '2023-10-18':
+  '2023-11-06':
     version: 1
-    score: 45
+    score: 63
     max_score: 110
     rules:
       repo-standard-files:
@@ -1135,25 +1135,15 @@ Experimenter:
         compliant: Yes
       repo-main-branch-protected:
         compliant: Yes
-      repo-version-tags-protected:
-        compliant: Unknown
       repo-issue-labels:
         compliant: No
         notes: No documentation, defect instead of bug
-      repo-team-reviewers-permissions:
-        compliant: Unknown
-      repo-pull-request-merge:
-        compliant: Unknown
       repo-pre-commit-optional:
         compliant: Yes
       repo-release-notes-auto:
         compliant: No
       repo-dependencies-auto:
         compliant: Yes
-      repo-automerge-enabled:
-        compliant: Unknown
-      repo-head-branch-auto-delete:
-        compliant: Unknown
       repo-code-owners:
         compliant: Yes
       test-lint-secrets:
@@ -1196,16 +1186,6 @@ Experimenter:
         compliant: Yes
       deployment-auto-pull-requests:
         compliant: No
-      monitoring-heartbeat-backends:
-        compliant: Unknown
-      monitoring-heartbeat-error:
-        compliant: Unknown
-      monitoring-requests-duration:
-        compliant: Unknown
-      monitoring-requests-id:
-        compliant: Unknown
-      monitoring-backends-duration:
-        compliant: Unknown
       monitoring-logging-level:
         compliant: No
         notes: DEBUG 
@@ -1242,6 +1222,26 @@ Experimenter:
         compliant: No
       documentation-troubleshooting:
         compliant: No
+      repo-version-tags-protected:
+        compliant: Yes
+      repo-team-reviewers-permissions:
+        compliant: Yes
+      repo-pull-request-merge:
+        compliant: Unknown
+      repo-automerge-enabled:
+        compliant: Unknown
+      repo-head-branch-auto-delete:
+        compliant: Unknown
+      monitoring-heartbeat-backends:
+        compliant: Yes
+      monitoring-heartbeat-error:
+        compliant: No
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: Yes
+      monitoring-backends-duration:
+        compliant: Unknown
 Balrog:
   '2023-10-18':
     version: 1
