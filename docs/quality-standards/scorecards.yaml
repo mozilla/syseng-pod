@@ -1240,7 +1240,7 @@ Experimenter:
       monitoring-requests-id:
         compliant: Yes
       monitoring-backends-duration:
-        compliant: Unknown
+        compliant: No
 Balrog:
   '2023-10-18':
     version: 1
