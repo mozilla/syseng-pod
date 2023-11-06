@@ -41,7 +41,9 @@ def html(output):
         root_scorecards = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
     def render_markdown(value):
-        return markdown.markdown(value, extensions=["tables"])
+        html = markdown.markdown(value, extensions=["tables"])
+        # Remove leading and trailing <p></p>
+        return html[3:-4]
 
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader("."),

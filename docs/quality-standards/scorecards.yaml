@@ -1043,8 +1043,8 @@ Tecken:
         compliant: No
       monitoring-heartbeat-backends:
         compliant: Yes
-        notes: 
-          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L585-L588
+        notes: |
+          [source](https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L585-L588)
       monitoring-backends-duration:
         compliant: Partially
         notes: metrics are used to monitor uploads/downloads, but apparently not for
@@ -1053,18 +1053,17 @@ Tecken:
         compliant: Yes
       monitoring-logging-mozlog:
         compliant: Yes
-        notes: 
-          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L170-L171
+        notes: |
+          [source](https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L170-L171)
       monitoring-logging-env-configuration:
         compliant: Partially
         notes: human format only in DEV, not configurable, and default level using
           LOGGING_DEFAULT_LEVEL env var 
-          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L87-L91
+          [source](https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L87-L91)
       monitoring-error-reporting:
         compliant: No
         notes: 
-          https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/bin/sentry-wrap.py#L43C21-L43C31  Not
-          environment / version passed to init
+          No environment / version passed to init [source](https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/bin/sentry-wrap.py#L43C21-L43C31)
       telemetry-metrics:
         compliant: Yes
         notes: Using markus
@@ -1188,7 +1187,7 @@ Experimenter:
       monitoring-logging-level:
         compliant: No
         notes: DEBUG 
-          https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L233
+          [source](https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L233)
       monitoring-logging-mozlog:
         compliant: Yes
       monitoring-logging-env-configuration:
@@ -1197,7 +1196,7 @@ Experimenter:
       monitoring-error-reporting:
         compliant: Partially
         notes: Without env/version 
-          https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L277
+          [source](https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L277)
       telemetry-metrics:
         compliant: Yes
       telemetry-naming:
@@ -1354,7 +1353,7 @@ Balrog:
       telemetry-documented:
         compliant: No
         notes: Not listed in 
-          https://github.com/mozilla-releng/balrog/blob/6493a9e2eae9e959fc69e7e2fd93b6e91ed16ba3/docs/source/infrastructure.rst#monitoring--metrics
+          [infra docs](https://github.com/mozilla-releng/balrog/blob/6493a9e2eae9e959fc69e7e2fd93b6e91ed16ba3/docs/source/infrastructure.rst#monitoring--metrics)
       telemetry-query-examples:
         compliant: No
       notifications-error-chat:
@@ -1465,7 +1464,7 @@ addons-server:
       monitoring-heartbeat-error:
         compliant: Partially
         notes: Not everything is logged 
-          https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/amo/monitors.py#L154
+          [source](https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/amo/monitors.py#L154)
       monitoring-requests-duration:
         compliant: Partially
         notes: In Grafana (not in MozLog field)
@@ -1480,8 +1479,8 @@ addons-server:
         compliant: Yes
       monitoring-logging-env-configuration:
         compliant: No
-        notes: 
-          https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/lib/settings_base.py
+        notes: |
+          [source](https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/lib/settings_base.py)
       monitoring-error-reporting:
         compliant: Yes
       telemetry-metrics:
@@ -1533,8 +1532,8 @@ kitsune:
         notes: No bug, no good-first-issue, ...
       repo-pre-commit-optional:
         compliant: No
-        notes: 
-          https://github.com/mozilla/kitsune/blob/1f1eb9e11dafbb4814f379fa748bef35f20ca780/docs/hacking_howto.md?plain=1#L187
+        notes: |
+          [source](https://github.com/mozilla/kitsune/blob/1f1eb9e11dafbb4814f379fa748bef35f20ca780/docs/hacking_howto.md?plain=1#L187)
       repo-release-notes-auto:
         compliant: No
       repo-dependencies-auto:
@@ -1585,7 +1584,7 @@ kitsune:
         compliant: No
       monitoring-backends-duration:
         compliant: No
-        notes: statsd was removed https://github.com/mozilla/kitsune/pull/4412
+        notes: statsd [was removed](https://github.com/mozilla/kitsune/pull/4412)
       monitoring-logging-level:
         compliant: Yes
       monitoring-logging-mozlog:
@@ -1747,13 +1746,13 @@ Taskcluster:
       monitoring-logging-mozlog:
         compliant: No
         notes: only if ENV==production 
-          https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/tools/websocktunnel/cmd/websocktunnel/main.go#L47
+          [source](https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/tools/websocktunnel/cmd/websocktunnel/main.go#L47)
       monitoring-logging-env-configuration:
         compliant: No
       monitoring-error-reporting:
         compliant: No
-        notes: Sentry init does not set environment 
-          https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/libraries/monitor/src/plugins/sentry.js#L19-L23
+        notes: |
+          [Sentry init](https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/libraries/monitor/src/plugins/sentry.js#L19-L23) does not set environment
       telemetry-metrics:
         compliant: Yes
       telemetry-naming:
@@ -1768,16 +1767,15 @@ Taskcluster:
           and no GitHub issues are created automatically'
       documentation-decisions-records:
         compliant: No
-        notes: There are design docs though 
-          https://github.com/taskcluster/taskcluster/tree/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/ui/docs/manual/design
+        notes: There are [design docs](https://github.com/taskcluster/taskcluster/tree/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/ui/docs/manual/design) though
       documentation-security-assessment:
         compliant: Unknown
       documentation-dev:
         compliant: Yes
       documentation-test-args:
         compliant: No
-        notes: 
-          https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/dev-docs/development-process.md#hacking-on-services-and-libraries
+        notes: |
+          [dev documentation](https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/dev-docs/development-process.md#hacking-on-services-and-libraries)
           does not mention it
       documentation-operator:
         compliant: Yes
