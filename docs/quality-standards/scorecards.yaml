@@ -972,7 +972,7 @@ Remote Settings:
       documentation-operator:
         compliant: Partially
 Tecken:
-  '2023-11-03':
+  '2023-11-06':
     version: 1
     score: 54
     max_score: 110
@@ -1087,6 +1087,10 @@ Tecken:
         compliant: No
       documentation-troubleshooting:
         compliant: No
+      monitoring-requests-duration:
+        compliant: Yes
+      monitoring-requests-id:
+        compliant: Yes
       repo-main-branch-protected:
         compliant: Unknown
       repo-team-reviewers-permissions:
@@ -1104,12 +1108,7 @@ Tecken:
       deployment-auto-release:
         compliant: Unknown
       monitoring-heartbeat-error:
-        compliant: Unknown
-        notes: Uses Django check framework. Likely to log errors.
-      monitoring-requests-duration:
-        compliant: Yes
-      monitoring-requests-id:
-        compliant: Yes
+        compliant: No
       notifications-error-chat:
         compliant: Unknown
 Experimenter:
