@@ -163,7 +163,7 @@
   <h1>Quality Standards</h1>
   <section id="intro">
     <p class="version">Version 1, last updated on 2023-10-19</p>
-    <p><p>Hello, this doc is about explicitly defining quality in the world of services software at Mozilla.</p>
+    <p>Hello, this doc is about explicitly defining quality in the world of services software at Mozilla.</p>
 <blockquote>
 <p>Definition: quality refers to the degree to which a software and its related deliverables <strong>meet or exceed</strong> the <strong>expectations</strong> of its <strong>stakeholders</strong>. However, what are those expectations and does the team share the same expectations?  This document defines what the expectations are and provides a way to measure the quality of a software.</p>
 </blockquote>
@@ -204,7 +204,7 @@ Scorecards show complicance in each category, which allows progress in iteration
 <li>Be too specific about tooling</li>
 <li>This is not (yet) a boilerplate for new projects</li>
 </ul>
-<p>For comments and questions, don't hesitate to get in touch in the <code>#coreservices</code> Slack channel, or open issues and pull-requests in the <a href="https://github.com/mozilla/syseng-pod/tree/main/docs/quality-standards">source repo</a>.</p></p>
+<p>For comments and questions, don't hesitate to get in touch in the <code>#coreservices</code> Slack channel, or open issues and pull-requests in the <a href="https://github.com/mozilla/syseng-pod/tree/main/docs/quality-standards">source repo</a>.</p>
   </section>
   <section id="toc">
     <h2>Table of Contents</h2>
@@ -259,7 +259,7 @@ Scorecards show complicance in each category, which allows progress in iteration
   
   <section class="rules">
     <h3><a name="category-Repository Ergonomics">Repository Ergonomics</a></h3>
-    <blockquote>
+    ockquote>
 <p>Ergonomics <em>(ûr″gə-nŏm′ĭks)</em>: Design factors, as for the workplace, intended to maximize productivity by minimizing operator fatigue and discomfort.</p>
 </blockquote>
 <ul>
@@ -267,7 +267,7 @@ Scorecards show complicance in each category, which allows progress in iteration
 <li>How a project repository is organized provides little return on the mental energy it takes to learn it</li>
 <li>To contribute to a project someone is required to learn how its content is organized.</li>
 <li>There is too little reusable knowledge across project organizations / layouts</li>
-</ul>
+<
     <table>
       <colgroup>
         <col>
@@ -286,17 +286,17 @@ Scorecards show complicance in each category, which allows progress in iteration
         
         <tr>
           <td><span class="rulename">repo-standard-files</span></td>
-          <td><ul>
+          <td>>
 <li>README.(md,rst)</li>
 <li>LICENSE</li>
 <li>CODE_OF_CONDUCT.md</li>
 <li>CONTRIBUTING.md</li>
 <li>SECURITY.md</li>
 <li>SUPPORT.md</li>
-</ul></td>
-          <td><p>See <a href="https://en.wikipedia.org/wiki/Contributing_guidelines">https://en.wikipedia.org/wiki/Contributing_guidelines</a>
+<</td>
+          <td>See <a href="https://en.wikipedia.org/wiki/Contributing_guidelines">https://en.wikipedia.org/wiki/Contributing_guidelines</a>
 and <a href="https://mozillascience.github.io/working-open-workshop/contributing/">https://mozillascience.github.io/working-open-workshop/contributing/</a>
-templates at <a href="https://contributing.md">https://contributing.md</a></p></td>
+templates at <a href="https://contributing.md">https://contributing.md</a></td>
           <td>
             <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
           </td>
@@ -304,10 +304,10 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-standard-folders</span></td>
-          <td><ul>
+          <td>>
 <li>docs/</li>
 <li>bin/</li>
-</ul></td>
+<</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, kitsune"></div>
@@ -316,20 +316,20 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-readme-sections</span></td>
-          <td><p>Readme contains the following:</p>
+          <td>Readme contains the following:</p>
 <ul>
 <li>Project name as main title</li>
 <li>Status (invest, sustain, sunset, abandoned)</li>
 <li>Usage</li>
 <li>Link to documentation</li>
-</ul></td>
-          <td><p>Our goals here are:</p>
+<</td>
+          <td>Our goals here are:</p>
 <ul>
 <li>avoid empty README</li>
 <li>expose maintenance status</li>
 <li>basic usage is detailed</li>
 <li>standard sections will help reading/scanning for newcomers</li>
-</ul></td>
+<</td>
           <td>
             <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
           </td>
@@ -337,14 +337,14 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-makefile-targets</span></td>
-          <td><p>Make has the following targets:</p>
+          <td>Make has the following targets:</p>
 <ul>
 <li>help</li>
 <li>test</li>
 <li>start</li>
 <li>lint</li>
 <li>format</li>
-</ul></td>
+<</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server, kitsune"></div>
@@ -353,7 +353,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-main-branch-name</span></td>
-          <td><p>Main branch is called <code>main</code></p></td>
+          <td>Main branch is called <code>main</code></td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, kitsune, Taskcluster"></div>
@@ -362,25 +362,25 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-main-branch-protected</span></td>
-          <td><p>Main branch is protected without exceptions</p></td>
+          <td>Main branch is protected without exceptions</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, Taskcluster"></div>
+            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-version-tags-protected</span></td>
-          <td><p>Tags starting with <code>v*</code> can only be pushed by maintainers/admins</p></td>
-          <td><p><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-tag-protection-rules">Github docs</a></p></td>
+          <td>Tags starting with <code>v*</code> can only be pushed by maintainers/admins</td>
+          <td><a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-tag-protection-rules">Github docs</a></td>
           <td>
-            <div class="popularity" style="--percent: 40;" title="CTMS, JBI, Telescope, Remote Settings"></div>
+            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-issue-labels</span></td>
-          <td><p>Standard issue labels exist:</p>
+          <td>Standard issue labels exist:</p>
 <ul>
 <li>bug</li>
 <li>dependencies</li>
@@ -388,7 +388,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
 <li>documentation</li>
 <li>wontfix</li>
 <li>good-first-issue</li>
-</ul></td>
+<</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 65;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server, kitsune, Taskcluster"></div>
@@ -397,16 +397,16 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-team-reviewers-permissions</span></td>
-          <td><p>Team of reviewers has at least “Maintain” permissions</p></td>
+          <td>Team of reviewers has at least “Maintain” permissions</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, Taskcluster"></div>
+            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-pull-request-merge</span></td>
-          <td><p>Only “<em>squash and merge</em>” and “<em>rebase and merge</em>” are allowed</p></td>
+          <td>Only “<em>squash and merge</em>” and “<em>rebase and merge</em>” are allowed</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, addons-server, Taskcluster"></div>
@@ -415,8 +415,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-pre-commit-optional</span></td>
-          <td><p>Pre-commit hooks are optional</p></td>
-          <td><p>Example in <a href="https://github.com/taskcluster/taskcluster/blob/main/dev-docs/development-process.md#pre-commit-optional">Taskcluster</a></p></td>
+          <td>Pre-commit hooks are optional</td>
+          <td>Example in <a href="https://github.com/taskcluster/taskcluster/blob/main/dev-docs/development-process.md#pre-commit-optional">Taskcluster</a></td>
           <td>
             <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, Taskcluster"></div>
           </td>
@@ -447,8 +447,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-release-notes-auto</span></td>
-          <td><p>Release Notes are generated from commits using <code>.github/release.yml</code></p></td>
-          <td><p>Sections titles contain at least “<em>Breaking changes</em>”, “<em>Bug fixes</em>”, “<em>New features</em>”, “<em>Documentation</em>”, and “<em>Other changes</em>”</p></td>
+          <td>Release Notes are generated from commits using <code>.github/release.yml</code></td>
+          <td>Sections titles contain at least “<em>Breaking changes</em>”, “<em>Bug fixes</em>”, “<em>New features</em>”, “<em>Documentation</em>”, and “<em>Other changes</em>”</td>
           <td>
             <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, Taskcluster"></div>
           </td>
@@ -456,8 +456,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-dependencies-auto</span></td>
-          <td><p>Pull-requests are automatically opened for dependencies</p></td>
-          <td><p>File <code>.github/dependabot.yml</code> and/or <code>renovate.json</code> exist</p></td>
+          <td>Pull-requests are automatically opened for dependencies</td>
+          <td>File <code>.github/dependabot.yml</code> and/or <code>renovate.json</code> exist</td>
           <td>
             <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
           </td>
@@ -465,7 +465,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-automerge-enabled</span></td>
-          <td><p>Automerge and merge queues are enabled</p></td>
+          <td>Automerge and merge queues are enabled</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, Taskcluster"></div>
@@ -474,7 +474,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-head-branch-auto-delete</span></td>
-          <td><p>Auto-delete head branches is enabled</p></td>
+          <td>Auto-delete head branches is enabled</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 60;" title="CTMS, JBI, Telescope, Remote Settings, addons-server, Taskcluster"></div>
@@ -483,8 +483,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">repo-code-owners</span></td>
-          <td><p>Code owners are configured</p></td>
-          <td><p>At least with team of reviewers for everything (eg. @syseng-reviewers)</p></td>
+          <td>Code owners are configured</td>
+          <td>At least with team of reviewers for everything (eg. @syseng-reviewers)</td>
           <td>
             <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, Balrog, addons-server, Taskcluster"></div>
           </td>
@@ -515,8 +515,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-lint-secrets</span></td>
-          <td><p>A test verifies that no secret is committed to the sources</p></td>
-          <td><p>Eg. <a href="https://github.com/Yelp/detect-secrets">Yelp/detect-secrets</a></p></td>
+          <td>A test verifies that no secret is committed to the sources</td>
+          <td>Eg. <a href="https://github.com/Yelp/detect-secrets">Yelp/detect-secrets</a></td>
           <td>
             <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
           </td>
@@ -524,8 +524,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-lint-code-format</span></td>
-          <td><p>A test verifies that code format respects standard</p></td>
-          <td><p>Eg. prettier, black+isort, cargo fmt</p></td>
+          <td>A test verifies that code format respects standard</td>
+          <td>Eg. prettier, black+isort, cargo fmt</td>
           <td>
             <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune, Taskcluster"></div>
           </td>
@@ -533,8 +533,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-lint-static-analysis</span></td>
-          <td><p>A test verifies that code respects idioms and good practices</p></td>
-          <td><p>Eg. eslint, bandit+pylint, cargo clippy</p></td>
+          <td>A test verifies that code respects idioms and good practices</td>
+          <td>Eg. eslint, bandit+pylint, cargo clippy</td>
           <td>
             <div class="popularity" style="--percent: 85;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune, Taskcluster"></div>
           </td>
@@ -542,8 +542,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-lint-type-checking</span></td>
-          <td><p>A test verifies that types are used consistently</p></td>
-          <td><p>Eg. typescript, mypy</p></td>
+          <td>A test verifies that types are used consistently</td>
+          <td>Eg. typescript, mypy</td>
           <td>
             <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Experimenter, addons-server"></div>
           </td>
@@ -551,8 +551,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-unit-coverage</span></td>
-          <td><p>Unit tests fail if coverage is under 90%</p></td>
-          <td><p>Better if 100% with branching option</p></td>
+          <td>Unit tests fail if coverage is under 90%</td>
+          <td>Better if 100% with branching option</td>
           <td>
             <div class="popularity" style="--percent: 40;" title="CTMS, JBI, Telescope, Remote Settings"></div>
           </td>
@@ -560,8 +560,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-documentation-build</span></td>
-          <td><p>A test verifies that documentation builds successfully without warnings</p></td>
-          <td><p>If the project does not have built documentation, a lint check for markdown files is recommended</p></td>
+          <td>A test verifies that documentation builds successfully without warnings</td>
+          <td>If the project does not have built documentation, a lint check for markdown files is recommended</td>
           <td>
             <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server, Taskcluster"></div>
           </td>
@@ -569,7 +569,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-container-build</span></td>
-          <td><p>A test verifies that container builds successfully</p></td>
+          <td>A test verifies that container builds successfully</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune, Taskcluster"></div>
@@ -578,7 +578,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-container-integration</span></td>
-          <td><p>A test executes integration tests on the built container</p></td>
+          <td>A test executes integration tests on the built container</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter"></div>
@@ -587,7 +587,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">test-pull-requests-labels</span></td>
-          <td><p>A test verifies that pull-requests have labels</p></td>
+          <td>A test verifies that pull-requests have labels</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 40;" title="CTMS, JBI, Telescope, Remote Settings"></div>
@@ -596,8 +596,8 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">dependencies-reproducibility</span></td>
-          <td><p>Dependencies are locked between local clone, tests, and container</p></td>
-          <td><p>Eg. use poetry, cargo, …</p></td>
+          <td>Dependencies are locked between local clone, tests, and container</td>
+          <td>Eg. use poetry, cargo, …</td>
           <td>
             <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
           </td>
@@ -609,7 +609,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
   
   <section class="rules">
     <h3><a name="category-Releasing">Releasing</a></h3>
-    <p>These checks apply to services that still rely on tags and releases. If a service has moved to <em>Continuous Delivery</em>, without tagging or releasing at all, they can all be considered as compliant.</p>
+    These checks apply to services that still rely on tags and releases. If a service has moved to <em>Continuous Delivery</em>, without tagging or releasing at all, they can all be considered as compliant.
     <table>
       <colgroup>
         <col>
@@ -628,7 +628,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">release-semver-calver</span></td>
-          <td><p>Project follows SemVer or Calver version scheme</p></td>
+          <td>Project follows SemVer or Calver version scheme</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
@@ -637,7 +637,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">release-tag-v-prefix</span></td>
-          <td><p>The release tags have <code>v(.+)</code> format</p></td>
+          <td>The release tags have <code>v(.+)</code> format</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 60;" title="CTMS, JBI, Telescope, Experimenter, Balrog, Taskcluster"></div>
@@ -646,9 +646,9 @@ templates at <a href="https://contributing.md">https://contributing.md</a></p></
         
         <tr>
           <td><span class="rulename">release-tag-only</span></td>
-          <td><p>Project version has a single source of truth. For example, it is read from <code>version.json</code>
-which is automatically built from current git tag</p></td>
-          <td><p>Does not apply to libraries, where a version number usually appears in package metadata</p></td>
+          <td>Project version has a single source of truth. For example, it is read from <code>version.json</code>
+which is automatically built from current git tag</td>
+          <td>Does not apply to libraries, where a version number usually appears in package metadata</td>
           <td>
             <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, Taskcluster"></div>
           </td>
@@ -656,7 +656,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">release-publish</span></td>
-          <td><p>Project container or package is published on git tag</p></td>
+          <td>Project container or package is published on git tag</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, Taskcluster"></div>
@@ -688,7 +688,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">deployment-dockerflow</span></td>
-          <td><p>Container follows Dockerflow spec</p></td>
+          <td>Container follows Dockerflow spec</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 75;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
@@ -697,8 +697,8 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">deployment-integration-test</span></td>
-          <td><p>Integration tests are part of deployment pipeline</p></td>
-          <td><p>Might be as well end-to-end (browser tests)</p></td>
+          <td>Integration tests are part of deployment pipeline</td>
+          <td>Might be as well end-to-end (browser tests)</td>
           <td>
             <div class="popularity" style="--percent: 25;" title="Experimenter, addons-server, Taskcluster"></div>
           </td>
@@ -706,26 +706,26 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">deployment-auto-main</span></td>
-          <td><p>Automatic deployment on DEV/STAGE environment on pull-requests merge</p></td>
+          <td>Automatic deployment on DEV/STAGE environment on pull-requests merge</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, Taskcluster"></div>
+            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">deployment-auto-release</span></td>
-          <td><p>Automatic deployment on STAGE/PROD environment on version tag</p></td>
-          <td><p>If they pass through a quality gate like an automated integration test</p></td>
+          <td>Automatic deployment on STAGE/PROD environment on version tag</td>
+          <td>If they pass through a quality gate like an automated integration test</td>
           <td>
-            <div class="popularity" style="--percent: 65;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, Taskcluster"></div>
+            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">deployment-auto-pull-requests</span></td>
-          <td><p>Automatic deployment on temporary instances on pull-requests</p></td>
-          <td><p>Should be allowed to repo owners only?</p></td>
+          <td>Automatic deployment on temporary instances on pull-requests</td>
+          <td>Should be allowed to repo owners only?</td>
           <td>
             <div class="popularity" style="--percent: 0;" title=""></div>
           </td>
@@ -756,16 +756,16 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">monitoring-heartbeat-backends</span></td>
-          <td><p>Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting</p></td>
+          <td>Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Balrog, addons-server"></div>
+            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-heartbeat-error</span></td>
-          <td><p>Heartbeat checks throw errors that will be reported</p></td>
+          <td>Heartbeat checks throw errors that will be reported</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
@@ -774,26 +774,26 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">monitoring-requests-duration</span></td>
-          <td><p>API requests processing duration is monitored</p></td>
+          <td>API requests processing duration is monitored</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
+            <div class="popularity" style="--percent: 75;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-requests-id</span></td>
-          <td><p>A unique ID is associated to each request and logged</p></td>
+          <td>A unique ID is associated to each request and logged</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 60;" title="CTMS, JBI, Telescope, Remote Settings, addons-server, Taskcluster"></div>
+            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">monitoring-backends-duration</span></td>
-          <td><p>Backends calls durations are monitored</p></td>
-          <td><p><a href="https://opentelemetry.io/docs/concepts/signals/traces/">Existing standards</a></p></td>
+          <td>Backends calls durations are monitored</td>
+          <td><a href="https://opentelemetry.io/docs/concepts/signals/traces/">Existing standards</a></td>
           <td>
             <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server"></div>
           </td>
@@ -801,7 +801,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">monitoring-logging-level</span></td>
-          <td><p>Logging has INFO level by default</p></td>
+          <td>Logging has INFO level by default</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Balrog, addons-server, kitsune, Taskcluster"></div>
@@ -810,7 +810,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">monitoring-logging-mozlog</span></td>
-          <td><p>Logging format is MozLog by default</p></td>
+          <td>Logging format is MozLog by default</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
@@ -819,7 +819,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">monitoring-logging-env-configuration</span></td>
-          <td><p>Logging level is set using <code>LOG_LEVEL</code> env variable. Logging format is set using <code>LOG_FORMAT</code> env variable</p></td>
+          <td>Logging level is set using <code>LOG_LEVEL</code> env variable. Logging format is set using <code>LOG_FORMAT</code> env variable</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Tecken, Balrog, kitsune"></div>
@@ -828,7 +828,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">monitoring-error-reporting</span></td>
-          <td><p>Sentry is setup by environment</p></td>
+          <td>Sentry is setup by environment</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 65;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, kitsune"></div>
@@ -860,8 +860,8 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">telemetry-metrics</span></td>
-          <td><p>Project sends live telemetry</p></td>
-          <td><p>StatsD with tags</p></td>
+          <td>Project sends live telemetry</td>
+          <td>StatsD with tags</td>
           <td>
             <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Remote Settings, Tecken, Experimenter, Balrog, addons-server, Taskcluster"></div>
           </td>
@@ -869,7 +869,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">telemetry-naming</span></td>
-          <td><p>Probes start with project name (eg. <code>ctms.*</code>)</p></td>
+          <td>Probes start with project name (eg. <code>ctms.*</code>)</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 75;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
@@ -878,7 +878,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">telemetry-documented</span></td>
-          <td><p>Probes are listed in documentation</p></td>
+          <td>Probes are listed in documentation</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 35;" title="CTMS, JBI, Telescope, Tecken"></div>
@@ -887,7 +887,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">telemetry-query-examples</span></td>
-          <td><p>BigQuery example queries are given in documentation</p></td>
+          <td>BigQuery example queries are given in documentation</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 25;" title="CTMS, JBI, Telescope"></div>
@@ -919,10 +919,10 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">notifications-error-chat</span></td>
-          <td><p>Sentry reports to Slack channel</p></td>
-          <td><p>Sentry creates Github issues?</p></td>
+          <td>Sentry reports to Slack channel</td>
+          <td>Sentry creates Github issues?</td>
           <td>
-            <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Remote Settings, Experimenter, Taskcluster"></div>
+            <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Remote Settings, Experimenter, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
@@ -951,8 +951,8 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">documentation-decisions-records</span></td>
-          <td><p>Enumerate evaluation criteria.</p></td>
-          <td><p>Enumerate considered options with score/comment for each criteria.</p></td>
+          <td>Enumerate evaluation criteria.</td>
+          <td>Enumerate considered options with score/comment for each criteria.</td>
           <td>
             <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, kitsune"></div>
           </td>
@@ -960,7 +960,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">documentation-security-assessment</span></td>
-          <td><p><a href="https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment">Rapid Risk Assessment</a>, either a link or its content</p></td>
+          <td><a href="https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment">Rapid Risk Assessment</a>, either a link or its content</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 20;" title="JBI, Remote Settings"></div>
@@ -969,7 +969,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">documentation-dev</span></td>
-          <td><p>Instructions for a developper: how to run the tests, procedures to obtain credentials on dev/stage instances, contribute, contact the team, etc.</p></td>
+          <td>Instructions for a developper: how to run the tests, procedures to obtain credentials on dev/stage instances, contribute, contact the team, etc.</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 100;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
@@ -978,7 +978,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">documentation-test-args</span></td>
-          <td><p>Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)</p></td>
+          <td>Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, addons-server, kitsune"></div>
@@ -987,8 +987,8 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">documentation-operator</span></td>
-          <td><p>Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.</p></td>
-          <td><p>Can also be called “Deployment docs”</p></td>
+          <td>Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.</td>
+          <td>Can also be called “Deployment docs”</td>
           <td>
             <div class="popularity" style="--percent: 50;" title="CTMS, JBI, Telescope, Remote Settings, kitsune, Taskcluster"></div>
           </td>
@@ -996,7 +996,7 @@ which is automatically built from current git tag</p></td>
         
         <tr>
           <td><span class="rulename">documentation-troubleshooting</span></td>
-          <td><p>Common troubleshooting steps</p></td>
+          <td>Common troubleshooting steps</td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 35;" title="JBI, Telescope, Remote Settings, Taskcluster"></div>
@@ -1224,7 +1224,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: Partially
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: Partially
               (Docs are only markdown files)
             </li>
           
@@ -1261,7 +1261,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               
             </li>
           
@@ -1277,7 +1277,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -1293,7 +1293,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: Partially
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: Partially
               (USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL)
             </li>
           
@@ -1339,7 +1339,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               
             </li>
           
@@ -1358,7 +1359,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: No
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
               
             </li>
           
@@ -1686,7 +1687,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: No
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: No
               (Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md)
             </li>
           
@@ -1699,8 +1706,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: No
-              (README has only links to `docs/`)
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: No
+              (README has only links to <code>docs/</code>)
             </li>
           
           
@@ -1763,7 +1776,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: Partially
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: Partially
               (Docs are only markdown files)
             </li>
           
@@ -1800,7 +1813,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               
             </li>
           
@@ -1816,7 +1829,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -1832,7 +1845,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: Partially
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: Partially
               (USE_MOZLOG instead of LOG_FORMAT, LOGGING_LEVEL instead of LOG_LEVEL)
             </li>
           
@@ -1845,7 +1858,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-duration</span>: No
+              <span class="rulename" title="API requests processing duration is monitored">monitoring-requests-duration</span>: No
               
             </li>
           
@@ -1876,7 +1889,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-query-examples</span>: No
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
               (Until now, logs/metrics are not easily accessible)
             </li>
           
@@ -1892,7 +1905,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               
             </li>
           
@@ -1905,7 +1919,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
               
             </li>
           
@@ -1918,7 +1932,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: No
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
               
             </li>
           
@@ -2390,7 +2404,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: Partially
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: Partially
               
             </li>
           
@@ -2403,7 +2417,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               
             </li>
           
@@ -2413,7 +2427,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -2756,7 +2770,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: No
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: No
               (No LICENSE, CONTRIBUTING, files)
             </li>
           
@@ -2766,7 +2786,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-folders</span>: No
+              <span class="rulename" title="- docs/
+- bin/
+">repo-standard-folders</span>: No
               (No docs/ folder, bin/ instead of scripts/ )
             </li>
           
@@ -2776,7 +2798,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: No
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: No
               (No status section in readme)
             </li>
           
@@ -2786,7 +2814,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: No
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: No
               (No make clean)
             </li>
           
@@ -2847,7 +2882,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: Partially
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: Partially
               (No built documentation, no markdown lint)
             </li>
           
@@ -2860,7 +2895,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-integration</span>: No
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: No
               (Built container is not tested)
             </li>
           
@@ -2891,7 +2926,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               (No integration test available.)
             </li>
           
@@ -2907,7 +2942,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               (No temporary instance deployed on pull-requests. THis would improve productivity since we could test configuration changes before merging/deploying to STAGE.)
             </li>
           
@@ -2932,7 +2967,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-level</span>: No
+              <span class="rulename" title="Logging has INFO level by default">monitoring-logging-level</span>: No
               (DEBUG by default instead of INFO)
             </li>
           
@@ -2942,7 +2977,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-mozlog</span>: Partially
+              <span class="rulename" title="Logging format is MozLog by default">monitoring-logging-mozlog</span>: Partially
               (Log level via LOG_LEVEL but log format is not configurable.)
             </li>
           
@@ -2973,7 +3008,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-decisions-records</span>: No
+              <span class="rulename" title="Enumerate evaluation criteria.">documentation-decisions-records</span>: No
               
             </li>
           
@@ -2983,7 +3018,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               (No link to RRA.)
             </li>
           
@@ -2996,7 +3032,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
               
             </li>
           
@@ -3384,7 +3420,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: Partially
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: Partially
               
             </li>
           
@@ -3460,7 +3496,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-integration</span>: Partially
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: Partially
               
             </li>
           
@@ -3470,7 +3506,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               
             </li>
           
@@ -3480,7 +3516,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -3489,79 +3525,6 @@ which is automatically built from current git tag</p></td>
           
           
         
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-backends-duration</span>: Partially
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-metrics</span>: No
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-naming</span>: Partially
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-documented</span>: Partially
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-query-examples</span>: Partially
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">notifications-error-chat</span>: No
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">documentation-security-assessment</span>: No
-              
-            </li>
           
           
         
@@ -3572,7 +3535,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>: Partially
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: Partially
               
             </li>
           
@@ -3582,7 +3545,82 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: Partially
+              <span class="rulename" title="Project sends live telemetry">telemetry-metrics</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Probes start with project name (eg. `ctms.*`)">telemetry-naming</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: Partially
               
             </li>
           
@@ -3910,7 +3948,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: No
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: No
               (Missing CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md)
             </li>
           
@@ -3920,7 +3964,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-folders</span>: No
+              <span class="rulename" title="- docs/
+- bin/
+">repo-standard-folders</span>: No
               (scripts/ instead of bin/)
             </li>
           
@@ -3930,7 +3976,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: Partially
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: Partially
               (Missing status badge, documentation within README)
             </li>
           
@@ -3940,7 +3992,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: No
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: No
               (Missing help, serve instead of start)
             </li>
           
@@ -3986,7 +4045,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-secrets</span>: No
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
               
             </li>
           
@@ -4008,7 +4067,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: Partially
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: Partially
               
             </li>
           
@@ -4021,7 +4080,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-integration</span>: Partially
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: Partially
               (No integration tests (Telescope has no backend))
             </li>
           
@@ -4052,7 +4111,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               
             </li>
           
@@ -4068,7 +4127,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               (No DEV environment and no temporary instance deployed on pull-requests.)
             </li>
           
@@ -4078,7 +4137,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-backends</span>: Partially
+              <span class="rulename" title="Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting">monitoring-heartbeat-backends</span>: Partially
               (No backend)
             </li>
           
@@ -4088,7 +4147,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-error</span>: Partially
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>: Partially
               (No check in heartbeat)
             </li>
           
@@ -4101,7 +4160,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-id</span>: No
+              <span class="rulename" title="A unique ID is associated to each request and logged">monitoring-requests-id</span>: No
               
             </li>
           
@@ -4111,7 +4170,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-backends-duration</span>: Partially
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: Partially
               (No backend)
             </li>
           
@@ -4133,7 +4192,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-metrics</span>: No
+              <span class="rulename" title="Project sends live telemetry">telemetry-metrics</span>: No
               (No telemetry)
             </li>
           
@@ -4143,7 +4202,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-naming</span>: Partially
+              <span class="rulename" title="Probes start with project name (eg. `ctms.*`)">telemetry-naming</span>: Partially
               (No telemetry)
             </li>
           
@@ -4153,7 +4212,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-documented</span>: Partially
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: Partially
               (No telemetry)
             </li>
           
@@ -4163,7 +4222,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-query-examples</span>: Partially
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: Partially
               (No telemetry)
             </li>
           
@@ -4173,7 +4232,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">notifications-error-chat</span>: No
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>: No
               (Would be too verbose)
             </li>
           
@@ -4186,7 +4245,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               
             </li>
           
@@ -4199,7 +4259,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
               
             </li>
           
@@ -4209,7 +4269,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>: Partially
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: Partially
               (Only configuration)
             </li>
           
@@ -4219,7 +4280,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: Partially
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: Partially
               (Troubleshooting docs are on Mana but not about Telescope itself)
             </li>
           
@@ -4673,7 +4734,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-static-analysis</span>: Partially
+              <span class="rulename" title="A test verifies that code respects idioms and good practices">test-lint-static-analysis</span>: Partially
               
             </li>
           
@@ -4683,20 +4744,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-type-checking</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">release-tag-v-prefix</span>: No
+              <span class="rulename" title="A test verifies that types are used consistently">test-lint-type-checking</span>: No
               
             </li>
           
@@ -4709,17 +4757,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="The release tags have `v(.+)` format">release-tag-v-prefix</span>: No
               
             </li>
           
@@ -4732,7 +4770,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               
             </li>
           
@@ -4742,22 +4780,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-documented</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-query-examples</span>: No
-              
-            </li>
-          
-          
-        
           
           
         
@@ -4768,7 +4793,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: No
               
             </li>
           
@@ -4778,7 +4803,44 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>: Partially
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: Partially
               
             </li>
           
@@ -5106,7 +5168,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: Partially
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: Partially
               (Missing CONTRIBUTING.md, SECURITY.md)
             </li>
           
@@ -5119,7 +5187,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: No
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: No
               (Missing status badge, Usage is called “Run”)
             </li>
           
@@ -5129,7 +5203,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: Partially
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: Partially
               (Missing help)
             </li>
           
@@ -5157,7 +5238,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-pre-commit-optional</span>: Partially
+              <span class="rulename" title="Pre-commit hooks are optional">repo-pre-commit-optional</span>: Partially
               (No pre-commit :))
             </li>
           
@@ -5167,7 +5248,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-release-notes-auto</span>: No
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
               (We use a CHANGELOG.rst file.)
             </li>
           
@@ -5189,7 +5270,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-secrets</span>: No
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
               
             </li>
           
@@ -5202,7 +5283,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-static-analysis</span>: Partially
+              <span class="rulename" title="A test verifies that code respects idioms and good practices">test-lint-static-analysis</span>: Partially
               (Only flake8)
             </li>
           
@@ -5212,7 +5293,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-type-checking</span>: No
+              <span class="rulename" title="A test verifies that types are used consistently">test-lint-type-checking</span>: No
               
             </li>
           
@@ -5234,7 +5315,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-pull-requests-labels</span>: No
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
               
             </li>
           
@@ -5250,7 +5331,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">release-tag-v-prefix</span>: No
+              <span class="rulename" title="The release tags have `v(.+)` format">release-tag-v-prefix</span>: No
               
             </li>
           
@@ -5260,7 +5341,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">release-tag-only</span>: No
+              <span class="rulename" title="Project version has a single source of truth. For example, it is read from `version.json`
+which is automatically built from current git tag
+">release-tag-only</span>: No
               (Requires a pull-request to update VERSION and CHANGELOG.rst files)
             </li>
           
@@ -5276,7 +5359,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               (This is planned for H1/H2 2023)
             </li>
           
@@ -5292,7 +5375,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               (No temporary instance deployed on pull-requests.)
             </li>
           
@@ -5311,7 +5394,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-id</span>: No
+              <span class="rulename" title="A unique ID is associated to each request and logged">monitoring-requests-id</span>: No
               
             </li>
           
@@ -5330,7 +5413,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: No
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: No
               (via .ini)
             </li>
           
@@ -5349,7 +5432,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-documented</span>: No
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
               
             </li>
           
@@ -5359,7 +5442,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-query-examples</span>: No
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
               
             </li>
           
@@ -5369,7 +5452,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">notifications-error-chat</span>: No
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>: No
               
             </li>
           
@@ -5382,7 +5465,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               (No link)
             </li>
           
@@ -5395,7 +5479,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
               
             </li>
           
@@ -5405,7 +5489,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>: Partially
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: Partially
               (Only via Kinto)
             </li>
           
@@ -5597,14 +5682,14 @@ which is automatically built from current git tag</p></td>
     
     <div class="card">
       <div class="container">
-        <h3>45% (50 / 110), 2023-10-06</h3>
+        <h3>49% (54 / 110), 2023-11-06</h3>
         <ul>
           
           <li>Deployment (2/10)</li>
           
           <li>Documentation Content (4/12)</li>
           
-          <li>Monitoring (8/18)</li>
+          <li>Monitoring (12/18)</li>
           
           <li>Notifications (0/2)</li>
           
@@ -5631,25 +5716,15 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="repo-main-branch-name"></div>
           
-          <div class="punch unknown" title="repo-main-branch-protected"></div>
-          
           <div class="punch no" title="repo-version-tags-protected"></div>
           
           <div class="punch yes" title="repo-issue-labels"></div>
-          
-          <div class="punch unknown" title="repo-team-reviewers-permissions"></div>
-          
-          <div class="punch unknown" title="repo-pull-request-merge"></div>
           
           <div class="punch yes" title="repo-pre-commit-optional"></div>
           
           <div class="punch no" title="repo-release-notes-auto"></div>
           
           <div class="punch yes" title="repo-dependencies-auto"></div>
-          
-          <div class="punch unknown" title="repo-automerge-enabled"></div>
-          
-          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
           
           <div class="punch no" title="repo-code-owners"></div>
           
@@ -5683,21 +5758,9 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="deployment-dockerflow"></div>
           
-          <div class="punch unknown" title="deployment-integration-test"></div>
-          
-          <div class="punch unknown" title="deployment-auto-main"></div>
-          
-          <div class="punch unknown" title="deployment-auto-release"></div>
-          
           <div class="punch no" title="deployment-auto-pull-requests"></div>
           
           <div class="punch yes" title="monitoring-heartbeat-backends"></div>
-          
-          <div class="punch unknown" title="monitoring-heartbeat-error"></div>
-          
-          <div class="punch unknown" title="monitoring-requests-duration"></div>
-          
-          <div class="punch unknown" title="monitoring-requests-id"></div>
           
           <div class="punch partially" title="monitoring-backends-duration"></div>
           
@@ -5717,8 +5780,6 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="telemetry-query-examples"></div>
           
-          <div class="punch unknown" title="notifications-error-chat"></div>
-          
           <div class="punch yes" title="documentation-decisions-records"></div>
           
           <div class="punch no" title="documentation-security-assessment"></div>
@@ -5731,6 +5792,30 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="documentation-troubleshooting"></div>
           
+          <div class="punch yes" title="monitoring-requests-duration"></div>
+          
+          <div class="punch yes" title="monitoring-requests-id"></div>
+          
+          <div class="punch unknown" title="repo-main-branch-protected"></div>
+          
+          <div class="punch unknown" title="repo-team-reviewers-permissions"></div>
+          
+          <div class="punch unknown" title="repo-pull-request-merge"></div>
+          
+          <div class="punch unknown" title="repo-automerge-enabled"></div>
+          
+          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
+          
+          <div class="punch unknown" title="deployment-integration-test"></div>
+          
+          <div class="punch unknown" title="deployment-auto-main"></div>
+          
+          <div class="punch unknown" title="deployment-auto-release"></div>
+          
+          <div class="punch no" title="monitoring-heartbeat-error"></div>
+          
+          <div class="punch unknown" title="notifications-error-chat"></div>
+          
         </div>
 
         
@@ -5742,7 +5827,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: Partially
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: Partially
               (Missing SECURITY and SUPPORT files)
             </li>
           
@@ -5755,7 +5846,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: Partially
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: Partially
               (Missing status)
             </li>
           
@@ -5765,12 +5862,16 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: Partially
-              (`run` instead of `start` and `lintfix` instead of `format`)
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: Partially
+              (<code>run</code> instead of <code>start</code> and <code>lintfix</code> instead of <code>format</code>)
             </li>
-          
-          
-        
           
           
         
@@ -5781,7 +5882,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-version-tags-protected</span>: No
+              <span class="rulename" title="Tags starting with `v*` can only be pushed by maintainers/admins">repo-version-tags-protected</span>: No
               
             </li>
           
@@ -5794,16 +5895,10 @@ which is automatically built from current git tag</p></td>
           
         
           
-          
-        
-          
-          
-        
-          
             
             
             <li>
-              <span class="rulename">repo-release-notes-auto</span>: No
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
               (Changelog is put in tag annotation)
             </li>
           
@@ -5813,16 +5908,10 @@ which is automatically built from current git tag</p></td>
           
         
           
-          
-        
-          
-          
-        
-          
             
             
             <li>
-              <span class="rulename">repo-code-owners</span>: No
+              <span class="rulename" title="Code owners are configured">repo-code-owners</span>: No
               
             </li>
           
@@ -5832,7 +5921,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-secrets</span>: No
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
               
             </li>
           
@@ -5848,7 +5937,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-type-checking</span>: No
+              <span class="rulename" title="A test verifies that types are used consistently">test-lint-type-checking</span>: No
               
             </li>
           
@@ -5858,7 +5947,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-unit-coverage</span>: No
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
               (No coverage mesurement)
             </li>
           
@@ -5874,7 +5963,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-integration</span>: Partially
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: Partially
               (Frontend tests are ran. System tests exist.)
             </li>
           
@@ -5884,7 +5973,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-pull-requests-labels</span>: No
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
               
             </li>
           
@@ -5900,18 +5989,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">release-tag-v-prefix</span>: No
+              <span class="rulename" title="The release tags have `v(.+)` format">release-tag-v-prefix</span>: No
               
             </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
           
           
         
@@ -5928,18 +6008,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
           
           
         
@@ -5950,7 +6021,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-backends-duration</span>: Partially
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: Partially
               (metrics are used to monitor uploads/downloads, but apparently not for database/cache calls)
             </li>
           
@@ -5966,8 +6037,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: Partially
-              (human format only in DEV, not configurable, and default level using LOGGING_DEFAULT_LEVEL env var https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L87-L91)
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: Partially
+              (human format only in DEV, not configurable, and default level using LOGGING_DEFAULT_LEVEL env var <a href="https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/tecken/settings.py#L87-L91">source</a>)
             </li>
           
           
@@ -5976,28 +6047,12 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-error-reporting</span>: No
-              (https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/bin/sentry-wrap.py#L43C21-L43C31  Not environment / version passed to init)
+              <span class="rulename" title="Sentry is setup by environment">monitoring-error-reporting</span>: No
+              (No environment / version passed to init <a href="https://github.com/mozilla-services/tecken/blob/3543f9d39f12cd65da1539341692663fd4621778/bin/sentry-wrap.py#L43C21-L43C31">source</a>)
             </li>
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-query-examples</span>: No
-              
-            </li>
           
           
         
@@ -6011,7 +6066,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
               
             </li>
           
@@ -6024,7 +6079,21 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
               
             </li>
           
@@ -6034,7 +6103,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>: No
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: No
               
             </li>
           
@@ -6044,9 +6114,52 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: No
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
               
             </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>: No
+              
+            </li>
+          
+          
+        
           
           
             </ul>
@@ -6054,6 +6167,126 @@ which is automatically built from current git tag</p></td>
         
 
         
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
         
           
           
@@ -6077,12 +6310,79 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-main-branch-protected</span>
+              <span class="rulename" title="Main branch is protected without exceptions">repo-main-branch-protected</span>
               
             </li>
           
           
         
+          
+            
+            
+            <li>
+              <span class="rulename" title="Team of reviewers has at least “Maintain” permissions">repo-team-reviewers-permissions</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Only “*squash and merge*” and “*rebase and merge*” are allowed">repo-pull-request-merge</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Auto-delete head branches is enabled">repo-head-branch-auto-delete</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automatic deployment on DEV/STAGE environment on pull-requests merge">deployment-auto-main</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automatic deployment on STAGE/PROD environment on version tag">deployment-auto-release</span>
+              
+            </li>
           
           
         
@@ -6093,217 +6393,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-team-reviewers-permissions</span>
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>
               
             </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-pull-request-merge</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-automerge-enabled</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-head-branch-auto-delete</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-integration-test</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-auto-main</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-auto-release</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-heartbeat-error</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-requests-duration</span>
-              : (Didn't see middleware/requests.summary. Maybe part of python-dockerflow)
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-requests-id</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">notifications-error-chat</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
           
           
             </ul>
@@ -6320,14 +6412,14 @@ which is automatically built from current git tag</p></td>
     
     <div class="card">
       <div class="container">
-        <h3>41% (45 / 110), 2023-10-18</h3>
+        <h3>57% (63 / 110), 2023-11-06</h3>
         <ul>
           
           <li>Deployment (7/10)</li>
           
           <li>Documentation Content (4/12)</li>
           
-          <li>Monitoring (3/18)</li>
+          <li>Monitoring (9/18)</li>
           
           <li>Notifications (2/2)</li>
           
@@ -6335,7 +6427,7 @@ which is automatically built from current git tag</p></td>
           
           <li>Repository Automation (4/10)</li>
           
-          <li>Repository Ergonomics (9/22)</li>
+          <li>Repository Ergonomics (13/22)</li>
           
           <li>Telemetry (4/8)</li>
           
@@ -6356,23 +6448,13 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="repo-main-branch-protected"></div>
           
-          <div class="punch unknown" title="repo-version-tags-protected"></div>
-          
           <div class="punch no" title="repo-issue-labels"></div>
-          
-          <div class="punch unknown" title="repo-team-reviewers-permissions"></div>
-          
-          <div class="punch unknown" title="repo-pull-request-merge"></div>
           
           <div class="punch yes" title="repo-pre-commit-optional"></div>
           
           <div class="punch no" title="repo-release-notes-auto"></div>
           
           <div class="punch yes" title="repo-dependencies-auto"></div>
-          
-          <div class="punch unknown" title="repo-automerge-enabled"></div>
-          
-          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
           
           <div class="punch yes" title="repo-code-owners"></div>
           
@@ -6414,16 +6496,6 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="deployment-auto-pull-requests"></div>
           
-          <div class="punch unknown" title="monitoring-heartbeat-backends"></div>
-          
-          <div class="punch unknown" title="monitoring-heartbeat-error"></div>
-          
-          <div class="punch unknown" title="monitoring-requests-duration"></div>
-          
-          <div class="punch unknown" title="monitoring-requests-id"></div>
-          
-          <div class="punch unknown" title="monitoring-backends-duration"></div>
-          
           <div class="punch no" title="monitoring-logging-level"></div>
           
           <div class="punch yes" title="monitoring-logging-mozlog"></div>
@@ -6454,6 +6526,26 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="documentation-troubleshooting"></div>
           
+          <div class="punch yes" title="repo-version-tags-protected"></div>
+          
+          <div class="punch yes" title="repo-team-reviewers-permissions"></div>
+          
+          <div class="punch unknown" title="repo-pull-request-merge"></div>
+          
+          <div class="punch unknown" title="repo-automerge-enabled"></div>
+          
+          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
+          
+          <div class="punch yes" title="monitoring-heartbeat-backends"></div>
+          
+          <div class="punch no" title="monitoring-heartbeat-error"></div>
+          
+          <div class="punch yes" title="monitoring-requests-duration"></div>
+          
+          <div class="punch yes" title="monitoring-requests-id"></div>
+          
+          <div class="punch no" title="monitoring-backends-duration"></div>
+          
         </div>
 
         
@@ -6465,7 +6557,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: Partially
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: Partially
               (Missing SECURITY.md and SUPPORT.md)
             </li>
           
@@ -6475,7 +6573,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-folders</span>: Partially
+              <span class="rulename" title="- docs/
+- bin/
+">repo-standard-folders</span>: Partially
               (scripts/ instead of bin/)
             </li>
           
@@ -6485,7 +6585,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: Partially
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: Partially
               (Missing Status)
             </li>
           
@@ -6495,7 +6601,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: No
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: No
               (up instead of start, no help, code_format instead of format, check instead of lint, pytest instead of test, ...)
             </li>
           
@@ -6508,13 +6621,18 @@ which is automatically built from current git tag</p></td>
           
         
           
-          
-        
-          
             
             
             <li>
-              <span class="rulename">repo-issue-labels</span>: No
+              <span class="rulename" title="Standard issue labels exist:
+
+- bug
+- dependencies
+- enhancement
+- documentation
+- wontfix
+- good-first-issue
+">repo-issue-labels</span>: No
               (No documentation, defect instead of bug)
             </li>
           
@@ -6524,6 +6642,16 @@ which is automatically built from current git tag</p></td>
           
         
           
+            
+            
+            <li>
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
+              
+            </li>
+          
+          
+        
+          
           
         
           
@@ -6533,7 +6661,52 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-release-notes-auto</span>: No
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
               
             </li>
           
@@ -6552,80 +6725,13 @@ which is automatically built from current git tag</p></td>
           
         
           
-            
-            
-            <li>
-              <span class="rulename">test-lint-secrets</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
           
         
           
             
             
             <li>
-              <span class="rulename">test-unit-coverage</span>: No
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">test-documentation-build</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">test-pull-requests-labels</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-dockerflow</span>: Partially
+              <span class="rulename" title="Container follows Dockerflow spec">deployment-dockerflow</span>: Partially
               (No readonly user apparently, /experimenter instead of /app, not ENTRYPOINT and CMD, ...)
             </li>
           
@@ -6644,33 +6750,18 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
           
         
           
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
             
             
             <li>
-              <span class="rulename">monitoring-logging-level</span>: No
-              (DEBUG https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L233)
+              <span class="rulename" title="Logging has INFO level by default">monitoring-logging-level</span>: No
+              (DEBUG <a href="https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L233">source</a>)
             </li>
           
           
@@ -6682,7 +6773,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: No
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: No
               (LOGGING_CONSOLE_LEVEL and LOGGING_USE_JSON)
             </li>
           
@@ -6692,8 +6783,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-error-reporting</span>: Partially
-              (Without env/version https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L277)
+              <span class="rulename" title="Sentry is setup by environment">monitoring-error-reporting</span>: Partially
+              (Without env/version <a href="https://github.com/mozilla/experimenter/blob/6e08fa198b07324b412543246390c0dab046cd7c/experimenter/experimenter/settings.py#L277">source</a>)
             </li>
           
           
@@ -6708,7 +6799,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-documented</span>: No
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
               
             </li>
           
@@ -6718,7 +6809,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-query-examples</span>: No
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
               
             </li>
           
@@ -6734,7 +6825,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               
             </li>
           
@@ -6747,7 +6839,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
               
             </li>
           
@@ -6757,7 +6849,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>: No
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: No
               
             </li>
           
@@ -6767,7 +6860,51 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: No
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: No
               
             </li>
           
@@ -6797,26 +6934,136 @@ which is automatically built from current git tag</p></td>
           
         
           
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
             
               <p>Could not be verified:</p>
                 <ul>
             
             
             <li>
-              <span class="rulename">repo-version-tags-protected</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-team-reviewers-permissions</span>
+              <span class="rulename" title="Only “*squash and merge*” and “*rebase and merge*” are allowed">repo-pull-request-merge</span>
               
             </li>
           
@@ -6826,26 +7073,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-pull-request-merge</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-automerge-enabled</span>
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>
               
             </li>
           
@@ -6855,149 +7083,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-head-branch-auto-delete</span>
+              <span class="rulename" title="Auto-delete head branches is enabled">repo-head-branch-auto-delete</span>
               
             </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-heartbeat-backends</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-heartbeat-error</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-requests-duration</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-requests-id</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">monitoring-backends-duration</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
           
           
         
@@ -7174,7 +7262,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: Partially
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: Partially
               (Missing CONTRIBUTING, SECURITY, SUPPORT)
             </li>
           
@@ -7184,7 +7278,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-folders</span>: Partially
+              <span class="rulename" title="- docs/
+- bin/
+">repo-standard-folders</span>: Partially
               (scripts/ instead of bin/)
             </li>
           
@@ -7194,7 +7290,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: Partially
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: Partially
               (No title, no status, no usage)
             </li>
           
@@ -7204,7 +7306,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: No
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: No
               (No Makefile)
             </li>
           
@@ -7223,7 +7332,15 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-issue-labels</span>: No
+              <span class="rulename" title="Standard issue labels exist:
+
+- bug
+- dependencies
+- enhancement
+- documentation
+- wontfix
+- good-first-issue
+">repo-issue-labels</span>: No
               (bug, no enhancement, no documentation, no wontfix, first-bug instead of good-first-issue)
             </li>
           
@@ -7242,7 +7359,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-release-notes-auto</span>: No
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
               (No changelog)
             </li>
           
@@ -7255,7 +7372,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-automerge-enabled</span>: No
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>: No
               
             </li>
           
@@ -7271,7 +7388,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-secrets</span>: No
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
               
             </li>
           
@@ -7281,7 +7398,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-code-format</span>: No
+              <span class="rulename" title="A test verifies that code format respects standard">test-lint-code-format</span>: No
               
             </li>
           
@@ -7291,7 +7408,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-static-analysis</span>: No
+              <span class="rulename" title="A test verifies that code respects idioms and good practices">test-lint-static-analysis</span>: No
               
             </li>
           
@@ -7301,7 +7418,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-type-checking</span>: No
+              <span class="rulename" title="A test verifies that types are used consistently">test-lint-type-checking</span>: No
               
             </li>
           
@@ -7311,7 +7428,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-unit-coverage</span>: No
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
               
             </li>
           
@@ -7321,34 +7438,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: No
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: No
               
             </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">test-pull-requests-labels</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
           
           
         
@@ -7362,7 +7454,32 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-dockerflow</span>: Partially
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Container follows Dockerflow spec">deployment-dockerflow</span>: Partially
               (No dedicated user, not exposing 8000, ...)
             </li>
           
@@ -7381,7 +7498,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -7415,7 +7532,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-error-reporting</span>: No
+              <span class="rulename" title="Sentry is setup by environment">monitoring-error-reporting</span>: No
               (No env Sentry SDK init)
             </li>
           
@@ -7431,8 +7548,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-documented</span>: No
-              (Not listed in https://github.com/mozilla-releng/balrog/blob/6493a9e2eae9e959fc69e7e2fd93b6e91ed16ba3/docs/source/infrastructure.rst#monitoring--metrics)
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
+              (Not listed in <a href="https://github.com/mozilla-releng/balrog/blob/6493a9e2eae9e959fc69e7e2fd93b6e91ed16ba3/docs/source/infrastructure.rst#monitoring--metrics">infra docs</a>)
             </li>
           
           
@@ -7441,7 +7558,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-query-examples</span>: No
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
               
             </li>
           
@@ -7454,7 +7571,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-decisions-records</span>: No
+              <span class="rulename" title="Enumerate evaluation criteria.">documentation-decisions-records</span>: No
               
             </li>
           
@@ -7464,20 +7581,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">documentation-test-args</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               
             </li>
           
@@ -7490,7 +7595,20 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: No
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
               
             </li>
           
@@ -7523,7 +7641,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-main-branch-protected</span>
+              <span class="rulename" title="Main branch is protected without exceptions">repo-main-branch-protected</span>
               
             </li>
           
@@ -7533,41 +7651,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-version-tags-protected</span>
+              <span class="rulename" title="Tags starting with `v*` can only be pushed by maintainers/admins">repo-version-tags-protected</span>
               
             </li>
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-team-reviewers-permissions</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-pull-request-merge</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
           
           
         
@@ -7578,18 +7664,19 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-head-branch-auto-delete</span>
+              <span class="rulename" title="Team of reviewers has at least “Maintain” permissions">repo-team-reviewers-permissions</span>
               
             </li>
           
           
         
           
-          
-        
-          
-          
-        
+            
+            
+            <li>
+              <span class="rulename" title="Only “*squash and merge*” and “*rebase and merge*” are allowed">repo-pull-request-merge</span>
+              
+            </li>
           
           
         
@@ -7609,7 +7696,38 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-build</span>
+              <span class="rulename" title="Auto-delete head branches is enabled">repo-head-branch-auto-delete</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that container builds successfully">test-container-build</span>
               : (Could not find in taskcluster)
             </li>
           
@@ -7619,7 +7737,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-integration</span>
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>
               : (Could not find it)
             </li>
           
@@ -7644,7 +7762,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">release-publish</span>
+              <span class="rulename" title="Project container or package is published on git tag">release-publish</span>
               
             </li>
           
@@ -7657,7 +7775,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>
               
             </li>
           
@@ -7667,7 +7785,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-main</span>
+              <span class="rulename" title="Automatic deployment on DEV/STAGE environment on pull-requests merge">deployment-auto-main</span>
               
             </li>
           
@@ -7677,7 +7795,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-release</span>
+              <span class="rulename" title="Automatic deployment on STAGE/PROD environment on version tag">deployment-auto-release</span>
               
             </li>
           
@@ -7693,7 +7811,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-error</span>
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>
               : (Could not find heartbeat checks implementation)
             </li>
           
@@ -7703,7 +7821,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-duration</span>
+              <span class="rulename" title="API requests processing duration is monitored">monitoring-requests-duration</span>
               
             </li>
           
@@ -7713,7 +7831,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-id</span>
+              <span class="rulename" title="A unique ID is associated to each request and logged">monitoring-requests-id</span>
               
             </li>
           
@@ -7723,7 +7841,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-backends-duration</span>
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>
               
             </li>
           
@@ -7738,28 +7856,6 @@ which is automatically built from current git tag</p></td>
           
           
         
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">notifications-error-chat</span>
-              
-            </li>
           
           
         
@@ -7779,7 +7875,30 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>
               
             </li>
           
@@ -7946,7 +8065,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: Partially
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: Partially
               (Missing SUPPORT.md)
             </li>
           
@@ -7956,7 +8081,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-folders</span>: No
+              <span class="rulename" title="- docs/
+- bin/
+">repo-standard-folders</span>: No
               (scripts instead of bin/)
             </li>
           
@@ -7966,7 +8093,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: Partially
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: Partially
               (No status nor usage)
             </li>
           
@@ -7976,7 +8109,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: Partially
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: Partially
               (No start)
             </li>
           
@@ -7986,7 +8126,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-main-branch-name</span>: No
+              <span class="rulename" title="Main branch is called `main`">repo-main-branch-name</span>: No
               (master instead of main)
             </li>
           
@@ -7999,7 +8139,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-version-tags-protected</span>: No
+              <span class="rulename" title="Tags starting with `v*` can only be pushed by maintainers/admins">repo-version-tags-protected</span>: No
               
             </li>
           
@@ -8009,7 +8149,15 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-issue-labels</span>: Partially
+              <span class="rulename" title="Standard issue labels exist:
+
+- bug
+- dependencies
+- enhancement
+- documentation
+- wontfix
+- good-first-issue
+">repo-issue-labels</span>: Partially
               (labels have prefixes, no enhancement, good_first_bug instead of good-first-issue)
             </li>
           
@@ -8019,7 +8167,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-team-reviewers-permissions</span>: No
+              <span class="rulename" title="Team of reviewers has at least “Maintain” permissions">repo-team-reviewers-permissions</span>: No
               (No but only 2 engineers in the team currently, all with write access)
             </li>
           
@@ -8035,7 +8183,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-release-notes-auto</span>: No
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
               (No changelog)
             </li>
           
@@ -8048,7 +8196,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-automerge-enabled</span>: No
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>: No
               
             </li>
           
@@ -8076,7 +8224,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-unit-coverage</span>: No
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
               (No coverage reporting)
             </li>
           
@@ -8092,7 +8240,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-integration</span>: No
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: No
               
             </li>
           
@@ -8102,23 +8250,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-pull-requests-labels</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">release-tag-v-prefix</span>: No
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
               
             </li>
           
@@ -8134,7 +8266,23 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-dockerflow</span>: Partially
+              <span class="rulename" title="The release tags have `v(.+)` format">release-tag-v-prefix</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Container follows Dockerflow spec">deployment-dockerflow</span>: Partially
               (No entrypoint, cmd, not exposing 8000, ...)
             </li>
           
@@ -8153,7 +8301,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -8166,8 +8314,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-error</span>: Partially
-              (Not everything is logged https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/amo/monitors.py#L154)
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>: Partially
+              (Not everything is logged <a href="https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/amo/monitors.py#L154">source</a>)
             </li>
           
           
@@ -8176,7 +8324,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-duration</span>: Partially
+              <span class="rulename" title="API requests processing duration is monitored">monitoring-requests-duration</span>: Partially
               (In Grafana (not in MozLog field))
             </li>
           
@@ -8189,7 +8337,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-backends-duration</span>: Partially
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: Partially
               (Via heartbeat)
             </li>
           
@@ -8205,8 +8353,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: No
-              (https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/lib/settings_base.py)
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: No
+              (<a href="https://github.com/mozilla/addons-server/blob/71893a824f11041297732162f101177bd11545e2/src/olympia/lib/settings_base.py">source</a>)
             </li>
           
           
@@ -8224,7 +8372,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-documented</span>: No
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
               
             </li>
           
@@ -8234,7 +8382,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-query-examples</span>: No
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
               
             </li>
           
@@ -8244,7 +8392,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">notifications-error-chat</span>: No
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>: No
               (Too verbose. Sentry tracebacks can automatically comment in GitHub and can be linked to GitHub issues though.)
             </li>
           
@@ -8254,7 +8402,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-decisions-records</span>: No
+              <span class="rulename" title="Enumerate evaluation criteria.">documentation-decisions-records</span>: No
               
             </li>
           
@@ -8264,7 +8412,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               
             </li>
           
@@ -8280,7 +8429,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-operator</span>: No
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: No
               
             </li>
           
@@ -8290,7 +8440,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: No
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
               
             </li>
           
@@ -8479,22 +8629,22 @@ which is automatically built from current git tag</p></td>
     
     <div class="card">
       <div class="container">
-        <h3>32% (35 / 110), 2023-10-19</h3>
+        <h3>39% (43 / 110), 2023-10-19</h3>
         <ul>
           
-          <li>Deployment (2/10)</li>
+          <li>Deployment (5/10)</li>
           
           <li>Documentation Content (8/12)</li>
           
           <li>Monitoring (5/18)</li>
           
-          <li>Notifications (0/2)</li>
+          <li>Notifications (1/2)</li>
           
           <li>Releasing (2/8)</li>
           
           <li>Repository Automation (2/10)</li>
           
-          <li>Repository Ergonomics (8/22)</li>
+          <li>Repository Ergonomics (12/22)</li>
           
           <li>Telemetry (0/8)</li>
           
@@ -8513,25 +8663,13 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="repo-main-branch-name"></div>
           
-          <div class="punch unknown" title="repo-main-branch-protected"></div>
-          
-          <div class="punch unknown" title="repo-version-tags-protected"></div>
-          
           <div class="punch partially" title="repo-issue-labels"></div>
-          
-          <div class="punch unknown" title="repo-team-reviewers-permissions"></div>
-          
-          <div class="punch unknown" title="repo-pull-request-merge"></div>
           
           <div class="punch no" title="repo-pre-commit-optional"></div>
           
           <div class="punch no" title="repo-release-notes-auto"></div>
           
           <div class="punch yes" title="repo-dependencies-auto"></div>
-          
-          <div class="punch unknown" title="repo-automerge-enabled"></div>
-          
-          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
           
           <div class="punch no" title="repo-code-owners"></div>
           
@@ -8559,17 +8697,9 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="release-tag-v-prefix"></div>
           
-          <div class="punch unknown" title="release-tag-only"></div>
-          
-          <div class="punch unknown" title="release-publish"></div>
-          
           <div class="punch yes" title="deployment-dockerflow"></div>
           
           <div class="punch no" title="deployment-integration-test"></div>
-          
-          <div class="punch unknown" title="deployment-auto-main"></div>
-          
-          <div class="punch unknown" title="deployment-auto-release"></div>
           
           <div class="punch no" title="deployment-auto-pull-requests"></div>
           
@@ -8599,8 +8729,6 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="telemetry-query-examples"></div>
           
-          <div class="punch unknown" title="notifications-error-chat"></div>
-          
           <div class="punch yes" title="documentation-decisions-records"></div>
           
           <div class="punch no" title="documentation-security-assessment"></div>
@@ -8613,6 +8741,28 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="documentation-troubleshooting"></div>
           
+          <div class="punch yes" title="repo-main-branch-protected"></div>
+          
+          <div class="punch no" title="repo-version-tags-protected"></div>
+          
+          <div class="punch yes" title="repo-team-reviewers-permissions"></div>
+          
+          <div class="punch no" title="repo-pull-request-merge"></div>
+          
+          <div class="punch no" title="repo-automerge-enabled"></div>
+          
+          <div class="punch no" title="repo-head-branch-auto-delete"></div>
+          
+          <div class="punch no" title="release-tag-only"></div>
+          
+          <div class="punch no" title="release-publish"></div>
+          
+          <div class="punch yes" title="deployment-auto-main"></div>
+          
+          <div class="punch partially" title="deployment-auto-release"></div>
+          
+          <div class="punch partially" title="notifications-error-chat"></div>
+          
         </div>
 
         
@@ -8624,7 +8774,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: Partially
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: Partially
               (No SUPPORT, no SECURITY, no CONTRIBUTING)
             </li>
           
@@ -8637,7 +8793,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: Partially
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: Partially
               (No Status, no Usage)
             </li>
           
@@ -8647,7 +8809,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: Partially
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: Partially
               (No format, run instead of start)
             </li>
           
@@ -8657,33 +8826,29 @@ which is automatically built from current git tag</p></td>
           
         
           
-          
-        
-          
-          
-        
-          
             
             
             <li>
-              <span class="rulename">repo-issue-labels</span>: Partially
+              <span class="rulename" title="Standard issue labels exist:
+
+- bug
+- dependencies
+- enhancement
+- documentation
+- wontfix
+- good-first-issue
+">repo-issue-labels</span>: Partially
               (No bug, no good-first-issue, ...)
             </li>
           
           
         
           
-          
-        
-          
-          
-        
-          
             
             
             <li>
-              <span class="rulename">repo-pre-commit-optional</span>: No
-              (https://github.com/mozilla/kitsune/blob/1f1eb9e11dafbb4814f379fa748bef35f20ca780/docs/hacking_howto.md?plain=1#L187)
+              <span class="rulename" title="Pre-commit hooks are optional">repo-pre-commit-optional</span>: No
+              (<a href="https://github.com/mozilla/kitsune/blob/1f1eb9e11dafbb4814f379fa748bef35f20ca780/docs/hacking_howto.md?plain=1#L187">source</a>)
             </li>
           
           
@@ -8692,7 +8857,30 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-release-notes-auto</span>: No
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Code owners are configured">repo-code-owners</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
               
             </li>
           
@@ -8705,39 +8893,10 @@ which is automatically built from current git tag</p></td>
           
         
           
-          
-        
-          
             
             
             <li>
-              <span class="rulename">repo-code-owners</span>: No
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">test-lint-secrets</span>: No
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">test-lint-type-checking</span>: No
+              <span class="rulename" title="A test verifies that types are used consistently">test-lint-type-checking</span>: No
               (Only flake8)
             </li>
           
@@ -8747,7 +8906,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-unit-coverage</span>: No
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
               
             </li>
           
@@ -8757,7 +8916,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-documentation-build</span>: No
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: No
               
             </li>
           
@@ -8770,7 +8929,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-container-integration</span>: No
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: No
               (No integration test apparently (only unit and js))
             </li>
           
@@ -8780,7 +8939,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-pull-requests-labels</span>: No
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
               
             </li>
           
@@ -8796,15 +8955,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">release-tag-v-prefix</span>: No
+              <span class="rulename" title="The release tags have `v(.+)` format">release-tag-v-prefix</span>: No
               
             </li>
-          
-          
-        
-          
-          
-        
           
           
         
@@ -8815,23 +8968,17 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: No
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
               (No integration tests apparently)
             </li>
           
           
         
           
-          
-        
-          
-          
-        
-          
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -8841,7 +8988,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-backends</span>: No
+              <span class="rulename" title="Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting">monitoring-heartbeat-backends</span>: No
               (Could not find mention of heartbeat or dockerflow)
             </li>
           
@@ -8851,7 +8998,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-error</span>: No
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>: No
               
             </li>
           
@@ -8861,7 +9008,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-duration</span>: No
+              <span class="rulename" title="API requests processing duration is monitored">monitoring-requests-duration</span>: No
               
             </li>
           
@@ -8871,7 +9018,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-requests-id</span>: No
+              <span class="rulename" title="A unique ID is associated to each request and logged">monitoring-requests-id</span>: No
               
             </li>
           
@@ -8881,8 +9028,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-backends-duration</span>: No
-              (statsd was removed https://github.com/mozilla/kitsune/pull/4412)
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: No
+              (statsd <a href="https://github.com/mozilla/kitsune/pull/4412">was removed</a>)
             </li>
           
           
@@ -8894,7 +9041,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-mozlog</span>: No
+              <span class="rulename" title="Logging format is MozLog by default">monitoring-logging-mozlog</span>: No
               (No mention of Json formatter)
             </li>
           
@@ -8904,7 +9051,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: Partially
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: Partially
               (Not LOG_FORMAT)
             </li>
           
@@ -8917,7 +9064,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-metrics</span>: No
+              <span class="rulename" title="Project sends live telemetry">telemetry-metrics</span>: No
               (statsd was removed)
             </li>
           
@@ -8927,7 +9074,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-naming</span>: No
+              <span class="rulename" title="Probes start with project name (eg. `ctms.*`)">telemetry-naming</span>: No
               
             </li>
           
@@ -8937,7 +9084,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-documented</span>: No
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
               
             </li>
           
@@ -8947,12 +9094,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">telemetry-query-examples</span>: No
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
               
             </li>
-          
-          
-        
           
           
         
@@ -8963,7 +9107,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-security-assessment</span>: No
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
               
             </li>
           
@@ -8982,8 +9127,99 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-troubleshooting</span>: No
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
               
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Tags starting with `v*` can only be pushed by maintainers/admins">repo-version-tags-protected</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Only “*squash and merge*” and “*rebase and merge*” are allowed">repo-pull-request-merge</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Auto-delete head branches is enabled">repo-head-branch-auto-delete</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Project version has a single source of truth. For example, it is read from `version.json`
+which is automatically built from current git tag
+">release-tag-only</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Project container or package is published on git tag">release-publish</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automatic deployment on STAGE/PROD environment on version tag">deployment-auto-release</span>: Partially
+              (Automatic releases but without tags. We are on the process of switching to tags)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>: Partially
+              (We do get notification but it's from NewRelic and from the pipelines. We do use Sentry but we don't have slack automation)
             </li>
           
           
@@ -9009,78 +9245,6 @@ which is automatically built from current git tag</p></td>
           
         
           
-            
-              <p>Could not be verified:</p>
-                <ul>
-            
-            
-            <li>
-              <span class="rulename">repo-main-branch-protected</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-version-tags-protected</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-team-reviewers-permissions</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-pull-request-merge</span>
-              
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-automerge-enabled</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">repo-head-branch-auto-delete</span>
-              
-            </li>
-          
           
         
           
@@ -9122,49 +9286,6 @@ which is automatically built from current git tag</p></td>
           
           
         
-          
-            
-            
-            <li>
-              <span class="rulename">release-tag-only</span>
-              : (No tag since 2016 (continuous deployment?))
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">release-publish</span>
-              : (No tag since 2016 (continuous deployment?))
-            </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-auto-main</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">deployment-auto-release</span>
-              
-            </li>
           
           
         
@@ -9211,12 +9332,47 @@ which is automatically built from current git tag</p></td>
           
         
           
-            
-            
-            <li>
-              <span class="rulename">notifications-error-chat</span>
-              
-            </li>
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
           
           
         
@@ -9251,14 +9407,14 @@ which is automatically built from current git tag</p></td>
     
     <div class="card">
       <div class="container">
-        <h3>50% (55 / 110), 2023-10-19</h3>
+        <h3>52% (57 / 110), 2023-11-07</h3>
         <ul>
           
           <li>Deployment (4/10)</li>
           
           <li>Documentation Content (6/12)</li>
           
-          <li>Monitoring (4/18)</li>
+          <li>Monitoring (6/18)</li>
           
           <li>Notifications (1/2)</li>
           
@@ -9321,8 +9477,6 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="test-container-build"></div>
           
-          <div class="punch unknown" title="test-container-integration"></div>
-          
           <div class="punch no" title="test-pull-requests-labels"></div>
           
           <div class="punch yes" title="dependencies-reproducibility"></div>
@@ -9349,11 +9503,7 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch no" title="monitoring-heartbeat-error"></div>
           
-          <div class="punch unknown" title="monitoring-requests-duration"></div>
-          
           <div class="punch yes" title="monitoring-requests-id"></div>
-          
-          <div class="punch unknown" title="monitoring-backends-duration"></div>
           
           <div class="punch yes" title="monitoring-logging-level"></div>
           
@@ -9365,17 +9515,9 @@ which is automatically built from current git tag</p></td>
           
           <div class="punch yes" title="telemetry-metrics"></div>
           
-          <div class="punch unknown" title="telemetry-naming"></div>
-          
-          <div class="punch unknown" title="telemetry-documented"></div>
-          
-          <div class="punch unknown" title="telemetry-query-examples"></div>
-          
           <div class="punch partially" title="notifications-error-chat"></div>
           
           <div class="punch no" title="documentation-decisions-records"></div>
-          
-          <div class="punch unknown" title="documentation-security-assessment"></div>
           
           <div class="punch yes" title="documentation-dev"></div>
           
@@ -9384,6 +9526,20 @@ which is automatically built from current git tag</p></td>
           <div class="punch yes" title="documentation-operator"></div>
           
           <div class="punch yes" title="documentation-troubleshooting"></div>
+          
+          <div class="punch no" title="test-container-integration"></div>
+          
+          <div class="punch yes" title="monitoring-requests-duration"></div>
+          
+          <div class="punch no" title="monitoring-backends-duration"></div>
+          
+          <div class="punch no" title="telemetry-naming"></div>
+          
+          <div class="punch no" title="telemetry-documented"></div>
+          
+          <div class="punch no" title="telemetry-query-examples"></div>
+          
+          <div class="punch no" title="documentation-security-assessment"></div>
           
         </div>
 
@@ -9396,7 +9552,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-files</span>: Partially
+              <span class="rulename" title="- README.(md,rst)
+- LICENSE
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- SECURITY.md
+- SUPPORT.md
+">repo-standard-files</span>: Partially
               (Missing SUPPORT.md)
             </li>
           
@@ -9406,7 +9568,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-standard-folders</span>: No
+              <span class="rulename" title="- docs/
+- bin/
+">repo-standard-folders</span>: No
               (No bin/, no docs/)
             </li>
           
@@ -9416,7 +9580,13 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-readme-sections</span>: Partially
+              <span class="rulename" title="Readme contains the following:
+
+- Project name as main title
+- Status (invest, sustain, sunset, abandoned)
+- Usage
+- Link to documentation
+">repo-readme-sections</span>: Partially
               (Missing status)
             </li>
           
@@ -9426,7 +9596,14 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-makefile-targets</span>: No
+              <span class="rulename" title="Make has the following targets:
+
+- help
+- test
+- start
+- lint
+- format
+">repo-makefile-targets</span>: No
               (No Makefile)
             </li>
           
@@ -9442,7 +9619,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-version-tags-protected</span>: No
+              <span class="rulename" title="Tags starting with `v*` can only be pushed by maintainers/admins">repo-version-tags-protected</span>: No
               (No tag protection rules)
             </li>
           
@@ -9452,7 +9629,15 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-issue-labels</span>: Partially
+              <span class="rulename" title="Standard issue labels exist:
+
+- bug
+- dependencies
+- enhancement
+- documentation
+- wontfix
+- good-first-issue
+">repo-issue-labels</span>: Partially
               (No wontfix, docs instead of documentation)
             </li>
           
@@ -9465,7 +9650,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-pull-request-merge</span>: Partially
+              <span class="rulename" title="Only “*squash and merge*” and “*rebase and merge*” are allowed">repo-pull-request-merge</span>: Partially
               (Merge commits are also allowed)
             </li>
           
@@ -9478,8 +9663,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-release-notes-auto</span>: Partially
-              (Using a command `yarn release`)
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: Partially
+              (Using a command <code>yarn release</code>)
             </li>
           
           
@@ -9491,7 +9676,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">repo-automerge-enabled</span>: Partially
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>: Partially
               (Merge queues are not enabled)
             </li>
           
@@ -9507,7 +9692,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-secrets</span>: No
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
               
             </li>
           
@@ -9523,7 +9708,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-lint-type-checking</span>: No
+              <span class="rulename" title="A test verifies that types are used consistently">test-lint-type-checking</span>: No
               
             </li>
           
@@ -9533,12 +9718,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-unit-coverage</span>: No
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
               
             </li>
-          
-          
-        
           
           
         
@@ -9552,7 +9734,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">test-pull-requests-labels</span>: No
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
               
             </li>
           
@@ -9577,7 +9759,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-dockerflow</span>: No
+              <span class="rulename" title="Container follows Dockerflow spec">deployment-dockerflow</span>: No
               (Does not expose 8000, not using specific user, ...)
             </li>
           
@@ -9587,7 +9769,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-integration-test</span>: Partially
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: Partially
               (A simple smoketest is run after deployment)
             </li>
           
@@ -9600,7 +9782,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-release</span>: Partially
+              <span class="rulename" title="Automatic deployment on STAGE/PROD environment on version tag">deployment-auto-release</span>: Partially
               (No quality gate to pass through before DEV deployment)
             </li>
           
@@ -9610,7 +9792,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">deployment-auto-pull-requests</span>: No
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
               
             </li>
           
@@ -9620,7 +9802,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-backends</span>: No
+              <span class="rulename" title="Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting">monitoring-heartbeat-backends</span>: No
               
             </li>
           
@@ -9630,7 +9812,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-heartbeat-error</span>: No
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>: No
               (Heartbeat is a simple Nginx endpoint that returns 200)
             </li>
           
@@ -9643,17 +9825,11 @@ which is automatically built from current git tag</p></td>
           
         
           
-          
-        
-          
-          
-        
-          
             
             
             <li>
-              <span class="rulename">monitoring-logging-mozlog</span>: No
-              (only if ENV==production https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/tools/websocktunnel/cmd/websocktunnel/main.go#L47)
+              <span class="rulename" title="Logging format is MozLog by default">monitoring-logging-mozlog</span>: No
+              (only if ENV==production <a href="https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/tools/websocktunnel/cmd/websocktunnel/main.go#L47">source</a>)
             </li>
           
           
@@ -9662,7 +9838,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-logging-env-configuration</span>: No
+              <span class="rulename" title="Logging level is set using `LOG_LEVEL` env variable. Logging format is set using `LOG_FORMAT` env variable">monitoring-logging-env-configuration</span>: No
               
             </li>
           
@@ -9672,18 +9848,9 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">monitoring-error-reporting</span>: No
-              (Sentry init does not set environment https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/libraries/monitor/src/plugins/sentry.js#L19-L23)
+              <span class="rulename" title="Sentry is setup by environment">monitoring-error-reporting</span>: No
+              (<a href="https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/libraries/monitor/src/plugins/sentry.js#L19-L23">Sentry init</a> does not set environment)
             </li>
-          
-          
-        
-          
-          
-        
-          
-          
-        
           
           
         
@@ -9694,7 +9861,7 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">notifications-error-chat</span>: Partially
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>: Partially
               (Notifications of elevated Sentry errors are sent to #taskcluster-services-notifications and no GitHub issues are created automatically)
             </li>
           
@@ -9704,8 +9871,22 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-decisions-records</span>: No
-              (There are design docs though https://github.com/taskcluster/taskcluster/tree/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/ui/docs/manual/design)
+              <span class="rulename" title="Enumerate evaluation criteria.">documentation-decisions-records</span>: No
+              (There are <a href="https://github.com/taskcluster/taskcluster/tree/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/ui/docs/manual/design">design docs</a> though)
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Instructions on how to run test suite with custom arguments (eg. test selection, verbosity, etc.)">documentation-test-args</span>: No
+              (<a href="https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/dev-docs/development-process.md#hacking-on-services-and-libraries">dev documentation</a>
+does not mention it)
             </li>
           
           
@@ -9720,8 +9901,8 @@ which is automatically built from current git tag</p></td>
             
             
             <li>
-              <span class="rulename">documentation-test-args</span>: No
-              (https://github.com/taskcluster/taskcluster/blob/a43bcb02d6fa98fcedbfa3c5b538362b7e28073f/dev-docs/development-process.md#hacking-on-services-and-libraries does not mention it)
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: No
+              (CI doesn’t build containers on every commit, only for release events)
             </li>
           
           
@@ -9729,6 +9910,54 @@ which is automatically built from current git tag</p></td>
           
           
         
+          
+            
+            
+            <li>
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: No
+              (No statsd / live metrics)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Probes start with project name (eg. `ctms.*`)">telemetry-naming</span>: No
+              (No statsd / live metrics)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
+              (No statsd / live metrics)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
+              (No statsd / live metrics)
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
+              
+            </li>
           
           
             </ul>
@@ -9807,16 +10036,6 @@ which is automatically built from current git tag</p></td>
           
         
           
-            
-              <p>Could not be verified:</p>
-                <ul>
-            
-            
-            <li>
-              <span class="rulename">test-container-integration</span>
-              
-            </li>
-          
           
         
           
@@ -9859,25 +10078,17 @@ which is automatically built from current git tag</p></td>
           
         
           
-            
-            
-            <li>
-              <span class="rulename">monitoring-requests-duration</span>
-              
-            </li>
-          
           
         
           
           
         
           
-            
-            
-            <li>
-              <span class="rulename">monitoring-backends-duration</span>
-              
-            </li>
+          
+        
+          
+          
+        
           
           
         
@@ -9897,33 +10108,6 @@ which is automatically built from current git tag</p></td>
           
         
           
-            
-            
-            <li>
-              <span class="rulename">telemetry-naming</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-documented</span>
-              
-            </li>
-          
-          
-        
-          
-            
-            
-            <li>
-              <span class="rulename">telemetry-query-examples</span>
-              
-            </li>
-          
           
         
           
@@ -9932,13 +10116,6 @@ which is automatically built from current git tag</p></td>
           
           
         
-          
-            
-            
-            <li>
-              <span class="rulename">documentation-security-assessment</span>
-              
-            </li>
           
           
         
