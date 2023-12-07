@@ -259,7 +259,7 @@ Scorecards show complicance in each category, which allows progress in iteration
   
   <section class="rules">
     <h3><a name="category-Repository Ergonomics">Repository Ergonomics</a></h3>
-    
+    <p><blockquote>
 <p>Ergonomics <em>(ûr″gə-nŏm′ĭks)</em>: Design factors, as for the workplace, intended to maximize productivity by minimizing operator fatigue and discomfort.</p>
 </blockquote>
 <ul>
@@ -267,7 +267,7 @@ Scorecards show complicance in each category, which allows progress in iteration
 <li>How a project repository is organized provides little return on the mental energy it takes to learn it</li>
 <li>To contribute to a project someone is required to learn how its content is organized.</li>
 <li>There is too little reusable knowledge across project organizations / layouts</li>
-
+</ul></p>
     <table>
       <colgroup>
         <col>
@@ -286,28 +286,28 @@ Scorecards show complicance in each category, which allows progress in iteration
         
         <tr>
           <td><span class="rulename">repo-standard-files</span></td>
-          <td>
+          <td><ul>
 <li>README.(md,rst)</li>
 <li>LICENSE</li>
 <li>CODE_OF_CONDUCT.md</li>
 <li>CONTRIBUTING.md</li>
 <li>SECURITY.md</li>
 <li>SUPPORT.md</li>
-</td>
+</ul></td>
           <td>See <a href="https://en.wikipedia.org/wiki/Contributing_guidelines">https://en.wikipedia.org/wiki/Contributing_guidelines</a>
 and <a href="https://mozillascience.github.io/working-open-workshop/contributing/">https://mozillascience.github.io/working-open-workshop/contributing/</a>
 templates at <a href="https://contributing.md">https://contributing.md</a></td>
           <td>
-            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
+            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-standard-folders</span></td>
-          <td>
+          <td><ul>
 <li>docs/</li>
 <li>bin/</li>
-</td>
+</ul></td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, kitsune"></div>
@@ -316,38 +316,38 @@ templates at <a href="https://contributing.md">https://contributing.md</a></td>
         
         <tr>
           <td><span class="rulename">repo-readme-sections</span></td>
-          <td>Readme contains the following:</p>
+          <td><p>Readme contains the following:</p>
 <ul>
 <li>Project name as main title</li>
 <li>Status (invest, sustain, sunset, abandoned)</li>
 <li>Usage</li>
 <li>Link to documentation</li>
-</td>
-          <td>Our goals here are:</p>
+</ul></td>
+          <td><p>Our goals here are:</p>
 <ul>
 <li>avoid empty README</li>
 <li>expose maintenance status</li>
 <li>basic usage is detailed</li>
 <li>standard sections will help reading/scanning for newcomers</li>
-</td>
+</ul></td>
           <td>
-            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
+            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
         <tr>
           <td><span class="rulename">repo-makefile-targets</span></td>
-          <td>Make has the following targets:</p>
+          <td><p>Make has the following targets:</p>
 <ul>
 <li>help</li>
 <li>test</li>
 <li>start</li>
 <li>lint</li>
 <li>format</li>
-</td>
+</ul></td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server, kitsune"></div>
+            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune"></div>
           </td>
         </tr>
         
@@ -380,7 +380,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></td>
         
         <tr>
           <td><span class="rulename">repo-issue-labels</span></td>
-          <td>Standard issue labels exist:</p>
+          <td><p>Standard issue labels exist:</p>
 <ul>
 <li>bug</li>
 <li>dependencies</li>
@@ -388,7 +388,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></td>
 <li>documentation</li>
 <li>wontfix</li>
 <li>good-first-issue</li>
-</td>
+</ul></td>
           <td></td>
           <td>
             <div class="popularity" style="--percent: 65;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, addons-server, kitsune, Taskcluster"></div>
@@ -428,7 +428,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></td>
   
   <section class="rules">
     <h3><a name="category-Repository Automation">Repository Automation</a></h3>
-    
+    <p></p>
     <table>
       <colgroup>
         <col>
@@ -496,7 +496,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></td>
   
   <section class="rules">
     <h3><a name="category-Testing and linting">Testing and linting</a></h3>
-    
+    <p></p>
     <table>
       <colgroup>
         <col>
@@ -609,7 +609,7 @@ templates at <a href="https://contributing.md">https://contributing.md</a></td>
   
   <section class="rules">
     <h3><a name="category-Releasing">Releasing</a></h3>
-    These checks apply to services that still rely on tags and releases. If a service has moved to <em>Continuous Delivery</em>, without tagging or releasing at all, they can all be considered as compliant.
+    <p>These checks apply to services that still rely on tags and releases. If a service has moved to <em>Continuous Delivery</em>, without tagging or releasing at all, they can all be considered as compliant.</p>
     <table>
       <colgroup>
         <col>
@@ -669,7 +669,7 @@ which is automatically built from current git tag</td>
   
   <section class="rules">
     <h3><a name="category-Deployment">Deployment</a></h3>
-    
+    <p></p>
     <table>
       <colgroup>
         <col>
@@ -737,7 +737,7 @@ which is automatically built from current git tag</td>
   
   <section class="rules">
     <h3><a name="category-Monitoring">Monitoring</a></h3>
-    
+    <p></p>
     <table>
       <colgroup>
         <col>
@@ -759,7 +759,7 @@ which is automatically built from current git tag</td>
           <td>Heartbeat endpoint checks that backends can executed desired operations (eg. DB, cache, filesystem etc.) to support troubleshooting</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server"></div>
+            <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, Balrog, addons-server, kitsune"></div>
           </td>
         </tr>
         
@@ -768,7 +768,7 @@ which is automatically built from current git tag</td>
           <td>Heartbeat checks throw errors that will be reported</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Remote Settings, addons-server"></div>
+            <div class="popularity" style="--percent: 55;" title="CTMS, JBI, Telescope, Remote Settings, addons-server, kitsune"></div>
           </td>
         </tr>
         
@@ -777,7 +777,7 @@ which is automatically built from current git tag</td>
           <td>API requests processing duration is monitored</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 75;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, Taskcluster"></div>
+            <div class="popularity" style="--percent: 85;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
@@ -786,7 +786,7 @@ which is automatically built from current git tag</td>
           <td>A unique ID is associated to each request and logged</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 80;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, Taskcluster"></div>
+            <div class="popularity" style="--percent: 90;" title="CTMS, JBI, Telescope, Remote Settings, Tecken, Experimenter, addons-server, kitsune, Taskcluster"></div>
           </td>
         </tr>
         
@@ -822,7 +822,7 @@ which is automatically built from current git tag</td>
           <td>Logging level is set using <code>LOG_LEVEL</code> env variable. Logging format is set using <code>LOG_FORMAT</code> env variable</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 45;" title="CTMS, JBI, Telescope, Tecken, Balrog, kitsune"></div>
+            <div class="popularity" style="--percent: 60;" title="CTMS, JBI, Telescope, Tecken, Experimenter, Balrog, kitsune"></div>
           </td>
         </tr>
         
@@ -831,7 +831,7 @@ which is automatically built from current git tag</td>
           <td>Sentry is setup by environment</td>
           <td></td>
           <td>
-            <div class="popularity" style="--percent: 65;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, kitsune"></div>
+            <div class="popularity" style="--percent: 70;" title="CTMS, JBI, Telescope, Remote Settings, Experimenter, addons-server, kitsune"></div>
           </td>
         </tr>
         
@@ -841,7 +841,7 @@ which is automatically built from current git tag</td>
   
   <section class="rules">
     <h3><a name="category-Telemetry">Telemetry</a></h3>
-    
+    <p></p>
     <table>
       <colgroup>
         <col>
@@ -900,7 +900,7 @@ which is automatically built from current git tag</td>
   
   <section class="rules">
     <h3><a name="category-Notifications">Notifications</a></h3>
-    
+    <p></p>
     <table>
       <colgroup>
         <col>
@@ -932,7 +932,7 @@ which is automatically built from current git tag</td>
   
   <section class="rules">
     <h3><a name="category-Documentation Content">Documentation Content</a></h3>
-    
+    <p></p>
     <table>
       <colgroup>
         <col>
@@ -6412,6 +6412,644 @@ which is automatically built from current git tag
     
     <div class="card">
       <div class="container">
+        <h3>65% (72 / 110), 2023-12-07</h3>
+        <ul>
+          
+          <li>Deployment (7/10)</li>
+          
+          <li>Documentation Content (6/12)</li>
+          
+          <li>Monitoring (12/18)</li>
+          
+          <li>Notifications (2/2)</li>
+          
+          <li>Releasing (8/8)</li>
+          
+          <li>Repository Automation (4/10)</li>
+          
+          <li>Repository Ergonomics (17/22)</li>
+          
+          <li>Telemetry (4/8)</li>
+          
+          <li>Testing and linting (12/20)</li>
+          
+        </ul>
+        <div class="punchs">
+          
+          <div class="punch yes" title="repo-main-branch-name"></div>
+          
+          <div class="punch yes" title="repo-main-branch-protected"></div>
+          
+          <div class="punch yes" title="repo-pre-commit-optional"></div>
+          
+          <div class="punch yes" title="repo-dependencies-auto"></div>
+          
+          <div class="punch yes" title="repo-code-owners"></div>
+          
+          <div class="punch yes" title="test-lint-code-format"></div>
+          
+          <div class="punch yes" title="test-lint-static-analysis"></div>
+          
+          <div class="punch yes" title="test-lint-type-checking"></div>
+          
+          <div class="punch yes" title="test-container-build"></div>
+          
+          <div class="punch yes" title="test-container-integration"></div>
+          
+          <div class="punch yes" title="dependencies-reproducibility"></div>
+          
+          <div class="punch yes" title="release-semver-calver"></div>
+          
+          <div class="punch yes" title="release-tag-v-prefix"></div>
+          
+          <div class="punch yes" title="release-tag-only"></div>
+          
+          <div class="punch yes" title="release-publish"></div>
+          
+          <div class="punch yes" title="deployment-integration-test"></div>
+          
+          <div class="punch yes" title="deployment-auto-main"></div>
+          
+          <div class="punch yes" title="deployment-auto-release"></div>
+          
+          <div class="punch yes" title="monitoring-logging-mozlog"></div>
+          
+          <div class="punch yes" title="telemetry-metrics"></div>
+          
+          <div class="punch yes" title="telemetry-naming"></div>
+          
+          <div class="punch yes" title="notifications-error-chat"></div>
+          
+          <div class="punch yes" title="documentation-decisions-records"></div>
+          
+          <div class="punch yes" title="documentation-dev"></div>
+          
+          <div class="punch yes" title="documentation-test-args"></div>
+          
+          <div class="punch yes" title="repo-version-tags-protected"></div>
+          
+          <div class="punch yes" title="repo-team-reviewers-permissions"></div>
+          
+          <div class="punch yes" title="monitoring-heartbeat-backends"></div>
+          
+          <div class="punch yes" title="monitoring-requests-duration"></div>
+          
+          <div class="punch yes" title="monitoring-requests-id"></div>
+          
+          <div class="punch yes" title="repo-standard-files"></div>
+          
+          <div class="punch partially" title="repo-standard-folders"></div>
+          
+          <div class="punch yes" title="repo-readme-sections"></div>
+          
+          <div class="punch yes" title="repo-makefile-targets"></div>
+          
+          <div class="punch no" title="repo-issue-labels"></div>
+          
+          <div class="punch unknown" title="repo-pull-request-merge"></div>
+          
+          <div class="punch no" title="repo-release-notes-auto"></div>
+          
+          <div class="punch unknown" title="repo-automerge-enabled"></div>
+          
+          <div class="punch unknown" title="repo-head-branch-auto-delete"></div>
+          
+          <div class="punch no" title="test-lint-secrets"></div>
+          
+          <div class="punch no" title="test-unit-coverage"></div>
+          
+          <div class="punch no" title="test-documentation-build"></div>
+          
+          <div class="punch no" title="test-pull-requests-labels"></div>
+          
+          <div class="punch partially" title="deployment-dockerflow"></div>
+          
+          <div class="punch no" title="deployment-auto-pull-requests"></div>
+          
+          <div class="punch no" title="monitoring-heartbeat-error"></div>
+          
+          <div class="punch no" title="monitoring-backends-duration"></div>
+          
+          <div class="punch no" title="monitoring-logging-level"></div>
+          
+          <div class="punch yes" title="monitoring-logging-env-configuration"></div>
+          
+          <div class="punch yes" title="monitoring-error-reporting"></div>
+          
+          <div class="punch no" title="telemetry-documented"></div>
+          
+          <div class="punch no" title="telemetry-query-examples"></div>
+          
+          <div class="punch no" title="documentation-security-assessment"></div>
+          
+          <div class="punch no" title="documentation-operator"></div>
+          
+          <div class="punch no" title="documentation-troubleshooting"></div>
+          
+        </div>
+
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+              <p>Missing from standard v1:</p>
+                <ul>
+            
+            
+            <li>
+              <span class="rulename" title="- docs/
+- bin/
+">repo-standard-folders</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Standard issue labels exist:
+
+- bug
+- dependencies
+- enhancement
+- documentation
+- wontfix
+- good-first-issue
+">repo-issue-labels</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Container follows Dockerflow spec">deployment-dockerflow</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Heartbeat checks throw errors that will be reported">monitoring-heartbeat-error</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Logging has INFO level by default">monitoring-logging-level</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Instructions for an operator: how to deploy and run the application, how to configure it for production, etc.
+">documentation-operator</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
+              
+            </li>
+          
+          
+            </ul>
+          
+        
+
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+              <p>Could not be verified:</p>
+                <ul>
+            
+            
+            <li>
+              <span class="rulename" title="Only “*squash and merge*” and “*rebase and merge*” are allowed">repo-pull-request-merge</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Auto-delete head branches is enabled">repo-head-branch-auto-delete</span>
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            </ul>
+          
+        
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="container">
         <h3>59% (65 / 110), 2023-11-06</h3>
         <ul>
           
@@ -8619,6 +9257,703 @@ which is automatically built from current git tag
   <section class="scorecards">
     <h3><a name="service-kitsune">kitsune</a></h3>
 
+    
+    <div class="card">
+      <div class="container">
+        <h3>50% (55 / 110), 2023-12-07</h3>
+        <ul>
+          
+          <li>Deployment (5/10)</li>
+          
+          <li>Documentation Content (8/12)</li>
+          
+          <li>Monitoring (14/18)</li>
+          
+          <li>Notifications (1/2)</li>
+          
+          <li>Releasing (2/8)</li>
+          
+          <li>Repository Automation (2/10)</li>
+          
+          <li>Repository Ergonomics (15/22)</li>
+          
+          <li>Telemetry (0/8)</li>
+          
+          <li>Testing and linting (8/20)</li>
+          
+        </ul>
+        <div class="punchs">
+          
+          <div class="punch yes" title="repo-standard-folders"></div>
+          
+          <div class="punch yes" title="repo-main-branch-name"></div>
+          
+          <div class="punch yes" title="repo-dependencies-auto"></div>
+          
+          <div class="punch yes" title="test-lint-code-format"></div>
+          
+          <div class="punch yes" title="test-lint-static-analysis"></div>
+          
+          <div class="punch yes" title="test-container-build"></div>
+          
+          <div class="punch yes" title="dependencies-reproducibility"></div>
+          
+          <div class="punch yes" title="release-semver-calver"></div>
+          
+          <div class="punch yes" title="deployment-dockerflow"></div>
+          
+          <div class="punch yes" title="monitoring-logging-level"></div>
+          
+          <div class="punch yes" title="monitoring-error-reporting"></div>
+          
+          <div class="punch yes" title="documentation-decisions-records"></div>
+          
+          <div class="punch yes" title="documentation-dev"></div>
+          
+          <div class="punch yes" title="documentation-test-args"></div>
+          
+          <div class="punch yes" title="documentation-operator"></div>
+          
+          <div class="punch yes" title="repo-main-branch-protected"></div>
+          
+          <div class="punch yes" title="repo-team-reviewers-permissions"></div>
+          
+          <div class="punch yes" title="deployment-auto-main"></div>
+          
+          <div class="punch yes" title="repo-standard-files"></div>
+          
+          <div class="punch yes" title="repo-readme-sections"></div>
+          
+          <div class="punch yes" title="repo-makefile-targets"></div>
+          
+          <div class="punch no" title="repo-version-tags-protected"></div>
+          
+          <div class="punch partially" title="repo-issue-labels"></div>
+          
+          <div class="punch no" title="repo-pull-request-merge"></div>
+          
+          <div class="punch no" title="repo-pre-commit-optional"></div>
+          
+          <div class="punch no" title="repo-release-notes-auto"></div>
+          
+          <div class="punch no" title="repo-automerge-enabled"></div>
+          
+          <div class="punch no" title="repo-head-branch-auto-delete"></div>
+          
+          <div class="punch no" title="repo-code-owners"></div>
+          
+          <div class="punch no" title="test-lint-secrets"></div>
+          
+          <div class="punch no" title="test-lint-type-checking"></div>
+          
+          <div class="punch no" title="test-unit-coverage"></div>
+          
+          <div class="punch no" title="test-documentation-build"></div>
+          
+          <div class="punch no" title="test-container-integration"></div>
+          
+          <div class="punch no" title="test-pull-requests-labels"></div>
+          
+          <div class="punch no" title="release-tag-v-prefix"></div>
+          
+          <div class="punch no" title="release-tag-only"></div>
+          
+          <div class="punch no" title="release-publish"></div>
+          
+          <div class="punch no" title="deployment-integration-test"></div>
+          
+          <div class="punch partially" title="deployment-auto-release"></div>
+          
+          <div class="punch no" title="deployment-auto-pull-requests"></div>
+          
+          <div class="punch yes" title="monitoring-heartbeat-backends"></div>
+          
+          <div class="punch yes" title="monitoring-heartbeat-error"></div>
+          
+          <div class="punch yes" title="monitoring-requests-duration"></div>
+          
+          <div class="punch yes" title="monitoring-requests-id"></div>
+          
+          <div class="punch no" title="monitoring-backends-duration"></div>
+          
+          <div class="punch no" title="monitoring-logging-mozlog"></div>
+          
+          <div class="punch yes" title="monitoring-logging-env-configuration"></div>
+          
+          <div class="punch no" title="telemetry-metrics"></div>
+          
+          <div class="punch no" title="telemetry-naming"></div>
+          
+          <div class="punch no" title="telemetry-documented"></div>
+          
+          <div class="punch no" title="telemetry-query-examples"></div>
+          
+          <div class="punch partially" title="notifications-error-chat"></div>
+          
+          <div class="punch no" title="documentation-security-assessment"></div>
+          
+          <div class="punch no" title="documentation-troubleshooting"></div>
+          
+        </div>
+
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+              <p>Missing from standard v1:</p>
+                <ul>
+            
+            
+            <li>
+              <span class="rulename" title="Tags starting with `v*` can only be pushed by maintainers/admins">repo-version-tags-protected</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Standard issue labels exist:
+
+- bug
+- dependencies
+- enhancement
+- documentation
+- wontfix
+- good-first-issue
+">repo-issue-labels</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Only “*squash and merge*” and “*rebase and merge*” are allowed">repo-pull-request-merge</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Pre-commit hooks are optional">repo-pre-commit-optional</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Release Notes are generated from commits using `.github/release.yml`">repo-release-notes-auto</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automerge and merge queues are enabled">repo-automerge-enabled</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Auto-delete head branches is enabled">repo-head-branch-auto-delete</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Code owners are configured">repo-code-owners</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that no secret is committed to the sources">test-lint-secrets</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that types are used consistently">test-lint-type-checking</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Unit tests fail if coverage is under 90%">test-unit-coverage</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that documentation builds successfully without warnings">test-documentation-build</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test executes integration tests on the built container">test-container-integration</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="A test verifies that pull-requests have labels">test-pull-requests-labels</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="The release tags have `v(.+)` format">release-tag-v-prefix</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Project version has a single source of truth. For example, it is read from `version.json`
+which is automatically built from current git tag
+">release-tag-only</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Project container or package is published on git tag">release-publish</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Integration tests are part of deployment pipeline">deployment-integration-test</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automatic deployment on STAGE/PROD environment on version tag">deployment-auto-release</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Automatic deployment on temporary instances on pull-requests">deployment-auto-pull-requests</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Backends calls durations are monitored">monitoring-backends-duration</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Logging format is MozLog by default">monitoring-logging-mozlog</span>: No
+              
+            </li>
+          
+          
+        
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Project sends live telemetry">telemetry-metrics</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Probes start with project name (eg. `ctms.*`)">telemetry-naming</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Probes are listed in documentation">telemetry-documented</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="BigQuery example queries are given in documentation">telemetry-query-examples</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Sentry reports to Slack channel">notifications-error-chat</span>: Partially
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="[Rapid Risk Assessment](https://infosec.mozilla.org/guidelines/risk/rapid_risk_assessment), either a link or its content
+">documentation-security-assessment</span>: No
+              
+            </li>
+          
+          
+        
+          
+            
+            
+            <li>
+              <span class="rulename" title="Common troubleshooting steps">documentation-troubleshooting</span>: No
+              
+            </li>
+          
+          
+            </ul>
+          
+        
+
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            </ul>
+          
+        
+      </div>
+    </div>
     
     <div class="card">
       <div class="container">
