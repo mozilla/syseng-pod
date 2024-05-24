@@ -20,14 +20,14 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: actions/setup-python@v4
+    - uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.12'
     - shell: bash
       run: pip install click
     - name: Dependabot metadata
       id: dependabot-metadata
-      uses: dependabot/fetch-metadata@v1
+      uses: dependabot/fetch-metadata@v2
       with:
         github-token: ${{ inputs.github-token }}
     - name: Review PR
