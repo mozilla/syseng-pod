@@ -25,7 +25,7 @@ permissions:
 jobs:
   dependabot-automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     steps:
       - name: Enable Dependabot automation
         uses: mozilla/syseng-pod/actions/dependabot-automerge@main
