@@ -41,7 +41,9 @@ def html(output):
         root_scorecards = ruamel.yaml.load(f, Loader=ruamel.yaml.Loader)
 
     def render_markdown(value):
-        return markdown.markdown(value, extensions=['tables'])
+        html = markdown.markdown(value, extensions=["tables"])
+        # Remove leading and trailing <p></p>
+        return html[3:-4]
 
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader("."),
@@ -103,7 +105,9 @@ def html(output):
     }
     rendered = template.render(**context)
 
-    shutil.copytree("assets", os.path.abspath(os.path.join(output, "assets")), dirs_exist_ok=True)
+    shutil.copytree(
+        "assets", os.path.abspath(os.path.join(output, "assets")), dirs_exist_ok=True
+    )
     output_index = os.path.abspath(os.path.join(output, "index.html"))
     with open(output_index, "w") as f:
         f.write(rendered)
@@ -196,7 +200,7 @@ def audit(service):
                 for rule, v in previous_audit.items()
                 if v["compliant"] == "Yes"
             }
-        if choice == 5:
+        if not choice or choice == 5:
             click.echo("Cancelled.")
             sys.exit(1)
 
@@ -227,7 +231,7 @@ def audit(service):
                 choices=POINTS_FOR.keys(),
                 instruction="\n" + rule["description"].strip() + "\n",
             ).ask()
-            if compliance is None:
+            if not compliance:
                 aborted = True
                 break
             # Offer ability to add notes if not compliant.
